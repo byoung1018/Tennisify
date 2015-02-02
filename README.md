@@ -18,7 +18,7 @@ towards tennis.  Users can:
 * [View Wireframes][views]
 * [DB schema][schema]
 
-[views]: ./docs/wireframes/wireframes.md
+[views]: ./docs/wireframes/wireframes.jpg
 [schema]: ./docs/schema.md
 
 ## Implementation Timeline
