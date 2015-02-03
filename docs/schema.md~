@@ -17,14 +17,19 @@ password_digest | string    | not null
 session_token   | string    | not null, unique
 
 
-
-## responded_players
+## invited_players
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 player_id       | integer   | not null, index
 meeting_id      | integer   | not null, index
-response	| string    | not null
+
+## accepted_players
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+player_id       | integer   | not null, index
+meeting_id      | integer   | not null, index
 
 
 ## meetings
