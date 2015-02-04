@@ -24,7 +24,7 @@ column name     | data type | details
 id              | integer   | not null, primary key
 player_id       | integer   | not null, index
 meeting_id      | integer   | not null, index
-response	| string    | not null
+response_status | string    | not null
 
 
 ## meetings
@@ -40,6 +40,7 @@ age_groups      | integer   | not null
 genders         | string    | not null
 date            | date      | not null
 time            | time      | not null
+title           | string    | not null
 organizer_id    | integer   | not null, index
 
 ## comments

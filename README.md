@@ -25,14 +25,14 @@ towards tennis.  Users can:
 
 ### Phase 1: User Authentication, user create and show(~1.5 days)
 I will implement user authentication in Rails. By the end of this phase,
-users will be able to create profiles and log in with them.  There will also be
-a basic view to see their profile details.
+users will be able to create basic profiles and log in with them.  There will
+also be a basic view to see their profile details.
 
 [Details][phase-one]
 
 ### Phase 2: Meeting Create, show and index (~2.5 days)
-I will create pages to show, create edit and see all meetings.  By the end of this
-phase there will be basic pages for minimal functionality.
+I will create pages to show, create edit and see all meetings.  By the end of
+this phase there will be basic pages for minimal functionality.
 
 [Details][phase-two]
 
@@ -44,7 +44,8 @@ phase there will be basic pages for minimal functionality.
 ### Phase 4: Filter meetings (~1 day)
 Unless I can find a gem (which I haven't checked for yet) I will take each of
 the filter options and pass them to the index function in the controller and
-have that construct a sql query with them.  
+have that construct a sql query with them.  This will allow meetings to be
+filtered by whether the user has responded to them, level, date, etc.
 
 
 [Details][phase-four]
@@ -57,6 +58,9 @@ decide to create later.
 [Details][phase-five]
 
 ### Bonus Features (TBD)
+- [ ] Extra details to users and filter
+- [ ] Private meeting fuctionality
+- [ ] Add a calendar to show "my meetings"
 - [ ] Add picture to profile
 - [ ] Notifications through SMS (twilio)
 - [ ] Send private messages (emails)
@@ -66,7 +70,7 @@ decide to create later.
 - [ ] Meeting templates
 - [ ] Subscriptions to emails for new meetings that match specified filters
 - [ ] Accept meeting links (sent in email notifications)
-- [ ] Google maps to locate tennis courts (through address)
+- [ ] Google maps for user/tennis court location (through address)
 - [ ] A DB of tennis courts
 - [ ] Invite by email (link to automatically create account, no email verification)
 
