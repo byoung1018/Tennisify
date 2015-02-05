@@ -1,8 +1,10 @@
 class User < ActiveRecord::Base
   # todo change message for validation errors (says fname right now)
+  has_many :responses, foreign_key: :respondent_id
+  has_many :owned_meetings, class_name: 'Meeting', foreign_key: :organizer_id
+
 
   attr_reader :password
-
 
   after_initialize :ensure_session_token
 
@@ -12,7 +14,8 @@ class User < ActiveRecord::Base
     length: { minimum: 6, allow_nil: true }
   )
   validates :session_token, :email, :fname, presence: true, uniqueness: true
-  # validates , presence: true, uniqueness: true
+
+
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

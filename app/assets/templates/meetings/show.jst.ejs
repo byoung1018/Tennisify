@@ -1,2 +1,12 @@
-<h1>title</h1>
-<h1><%= meeting.escape("title") %></h1>
+<a href="#meetings/<%=meeting.id%>/edit">edit</a>
+<ul class="index-item">
+  <a href="#meetings/<%= meeting.id %>">
+    <h1><%= meeting.escape("title") %></h1>
+  </a>
+  <div class="response">
+  </div>
+  <li><%= meeting.escape("organizer_id") %></li>
+  <li><%= meeting.escape("about") %></li>
+  <li><%= meeting.escape("date") %></li>
+  <li><%= meeting.escape("time") %></li>
+</ul>

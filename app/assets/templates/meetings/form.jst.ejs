@@ -1,0 +1,24 @@
+<h1><%=title%></h1>
+<label>Title
+  <input type="text" name="meeting[title]"
+    id="title" value="<%=meeting.escape("title")%>">
+</label>
+<br>
+
+<label>About Meeting <br>
+  <textarea name="meeting[about]"><%=meeting.escape("about")%></textarea>
+</label>
+<br>
+
+<label>Date
+  <input type="date" name="meeting[date]"
+    value="<%=meeting.escape("date")%>">
+</label>
+<br>
+
+<label>Time
+  <input type="time" name="meeting[time]"
+    value="<%=time(meeting.escape("time"))%>">
+</label>
+<br>
+<button class="submit-meeting"><%=buttonText%></button>

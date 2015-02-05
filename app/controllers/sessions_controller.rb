@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       render :new
     else
       login_user!(user)
-      redirect_to "#meetings/new"
+      redirect_to root_url
     end
   end
 

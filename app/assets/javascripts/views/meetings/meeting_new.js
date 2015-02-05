@@ -1,9 +1,9 @@
 Tennisify.Views.newMeeting = Backbone.View.extend({
-  template: JST['meetings/new'],
+  template: JST['meetings/form'],
   events: {
-    "click button.create-meeting": "createMeeting"
+    "click button.submit-meeting": "createMeeting"
   },
-  className: "new-meeting-form",
+  className: "meeting-form",
   tagName: "form",
 
   createMeeting: function (event) {
@@ -17,7 +17,11 @@ Tennisify.Views.newMeeting = Backbone.View.extend({
   },
 
   render: function () {
-    var content = this.template();
+    var content = this.template({
+      title: "Create Meeting",
+      buttonText: "Create",
+      meeting: new Tennisify.Models.Meeting()
+      });
     this.$el.html(content);
 
     return this;

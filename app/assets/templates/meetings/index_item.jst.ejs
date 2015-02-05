@@ -1,6 +1,8 @@
 <ul class="index-item">
-  <h2><%= meeting.escape("title") %></h2>
-  <a href="#meetings/<%= meeting.id %>">link</a>
+
+  <a href="#meetings/<%= meeting.id %>">
+    <h2><%= meeting.escape("title") %></h2>
+  </a>
   <li><%= meeting.escape("organizer_id") %></li>
   <li><%= meeting.escape("about") %></li>
   <li><%= meeting.escape("date") %></li>

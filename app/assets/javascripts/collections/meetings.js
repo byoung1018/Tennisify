@@ -10,9 +10,8 @@ Tennisify.Collections.Meetings = Backbone.Collection.extend({
       meeting = new Tennisify.Models.Meeting({ id: id });
       meeting.fetch({
         success: function () {
-          debugger
           that.add(meeting);
-        }.bind(this),
+        },
       });
     } else {
       meeting.fetch();
