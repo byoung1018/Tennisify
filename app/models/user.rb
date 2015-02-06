@@ -13,13 +13,15 @@ class User < ActiveRecord::Base
     :password,
     length: { minimum: 6, allow_nil: true }
   )
-  validates :session_token, :email, :fname, presence: true, uniqueness: true
+  validates :session_token, :email, presence: true, uniqueness: true
+  validates :fname, presence: true
 
 
-
-  def self.find_by_credentials(email, password)
-    user = User.find_by(email: email)
-
+  def self.find_by_credentials(login, password)
+    user = User.find_by(email: login)
+    if user.nil?
+      user = User.find_by(username: login)
+    end      
     return nil if user.nil?
     user.is_password?(password) ? user : nil
   end

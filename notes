@@ -1,0 +1,8 @@
+
+filter method
+  save query
+  loop through params hash
+    chain where(for singe value) and in(mult value) onto query
+  run query and return objects
+
+rails generate migration add_username_to_users username:string

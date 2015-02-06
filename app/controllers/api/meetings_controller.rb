@@ -7,14 +7,19 @@ module Api
       if @meeting.save
         render json: @meeting
       else
-        render json: @meeting.errors.full_messages, status: :unprocessable_entity
+        render json: { errors: @meeting.errors.full_messages }, status: 422
       end
     end
 
 
 
     def index
-      @meetings = Meeting.all
+      if params[:filter]
+        @meetings = Meeting.filter(filter_params)
+      else
+        @meetings = Meeting.all
+      end
+
     end
 
     def show
@@ -38,6 +43,10 @@ module Api
     private
       def meeting_params
         params.require(:meeting).permit(:title, :about, :date, :time,)
+      end
+
+      def filter_params
+        params.require(:filter).permit(:title, :organizer)
       end
 
   end

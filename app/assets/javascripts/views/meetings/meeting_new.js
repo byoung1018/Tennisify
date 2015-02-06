@@ -1,4 +1,4 @@
-Tennisify.Views.newMeeting = Backbone.View.extend({
+Tennisify.Views.newMeeting = Backbone.ErrorView.extend({
   template: JST['meetings/form'],
   events: {
     "click button.submit-meeting": "createMeeting"
@@ -9,11 +9,17 @@ Tennisify.Views.newMeeting = Backbone.View.extend({
   createMeeting: function (event) {
     event.preventDefault();
     var attrs = $(event.delegateTarget).serializeJSON()["meeting"];
-
+    console.log(attrs.time)
+    console.log(attrs.date)
     var meeting = new Tennisify.Models.Meeting(attrs);
-    meeting.save({}, {success: function () {
+    meeting.save({}, {
+      success: function () {
 
-    }})
+      },
+      error: function (meeting, errors) {
+        this.renderErrors(errors)
+      }.bind(this)
+    })
   },
 
   render: function () {
