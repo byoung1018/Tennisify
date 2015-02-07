@@ -1,8 +1,13 @@
+add to user details
+  db
+  create
 
-filter method
-  save query
-  loop through params hash
-    chain where(for singe value) and in(mult value) onto query
-  run query and return objects
+add to meeting details
+  db
+  create
+  show
+  index
+  filter
 
-rails generate migration add_username_to_users username:string
+
+ejs helpers? for radio buttons and checkboxes

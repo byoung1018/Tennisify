@@ -15,6 +15,7 @@
 //= require underscore
 //= require backbone
 //= require tennisify
+//= require bootstrap
 //= require jquery.serializeJSON
 //= require_tree ../templates
 //= require_tree ./utils

@@ -12,6 +12,9 @@ class Meeting < ActiveRecord::Base
     meetings = Meeting.all
     filter.each do |name, value|
       if value != ""
+        if value.class == Array
+          meetings = meetings.where("#{name}: ?", "#{value}%");
+        end
         meetings = meetings.where("#{name} LIKE ?", "#{value}%");
       end
     end

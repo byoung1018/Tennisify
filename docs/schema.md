@@ -31,7 +31,7 @@ response_status | string    | not null
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-max_players     | integer   | not null, unique
+max_players     | integer   | not null
 public          | boolean   | not null
 location        | string    | not null
 level           | string    | not null
@@ -42,6 +42,9 @@ date            | date      | not null
 time            | time      | not null
 title           | string    | not null
 organizer_id    | integer   | not null, index
+
+
+
 
 ## comments
 column name     | data type | details

@@ -46,7 +46,8 @@ module Api
       end
 
       def filter_params
-        params.require(:filter).permit(:title, :organizer)
+        params.require(:filter).permit(:date, :time, :max_players, :title,
+                                      :about, :age_groups, :level, :locations)
       end
 
   end

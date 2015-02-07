@@ -1,13 +1,30 @@
 Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
   routes:{
     "": "index",
+    "login": "showLogin",
     "users/new": "newUser",
     "meetings/new": "newMeeting",
     "meetings/:id/edit": "editMeeting",
     "meetings/:id": "showMeeting",
   },
 
+  events: {
+    "route": "checkLogin"
+  },
+
+  checkLogin: function (route, params) {
+    if (!currentUser && route != "newUser" && route != "login") {
+      Backbone.history.navigate("login", { trigger: true })
+    }
+  },
+
+  showLogin: function () {
+    var loginPage = new Tennisify.Views.SessionNew();
+    this._swapView(loginPage);
+  },
+
   initialize: function () {
+    this.listenTo(this, "route", this.checkLogin)
     this.$rootEl = $('#main');
   },
 

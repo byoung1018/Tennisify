@@ -1,6 +1,16 @@
 
 <div class="backdrop">
+  <div class="nav">
+  </div>
   <div id="main"></div>
 </div>
 
 <script>$(Tennisify.initialize);</script>
+
+<script>
+  var currentUser;
+  <% if (current_user)%>
+    currentUser = <%= current_user.id %>
+  <% end %>
+  console.log(currentUser);
+</script>

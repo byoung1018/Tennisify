@@ -1,10 +1,35 @@
-  <label>Title
-    <input type="text" name="filter[title]"
-      id="title" value="" class="filter">
-  </label>
-  <label>Organizer
-    <input type="text" name="filter[organizer]"
-      id="title" value="" class="filter">
-  </label>
+<label>Title
+  <input type="text" name="filter[title]"
+    id="title" value="" class="filter">
+</label>
+<label>Organizer
+  <input type="text" name="filter[organizer]"
+    id="title" value="" class="filter">
+</label>
 
+<label>Dates
+  <input type="date" name="meeting[dateStart]"
+  value="">
+  to
+  <input type="date" name="meeting[dateEnd]"
+  value="">
+</label>
+<br>
+
+<label>Time
+  <input type="time" name="meeting[timeStart]"
+  value="">
+  to
+  <input type="time" name="meeting[timeEnd]"
+  value="">
+</label>
+<label> Maximum Players
+  <input type="number" name="meeting[maxPlayers]" value="">
+</label>
+<%= buttons("radio", "Public", "filter", ['Yes', 'No'])%>
+<%= buttons("checkbox", "locations", "filter", LOCATIONS)%>
+<%= buttons("checkbox", "level", "filter", LEVELS)%>
+<%= buttons("checkbox", "age_groups", "filter",
+    ['1-18', '18-40', '40-55', '55-65', '65+'])%>
+<%= buttons("checkbox", "genders", "filter", ['M', 'F'])%>
 <button class="filter">submit</button>

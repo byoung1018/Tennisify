@@ -1,28 +1,40 @@
 <h1>Sign Up</h1>
 <ul class="errors"></ul>
+
 <label>
   Username
-  <input type="text" name="user[email]" value="">
+  <input type="text" name="user[username]" value="">
+</label>
+
+<label> First Name
+  <input type="text" name="user[fname]"
+        id="fname" value="">
+</label>
+
+<label>Last Name
+  <input type="text" name="user[lname]"
+      id="lname" value="">
 </label>
 
 <label>
   Password
   <input type="password" name="user[password]" value="">
 </label>
+
+<label>Email
+  <input type="text" name="user[email]"
+    id="email" value="">
+</label>
+<%= select("level", "user", LEVELS)%>
+<%= select("location", "user", LOCATIONS)%>
+
+<label>Age
+  <input type="number" name="user[age]" value="">
+</label>
+
+<%= buttons("radio", "revealAge", "user", ['Yes', 'No'], 'Yes') %>
+<%= buttons('radio', 'gender', "user", ['M', 'F']) %>
+
+
 <br>
-<label> First Name
-  <input type="text"
-  name="user[fname]"
-  id="fname"
-  value="">
-</label>
-
-
-<label>Last Name
-  <input type="text"
-  name="user[lname]"
-  id="lname"
-  value="">
-</label>
-
 <button class="create-user">Sign Up</button>

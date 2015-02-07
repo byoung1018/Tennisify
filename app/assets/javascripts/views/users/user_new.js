@@ -11,6 +11,7 @@ Tennisify.Views.newUser = Backbone.ErrorView.extend({
     event.preventDefault();
     var attrs = $(event.delegateTarget).serializeJSON()["user"];
     var user = new Tennisify.Models.User(attrs);
+    console.log(attrs);
     user.save({}, {
       success: function () {
       },
