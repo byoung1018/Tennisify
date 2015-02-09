@@ -29,5 +29,10 @@ class Meeting < ActiveRecord::Base
     meetings
   end
 
+  def val_arr_association(association)
+    self.send("#{association}s").map do |obj|
+      obj.send(association)
+    end
+  end
 
 end
