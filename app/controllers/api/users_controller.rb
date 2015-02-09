@@ -5,12 +5,6 @@ module Api
                                 :email, :level, :location, :age, :reveal_ge]}
     def create
       @user = User.new(user_params)
-      puts @user.reveal_age
-      if @user.reveal_age == "Yes"
-        @user.reveal_age = true
-      else
-        @user.reveal_age = false
-      end
 
       if @user.save
         login_user!(@user)

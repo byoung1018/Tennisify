@@ -27,11 +27,11 @@
   <input type="number" name="meeting[max_players]"
           value="<%= meeting.escape("max_players") %>">
 </label>
-<%= buttons("radio", "public", "meeting", ['Yes', 'No'])%>
+<%= buttons("radio", "public", "meeting", ['Yes', 'No'], meeting.escape("public"))%>
 <%= select("location", "meeting", LOCATIONS)%>
-<%= select("level", "meeting", LEVELS)%>
-<%= select("age_groups", "meeting",
+<%= buttons("checkbox", "level", "meeting", LEVELS)%>
+<%= buttons("checkbox", "age_groups", "meeting",
         ['1-18', '18-40', '40-55', '55-65', '65+'])%>
-<%= buttons("checkbox", "genders", "meeting", ['M', 'F'])%>
+<%= buttons("checkbox", "genders", "meeting", ['M', 'F'], meeting.escape("genders"))%>
 <br>
 <button class="submit-meeting"><%=buttonText%></button>

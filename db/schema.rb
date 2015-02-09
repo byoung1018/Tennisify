@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206171848) do
+ActiveRecord::Schema.define(version: 20150209045548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 20150206171848) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "max_players",  null: false
-    t.boolean  "public",       null: false
+    t.string   "public",       null: false
     t.string   "location",     null: false
     t.string   "level",        null: false
-    t.integer  "age_groups",   null: false
+    t.string   "age_groups",   null: false
     t.string   "genders",      null: false
   end
 
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20150206171848) do
     t.string   "level"
     t.string   "location"
     t.integer  "age"
-    t.boolean  "reveal_age",      null: false
+    t.string   "reveal_age",      null: false
     t.string   "gender"
     t.string   "picture"
   end
