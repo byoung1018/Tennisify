@@ -2,7 +2,10 @@
     <label><%= toTitle(label) %>
       <select name="<%=model%>[<%=label%>]">
         <%itemNames.forEach(function(itemName){%>
-            <option value="<%=itemName%>">
+            <option value="<%=itemName%>"
+              <%if(itemName === selectedItem){%>
+                checked
+                <%}%>>
               <%=toTitle(itemName)%>
             </option>
         <%}) %>

@@ -13,22 +13,33 @@ function toDoubleDigit(num) {
   return num;
 }
 
-function buttons(buttonType, label, model, buttonNames, selectedItem) {
-  return JST['helpers/buttons']({
-    buttonType: buttonType,
+function buttons(buttonType, label, modelType, buttonNames, selectedItems) {
+  var $container = $(JST['helpers/button_container']({label: label}));
+  buttonNames.forEach(function (buttonName) {
+    if (_.include(selectedItems, buttonName)) {var checked = "checked"; console.log("included");}
+    else {var checked = ""; console.log("not included");}
+
+    var name = modelType + "[" + label + ']';
+    if (buttonType === "checkbox") {name += "[]";}
+    var button = JST['helpers/button']({
+      buttonType: buttonType,
+      buttonName: buttonName,
+      name: name,
+      checked: checked
+    })
+    $container.append(button);
+  })
+  return $container.html();
+}
+
+function select(label, model, itemNames, selectedItem) {
+  var button = JST['helpers/select']({
     label: label,
-    buttonNames: buttonNames,
+    itemNames: itemNames,
     model: model,
     selectedItem: selectedItem
   });
-}
-
-function select(label, model, itemNames) {
-  return JST['helpers/select']({
-    label: label,
-    itemNames: itemNames,
-    model: model
-  });
+  return button;
 }
 
 

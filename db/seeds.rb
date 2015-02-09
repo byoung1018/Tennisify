@@ -11,17 +11,16 @@ Level.create!([{level: "2.5"}, {level: "3.5"}, {level: "4.5"}, {level: "5.5+"},
 AgeGroup.create!([{age_group: '1-18'}, {age_group: '18-40'}, {age_group: '40-55'},
                 {age_group: '55-65'}, {age_group: '65+'}])
 # AllowedLevel.create!([
-#             {meeting_id: 24, level_id: 2},
-#             {meeting_id: 24, level_id: 5},
-#             {meeting_id: 24, level_id: 3},
-#             {meeting_id: 24, level_id: 4}, ])
-
+#             {meeting_id: 25, level_id: 2},
+#             {meeting_id: 25, level_id: 5},
+#             {meeting_id: 25, level_id: 3},
+#             {meeting_id: 25, level_id: 4}, ])
 # AllowedAgeGroup.create!([
-#             {meeting_id: 24, age_group_id: 2},
-#             {meeting_id: 24, age_group_id: 3},
-#             {meeting_id: 24, age_group_id: 4}, ])
-# AllowedGender.create!([{meeting_id: 24, gender_id: 1},
-#       {meeting_id: 24, gender_id: 2}])
+#             {meeting_id: 25, age_group_id: 2},
+#             {meeting_id: 25, age_group_id: 3},
+#             {meeting_id: 25, age_group_id: 4}, ])
+# AllowedGender.create!([{meeting_id: 25, gender_id: 1},
+#       {meeting_id: 25, gender_id: 2}])
 Gender.create!([{gender: 'M'}, {gender: 'F'}])
 User.create!({fname: "Bryce",
   lname: "Young",

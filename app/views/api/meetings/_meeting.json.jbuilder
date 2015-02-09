@@ -1,14 +1,14 @@
 json.extract! meeting, :id, :title, :about, :date, :time,
                   :max_players, :organizer_id, :public, :location
 
-json.allowed_genders do
+json.genders do
   json.array! meeting.val_arr_association("gender")
 end
 
-json.allowed_levels do
+json.levels do
   json.array! meeting.val_arr_association("level")
 end
-json.allowed_age_groups do
+json.age_groups do
   json.array! meeting.val_arr_association("age_group")
 end
 

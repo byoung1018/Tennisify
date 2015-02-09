@@ -9,9 +9,11 @@ Tennisify.Views.ShowMeeting = Backbone.View.extend({
   },
 
   render: function () {
+
     var responseContent = new Tennisify.Views.showResponse({
       model: this.model.response()
     })
+
     var meetingShow = this.template({
       meeting: this.model
     });
