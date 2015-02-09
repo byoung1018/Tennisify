@@ -11,10 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209045548) do
+ActiveRecord::Schema.define(version: 20150209182635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "age_groups", force: true do |t|
+    t.string "age_group", null: false
+  end
+
+  create_table "allowed_age_groups", force: true do |t|
+    t.integer  "meeting_id",   null: false
+    t.integer  "age_group_id", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "allowed_age_groups", ["age_group_id"], name: "index_allowed_age_groups_on_age_group_id", using: :btree
+  add_index "allowed_age_groups", ["meeting_id"], name: "index_allowed_age_groups_on_meeting_id", using: :btree
+
+  create_table "allowed_levels", force: true do |t|
+    t.integer  "meeting_id", null: false
+    t.integer  "level_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "allowed_levels", ["level_id"], name: "index_allowed_levels_on_level_id", using: :btree
+  add_index "allowed_levels", ["meeting_id"], name: "index_allowed_levels_on_meeting_id", using: :btree
+
+  create_table "levels", force: true do |t|
+    t.string "level", null: false
+  end
 
   create_table "meetings", force: true do |t|
     t.string   "title",        null: false
@@ -27,10 +55,10 @@ ActiveRecord::Schema.define(version: 20150209045548) do
     t.integer  "max_players",  null: false
     t.string   "public",       null: false
     t.string   "location",     null: false
-    t.string   "level",        null: false
-    t.string   "age_groups",   null: false
     t.string   "genders",      null: false
   end
+
+  add_index "meetings", ["organizer_id"], name: "index_meetings_on_organizer_id", using: :btree
 
   create_table "responses", force: true do |t|
     t.integer  "respondent_id",   null: false

@@ -27,6 +27,9 @@ meeting_id      | integer   | not null, index
 response_status | string    | not null
 
 
+
+
+
 ## meetings
 column name     | data type | details
 ----------------|-----------|-----------------------
@@ -35,8 +38,8 @@ max_players     | integer   | not null
 public          | boolean   | not null
 location        | string    | not null
 level           | string    | not null
-about           | text      | not null
 age_groups      | integer   | not null
+about           | text      | not null
 genders         | string    | not null
 date            | date      | not null
 time            | time      | not null
@@ -45,6 +48,33 @@ organizer_id    | integer   | not null, index
 
 
 
+
+## levels_allowed
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+meeting_id      | integer   | not null
+level_id        | boolean   | not null
+
+## levels
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+level           | string    | not null
+
+
+## age_groups_allowed
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+meeting_id      | integer   | not null
+age_group_id    | integer   | not null
+
+## age_groups
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+age_group       | string    | not null
 
 ## comments
 column name     | data type | details

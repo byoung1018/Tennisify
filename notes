@@ -1,7 +1,4 @@
-to allow for multiple values do I need to create extra tables? seems like a lot of work for
-create table,
-
-
+is there any point to validating values with radios and checkboxes?
 
 check filter values
 add values for filter
