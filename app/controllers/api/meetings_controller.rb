@@ -4,6 +4,10 @@ module Api
     def create
       @meeting = Meeting.new(meeting_params)
       @meeting.organizer_id = current_user.id
+      puts "meeting params"
+      puts meeting_params
+      puts "params"
+      puts params
       if @meeting.save
         render json: @meeting
       else
@@ -42,12 +46,13 @@ module Api
 
     private
       def meeting_params
-        params.require(:meeting).permit(:title, :about, :date, :time,)
+        params.require(:meeting).permit(:date, :time, :max_players, :title,
+                    :about, :age_groups, :level, :location, :public, :genders)
       end
 
       def filter_params
         params.require(:filter).permit(:date, :time, :max_players, :title,
-                                      :about, :age_groups, :level, :locations)
+                    :about, :age_groups, :level, :location, :public, :genders)
       end
 
   end

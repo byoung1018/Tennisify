@@ -9,12 +9,10 @@ Tennisify.Views.newMeeting = Backbone.ErrorView.extend({
   createMeeting: function (event) {
     event.preventDefault();
     var attrs = $(event.delegateTarget).serializeJSON()["meeting"];
-    console.log(attrs.time)
-    console.log(attrs.date)
     var meeting = new Tennisify.Models.Meeting(attrs);
     meeting.save({}, {
-      success: function () {
-
+      success: function (meeting) {
+        Backbone.history.navigate("meetings/" + meeting.id, {trigger: true})
       },
       error: function (meeting, errors) {
         this.renderErrors(errors)

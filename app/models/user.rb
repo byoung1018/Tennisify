@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
     :password,
     length: { minimum: 6, allow_nil: true }
   )
-  validates :session_token, :email, presence: true, uniqueness: true
+  validates :session_token, presence: true, uniqueness: true
   validates :fname, presence: true
 
 
@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
     user = User.find_by(email: login)
     if user.nil?
       user = User.find_by(username: login)
-    end      
+    end
     return nil if user.nil?
     user.is_password?(password) ? user : nil
   end

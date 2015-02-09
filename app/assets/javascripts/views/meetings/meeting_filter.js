@@ -12,10 +12,8 @@ Tennisify.Views.filterMeeting = Backbone.View.extend({
   },
 
   runFilter: function (event) {
-    console.log(event.delegateTarget);
     event.preventDefault();
     var filter = $(event.delegateTarget).serializeJSON();
-    console.log(filter);
     Tennisify.Collections.meetings.fetch({data: filter})
   },
 

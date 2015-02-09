@@ -1,13 +1,5 @@
-add to user details
-  db
-  create
 
-add to meeting details
-  db
-  create
-  show
-  index
-  filter
-
-
-ejs helpers? for radio buttons and checkboxes
+double check forms
+verify meetings can be created
+check filter values
+add values for filter

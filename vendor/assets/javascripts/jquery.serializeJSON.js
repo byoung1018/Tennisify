@@ -14,11 +14,11 @@
     var obj, formAsArray;
     obj = {};
     formAsArray = this.serializeArray();
-
     $.each(formAsArray, function (i, input) {
       var name, value, keys;
       name = input.name;
       value = input.value;
+console.log(input);
 
       // Split the input name in programatically readable keys
       // name = "foo"              => keys = ['foo']
@@ -32,10 +32,11 @@
         return last === ']' ? key.substring(0, key.length - 1) : key;
       });
       if (keys[0] === '') { keys.shift(); } // "[foo][inn]" should be same as "foo[inn]"
-
       // Set value in the object using the keys
+
       $.deepSet(obj, keys, value);
     });
+    console.log(obj);
     return obj;
   };
 
