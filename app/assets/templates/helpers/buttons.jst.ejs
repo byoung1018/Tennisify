@@ -2,7 +2,8 @@
   <%= toTitle(label) %>
   <%buttonNames.forEach(function(buttonName){%>
   <label><%= buttonName %>
-    <input type="<%= buttonType %>" name="<%=model%>[<%= label %>]"
+    <input type="<%= buttonType %>"
+      name="<%=model%>[<%= label %>]<% if(buttonType === "checkbox") {%>[]<%}%>"
       <%if(buttonName === selectedItem){%>
         checked
       <%}%>

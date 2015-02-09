@@ -13,3 +13,15 @@ User.create!({fname: "Bryce",
   username: "b",
   level: "4.5",
   reveal_age: true})
+Meeting.Create!({
+  title: "Monday Night Dubs",
+  organizer_id: 25,
+  about: "Cus we all need practice",
+  date: Sun, 22 Feb 2015,
+  time: 2000-01-01 18:00:00 UTC,
+  max_players: 4,
+  public: "Yes",
+  location: "San Francisco",
+  level: "4.5",
+  age_groups: "18-40",
+  genders: "F"]})

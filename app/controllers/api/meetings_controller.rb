@@ -19,6 +19,7 @@ module Api
 
     def index
       if params[:filter]
+        puts filter_params
         @meetings = Meeting.filter(filter_params)
       else
         @meetings = Meeting.all

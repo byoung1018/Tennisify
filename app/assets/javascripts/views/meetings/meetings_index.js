@@ -6,7 +6,7 @@ Tennisify.Views.MeetingsIndex = Backbone.CompositeView.extend({
 
   className: "meetings-index",
   events: {
-    "onchange .filter-field": this.renderIndex
+    "onchange .filter": this.renderIndex
   },
 
   render: function () {

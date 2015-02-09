@@ -4,7 +4,7 @@ Tennisify.Views.newUser = Backbone.ErrorView.extend({
   events: {
     "click .create-user": "createUser"
   },
-  className: "user-form",
+  className: "user-form .col-md-6 .col-md-offset-3",
   tagName: "form",
 
   createUser: function (event) {
