@@ -48,13 +48,25 @@ organizer_id    | integer   | not null, index
 
 
 
+## genders_allowed
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+meeting_id      | integer   | not null, index
+gender_id       | boolean   | not null, index
+
+## genders
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+gender          | string    | not null
 
 ## levels_allowed
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-meeting_id      | integer   | not null
-level_id        | boolean   | not null
+meeting_id      | integer   | not null, index
+level_id        | boolean   | not null, index
 
 ## levels
 column name     | data type | details
@@ -67,8 +79,8 @@ level           | string    | not null
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-meeting_id      | integer   | not null
-age_group_id    | integer   | not null
+meeting_id      | integer   | not null, index
+age_group_id    | integer   | not null, index
 
 ## age_groups
 column name     | data type | details

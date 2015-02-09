@@ -20,7 +20,9 @@ AgeGroup.create!([{age_group: '1-18'}, {age_group: '18-40'}, {age_group: '40-55'
 #             {meeting_id: 24, age_group_id: 2},
 #             {meeting_id: 24, age_group_id: 3},
 #             {meeting_id: 24, age_group_id: 4}, ])
-
+# AllowedGender.create!([{meeting_id: 24, gender_id: 1},
+#       {meeting_id: 24, gender_id: 2}])
+Gender.create!([{gender: 'M'}, {gender: 'F'}])
 User.create!({fname: "Bryce",
   lname: "Young",
   password: "asdfasdf",

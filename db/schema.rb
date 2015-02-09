@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209182635) do
+ActiveRecord::Schema.define(version: 20150209185115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 20150209182635) do
   add_index "allowed_age_groups", ["age_group_id"], name: "index_allowed_age_groups_on_age_group_id", using: :btree
   add_index "allowed_age_groups", ["meeting_id"], name: "index_allowed_age_groups_on_meeting_id", using: :btree
 
+  create_table "allowed_genders", force: true do |t|
+    t.integer  "meeting_id", null: false
+    t.integer  "gender_id",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "allowed_genders", ["gender_id"], name: "index_allowed_genders_on_gender_id", using: :btree
+  add_index "allowed_genders", ["meeting_id"], name: "index_allowed_genders_on_meeting_id", using: :btree
+
   create_table "allowed_levels", force: true do |t|
     t.integer  "meeting_id", null: false
     t.integer  "level_id",   null: false
@@ -39,6 +49,12 @@ ActiveRecord::Schema.define(version: 20150209182635) do
 
   add_index "allowed_levels", ["level_id"], name: "index_allowed_levels_on_level_id", using: :btree
   add_index "allowed_levels", ["meeting_id"], name: "index_allowed_levels_on_meeting_id", using: :btree
+
+  create_table "genders", force: true do |t|
+    t.string   "gender",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "levels", force: true do |t|
     t.string "level", null: false
