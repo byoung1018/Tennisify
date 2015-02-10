@@ -16,16 +16,25 @@ class Meeting < ActiveRecord::Base
   #where("bar LIKE ?", "%#{query}%")
   def self.filter(filter)
     meetings = Meeting.all
-    filter.each do |name, value|
-      if value != ""
-        if value.class == Array
-          meetings = meetings.where("#{name}: ?", "#{value}%");
-        elsif name == "organizer"
-        else
-          meetings = meetings.where("#{name} LIKE ?", "#{value}%");
-        end
+    filter["filter"].each do |name, value|
+      puts ""
+      puts name
+      puts value
+      puts ""
+      next if value == ""
+      if value.class == Array
+        meetings = meetings.where(name.to_sym => value);
+      elsif name == "organizer"
+      else
+        meetings = meetings.where("#{name} LIKE ?", "#{value}%");
       end
     end
+    puts "here"
+    puts "here"
+    puts "here"
+    puts meetings
+    puts "here"
+    puts "here"
     meetings
   end
 

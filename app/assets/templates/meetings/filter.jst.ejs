@@ -8,27 +8,27 @@
 </label>
 
 <label>Dates
-  <input type="date" name="meeting[dateStart]"
+  <input type="date" name="filter[dateStart]"
   value="">
   to
-  <input type="date" name="meeting[dateEnd]"
+  <input type="date" name="filter[dateEnd]"
   value="">
 </label>
 <br>
 
 <label>Time
-  <input type="time" name="meeting[timeStart]"
+  <input type="time" name="filter[timeStart]"
   value="">
   to
-  <input type="time" name="meeting[timeEnd]"
+  <input type="time" name="filter[timeEnd]"
   value="">
 </label>
 <label> Maximum Players
-  <input type="number" name="meeting[maxPlayers]" value="">
+  <input type="number" name="filter[maxPlayers]" value="">
 </label>
 <%= buttons("radio", "Public", "filter", ['Yes', 'No'])%>
 <%= buttons("checkbox", "locations", "filter", LOCATIONS)%>
-<%= buttons("checkbox", "level", "filter", LEVELS)%>
+<%= buttons("checkbox", "levels", "filter", LEVELS)%>
 <%= buttons("checkbox", "age_groups", "filter",
     ['1-18', '18-40', '40-55', '55-65', '65+'])%>
 <%= buttons("checkbox", "genders", "filter", ['M', 'F'])%>

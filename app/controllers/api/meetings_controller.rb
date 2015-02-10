@@ -15,13 +15,9 @@ module Api
       end
     end
 
-
-
-
     def index
       if params[:filter]
-        puts filter_params
-        @meetings = Meeting.filter(filter_params)
+        @meetings = Meeting.filter(params)
       else
         @meetings = Meeting.all
       end
@@ -93,8 +89,8 @@ module Api
 
       def filter_params
         params.require(:filter).permit(:date, :time, :max_players, :title,
-                    :about, :age_groups, :levels, :location, :public, :genders)
+            :about, :age_groups, :levels, :location, :public, :genders,
+            :organizer, :dateStart, :dateEnd, :timeStart, :timeEnd, :maxPlayers)
       end
-
   end
 end

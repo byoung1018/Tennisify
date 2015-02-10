@@ -6,10 +6,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Level.create!([{level: "2.5"}, {level: "3.5"}, {level: "4.5"}, {level: "5.5+"},
-              {level: "3.0"}, {level: "4.0"}, {level: "5.0"}])
-AgeGroup.create!([{age_group: '1-18'}, {age_group: '18-40'}, {age_group: '40-55'},
-                {age_group: '55-65'}, {age_group: '65+'}])
+Level.create!([{level: "2.5"},
+              {level: "3.0"},
+              {level: "3.5"},
+              {level: "4.0"},
+              {level: "4.5"},
+              {level: "5.0"},
+              {level: "5.5+"}])
+AgeGroup.create!([{age_group: '1-18'},
+                {age_group: '18-40'},
+                {age_group: '40-55'},
+                {age_group: '55-65'},
+                {age_group: '65+'}])
+Gender.create!([{gender: 'M'}, {gender: 'F'}])
 # AllowedLevel.create!([
 #             {meeting_id: 25, level_id: 2},
 #             {meeting_id: 25, level_id: 5},
@@ -21,7 +30,6 @@ AgeGroup.create!([{age_group: '1-18'}, {age_group: '18-40'}, {age_group: '40-55'
 #             {meeting_id: 25, age_group_id: 4}, ])
 # AllowedGender.create!([{meeting_id: 25, gender_id: 1},
 #       {meeting_id: 25, gender_id: 2}])
-Gender.create!([{gender: 'M'}, {gender: 'F'}])
 User.create!({fname: "Bryce",
   lname: "Young",
   password: "asdfasdf",
@@ -31,15 +39,98 @@ User.create!({fname: "Bryce",
   reveal_age: true})
 
 
-Meeting.Create!({
-  title: "Monday Night Dubs",
+User.create!({
+  fname: "Will",
+  lname: "Ferrell",
+  password: "asdfasdf",
+  email: "boatsNhos@gmail.com",
+  username: "hoboats",
+  level: "4.0",
+  reveal_age: "Yes",
+  location: "San Francisco",
+  age: "47",
+  gender: "M"
+})
+
+
+User.create!({
+  fname: "Kevin",
+  lname: "James",
+  password: "asdfasdf",
+  email: "safermalls@gmail.com",
+  username: "mallcop",
+  level: "3.5",
+  reveal_age: "Yes",
+  location: "San Francisco",
+  age: "49",
+  gender: "M"
+  })
+
+
+def create_meeting!(attrs)
+  meeting = Meeting.new()
+  objs_to_create = []
+  attrs.each do |attr, value|
+    if value.class.name == "Array"
+      value.each do |value|
+        attr_model = str_to_class(attr).where(attr => value).first
+        allowed_obj_class = str_to_class("allowed_#{attr}")
+        objs_to_create << allowed_obj_class.new({"#{attr}_id" => attr_model.id})
+      end
+    else
+      meeting[attr] = value
+    end
+  end
+  meeting.save!
+  objs_to_create.each do |obj|
+    obj.meeting_id = meeting.id
+    obj.save!
+  end
+end
+
+def str_to_class(str)
+  return str.to_s.singularize.camelize.constantize
+end
+
+create_meeting!({
+  location: "San Francisco",
+  title: "Beat up on the mall cop",
   organizer_id: 25,
+  about: "Why wouldn't this be fun?",
+  date: "Sun, 27 Feb 2015",
+  time: "2000-01-01 14:00:00 UTC",
+  max_players: 4,
+  public: "Yes",
+  level: ["3.5", "4.0", "4.5"],
+  gender: ["M", "F"]
+  age_group: ["18-40"]
+
+})
+
+create_meeting!({
+  location: "San Francisco",
+  title: "Do you like racing?",
+  organizer_id: 1,
+  about: "Racing... tennis... I'll come up with the rules when we start...",
+  date: "Sun, 20 Feb 2015",
+  time: "2000-01-01 15:00:00 UTC",
+  max_players: 4,
+  public: "Yes",
+  level: ["3.5", "4.0", "4.5"],
+  gender: ["M", "F"]
+  age_group: ["18-40"]
+})
+
+create_meeting!({
+  location: "San Francisco",
+  title: "Monday Dubs",
+  organizer_id: 1,
   about: "Cus we all need practice",
   date: "Sun, 22 Feb 2015",
   time: "2000-01-01 18:00:00 UTC",
   max_players: 4,
   public: "Yes",
-  location: "San Francisco",
-  level: "4.5",
-  age_groups: "18-40",
-  genders: "F"})
+  level: ["4.5"],
+  gender: ["M", "F"]
+  age_group: ["18-40"]
+})
