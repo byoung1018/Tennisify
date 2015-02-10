@@ -16,8 +16,8 @@ Tennisify.Views.EditMeeting = Backbone.View.extend({
   editMeeting: function (event) {
     event.preventDefault();
     var attrs = $(event.delegateTarget).serializeJSON()["meeting"];
-
     this.model.set(attrs);
+    
     this.model.save({}, {
       success: function (meeting) {
         Backbone.history.navigate("meetings/" + meeting.id, {trigger: true})

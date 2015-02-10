@@ -29,6 +29,15 @@ class Meeting < ActiveRecord::Base
     meetings
   end
 
+  def create_association_entry(entries, attr)
+    attr_class = attr.camelize.constantize
+    association_class = "Allowed#{attr.camelize}".constantize
+    entries.each do |entry|
+      attr_id = attr_class.find_by(attr => entry).id
+      association_class.create!({meeting_id: self.id, "#{attr}_id" => attr_id})
+    end
+  end
+
   def val_arr_association(association)
     self.send("#{association}s").map do |obj|
       obj.send(association)

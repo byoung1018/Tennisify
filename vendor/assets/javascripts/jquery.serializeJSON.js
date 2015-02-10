@@ -18,7 +18,6 @@
       var name, value, keys;
       name = input.name;
       value = input.value;
-console.log(input);
 
       // Split the input name in programatically readable keys
       // name = "foo"              => keys = ['foo']
@@ -36,7 +35,6 @@ console.log(input);
 
       $.deepSet(obj, keys, value);
     });
-    console.log(obj);
     return obj;
   };
 

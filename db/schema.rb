@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209185115) do
+ActiveRecord::Schema.define(version: 20150210011126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(version: 20150209185115) do
     t.integer  "max_players",  null: false
     t.string   "public",       null: false
     t.string   "location",     null: false
-    t.string   "genders",      null: false
   end
 
   add_index "meetings", ["organizer_id"], name: "index_meetings_on_organizer_id", using: :btree

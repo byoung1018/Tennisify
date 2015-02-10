@@ -16,8 +16,8 @@ function toDoubleDigit(num) {
 function buttons(buttonType, label, modelType, buttonNames, selectedItems) {
   var $container = $(JST['helpers/button_container']({label: label}));
   buttonNames.forEach(function (buttonName) {
-    if (_.include(selectedItems, buttonName)) {var checked = "checked"; console.log("included");}
-    else {var checked = ""; console.log("not included");}
+    if (_.include(selectedItems, buttonName)) {var checked = "checked";}
+    else {var checked = "";}
 
     var name = modelType + "[" + label + ']';
     if (buttonType === "checkbox") {name += "[]";}
