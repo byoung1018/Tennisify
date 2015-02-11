@@ -1,7 +1,9 @@
 <a href="#meetings/<%= meeting.id %>">
   <div class="border col-sm-4  ">
-    <div class="index-item">
-      <h3 class="index-item-header"><%= meeting.escape("title") %></h3>
+    <div class="index-item modal-content">
+      <div class="modal-header">
+        <h3 class="index-item-header"><%= meeting.escape("title") %></h3>
+      </div>
       <div class="row">
         <label class="border col-sm-3">Organizer:</label>
         <div class="border col-sm-6">
@@ -23,6 +25,9 @@
     </div>
   </div>
 </a>
+
+
+
 
 <!-- accepted out of total
 location
