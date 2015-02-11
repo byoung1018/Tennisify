@@ -40,10 +40,10 @@ input[type="time"] {
   background-color: blue;
 }
 
-// .border {
-//   border-style: solid;
-//   border-color: red;
-// }
+.border {
+  // border-style: solid;
+  // border-color: red;
+}
 
 
 .noBottomMargin {
@@ -57,7 +57,12 @@ input[type="time"] {
 .index-item {
   color: black;
   border: 5px solid, black;
-  background-color: #33CCFF;
+  background-color: Gainsboro;
+  font-size: large;
+  border-radius: 5%;
+}
+.index-item-header {
+  text-align: center;
 }
 
 //
