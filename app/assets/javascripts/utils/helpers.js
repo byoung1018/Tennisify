@@ -1,8 +1,19 @@
-function time(dateTime) {
+function toMilitary(dateTime) {
   var date = new Date(dateTime);
   var hours = toDoubleDigit(date.getUTCHours());
   var minutes = toDoubleDigit(date.getUTCMinutes());
   return hours + ":" + minutes;
+}
+
+function timeDisplay(dateTime) {
+  var date = new Date(dateTime);
+  var hours = date.getUTCHours();
+  var period = hours > 11 ? "pm" : "am";
+  hours > 12 ? hours -= 12 :
+  hours = hours.toString();
+  var minutes = toDoubleDigit(date.getUTCMinutes());
+
+  return hours + ":" + minutes + period;
 }
 
 function toDoubleDigit(num) {

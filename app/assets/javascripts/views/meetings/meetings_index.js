@@ -2,12 +2,18 @@ Tennisify.Views.MeetingsIndex = Backbone.CompositeView.extend({
   template: JST['meetings/index'],
   initialize: function () {
     this.listenTo(this.collection, "add, sync", this.renderIndex)
+    this.showFilter = true;
   },
-
   className: "meetings-index",
   events: {
+    // "click .toggle-filter": this.toggleFilter,
     "onchange .filter": this.renderIndex
   },
+
+  // toggleFilter: function () {
+  //   this.showFilter = !this.showFilter;
+  //   this.renderFilter();
+  // },
 
   render: function () {
     var index = this.template();

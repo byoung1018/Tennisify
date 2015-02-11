@@ -25,6 +25,7 @@
 
 input[type="number"] {
   width: 50px;
+  margin-top: 4px;
 }
 
 input[type="date"] {
@@ -39,21 +40,33 @@ input[type="time"] {
   background-color: blue;
 }
 
-.border {
-  // border-style: solid;
-  // border-color: red;
-}
+// .border {
+//   border-style: solid;
+//   border-color: red;
+// }
 
-.inlinePadding {
-  padding-top: 5px;
-  padding-right: 5px
-}
 
 .noBottomMargin {
   margin-bottom: 0px
 }
 
-
-.backdrop {
-  background-image: url("http://www.hdwallsource.com/img/2014/9/awesome-tennis-wallpaper-44869-46012-hd-wallpapers.jpg")
+.meeting-filter {
+  border-bottom: solid, 10px
 }
+
+.index-item {
+  color: black;
+  border: 5px solid, black;
+  background-color: #33CCFF;
+}
+
+//
+// .backdrop {
+//   background-image: url("backdrop2.jpg");
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+//   opacity: 0.5;
+//   z-index: -1;
+// }

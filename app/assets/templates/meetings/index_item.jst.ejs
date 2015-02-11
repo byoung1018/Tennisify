@@ -1,10 +1,27 @@
-<ul class="index-item">
+<a href="#meetings/<%= meeting.id %>">
+  <div class="border col-sm-3  ">
+    <div class="index-item">
+      <label class=" col-sm-6">Created By:
+      </label>
+      <div class=" col-sm-6">
+        <%= meeting.get("organizer").fname %>
+      </div>
+      <div class="">
+        Date: <%= meeting.escape("date") %>
+      </div>
+      <div class="">
+        Time: <%= timeDisplay(meeting.get("time")) %>
+      </div>
+    </div>
+  </div>
+</a>
 
-  <a href="#meetings/<%= meeting.id %>">
-    <h2><%= meeting.escape("title") %></h2>
-  </a>
-  <li><%= meeting.escape("organizer_id") %></li>
-  <li><%= meeting.escape("about") %></li>
-  <li><%= meeting.escape("date") %></li>
-  <li><%= meeting.escape("time") %></li>
-</ul>
+<!-- accepted out of total
+location
+
+
+
+title
+organizer
+date
+time -->

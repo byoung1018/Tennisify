@@ -9,11 +9,7 @@ Tennisify.Models.Meeting = Backbone.Model.extend({
     return response;
   },
 
-  organizer: function () {
-    if (!this._organizer) {
-      this._organizer = new Tennisify.Model.User({id: this.get("organizer_id")})
-    }
-  },
+
 
   response: function () {
     if (!this._response) {

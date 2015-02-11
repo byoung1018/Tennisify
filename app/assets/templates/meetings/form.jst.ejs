@@ -20,7 +20,7 @@
 
 <label>Time
   <input type="time" name="meeting[time]"
-    value="<%=time(meeting.escape("time"))%>">
+    value="<%=toMilitary(meeting.escape("time"))%>">
 </label>
 
 <label> Maximum Players

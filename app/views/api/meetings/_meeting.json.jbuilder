@@ -1,5 +1,8 @@
 json.extract! meeting, :id, :title, :about, :date, :time,
                   :max_players, :organizer_id, :public, :location
+json.organizer do
+  json.extract! meeting.organizer, :fname, :lname
+end
 
 json.genders do
   json.array! meeting.val_arr_association("gender")
