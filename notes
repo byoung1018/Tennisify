@@ -1,20 +1,20 @@
 
-figure out filter
-
-figure out reseting database
-seed data
-
 hide filter
 test heroku
 
 add invites personal invites to meetings
+  add invited_users to db - meeting, user ids, invite
+  add model assoc
+
+  add create invites-
+   
+   ...
+
+  add to json
+  add
+
+  add invitations for private meetings
+
+
 filter by public/private current user
 add emails
-
-
-filter - get the value and use that
-
-
-
-check filter values
-add values for filter

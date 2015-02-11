@@ -1,35 +1,58 @@
-<label>Title
-  <input type="text" name="filter[title]"
-    id="title" value="" class="filter">
-</label>
-<label>Organizer
-  <input type="text" name="filter[organizer]"
-    id="title" value="" class="filter">
-</label>
 
-<label>Dates
-  <input type="date" name="filter[dateStart]"
-  value="">
-  to
-  <input type="date" name="filter[dateEnd]"
-  value="">
-</label>
-<br>
+<div class="form-group col-sm-3 ">
+  <label>Title
+  </label>
+    <input type="text" name="filter[title]" id="title" value="" class="filter form-control">
+  <label>Organizer
+  </label>
+    <input type="text" name="filter[organizer]" id="title" value="" class=" filter form-control">
+  <div class="form-group row">
+    <label class="col-sm-5 inlinePadding">Maximum Players</label>
+    <input type="number" name="filter[maxPlayers]" value="" class="form-control" >
+  </div>
+</div>
 
-<label>Time
-  <input type="time" name="filter[timeStart]"
-  value="">
-  to
-  <input type="time" name="filter[timeEnd]"
-  value="">
-</label>
-<label> Maximum Players
-  <input type="number" name="filter[maxPlayers]" value="">
-</label>
-<%= buttons("radio", "Public", "filter", ['Yes', 'No'])%>
-<%= buttons("checkbox", "locations", "filter", LOCATIONS)%>
-<%= buttons("checkbox", "levels", "filter", LEVELS)%>
-<%= buttons("checkbox", "age_groups", "filter",
-    ['1-18', '18-40', '40-55', '55-65', '65+'])%>
-<%= buttons("checkbox", "genders", "filter", ['M', 'F'])%>
+<div class="form-group col-sm-3">
+  <label class="">Dates
+    <input type="date" class="form-control" name="filter[dateStart]" value="">
+    to
+    <input type="date" class="form-control" name="filter[dateEnd]" value="">
+  </label>
+  <label class="">Time
+    <input type="time" class="form-control" name="filter[timeStart]" value="">
+    to
+    <input type="time" class="form-control" name="filter[timeEnd]" value="">
+  </label>
+  <label class="col-sm-6">Public
+    <%= buttons("radio", "Public", "filter", ['Yes', 'No'])%>
+  </label>
+  <label class="col-sm-6">Genders:
+    <%= buttons("checkbox", "genders", "filter", ['M', 'F'])%>
+  </label>
+</div>
+
+<div class="form-group border col-sm-6">
+  <div class="border form-group ">
+    <label class="border col-sm-9 noBottomMargin">Locations: </label>
+    <div class="border col-sm-9">
+      <%= buttons("checkbox", "locations", "filter", LOCATIONS)%>
+    </div>
+  </div>
+
+  <div class="border form-group">
+    <label class="border col-sm-9 noBottomMargin">Age Groups: </label>
+    <div class="border col-sm-9">
+      <%= buttons("checkbox", "age_groups", "filter",
+        ['1-18', '18-40', '40-55', '55-65', '65+'])%>
+    </div>
+  </div>
+
+  <div class="border form-group">
+    <label class="border col-sm-9 noBottomMargin">Levels: </label>
+    <div class="border col-sm-9">
+      <%= buttons("checkbox", "levels", "filter", LEVELS)%>
+    </div>
+  </div>
+
+</div>
 <!-- <button class="filter">submit</button> -->

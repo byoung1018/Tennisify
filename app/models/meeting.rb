@@ -23,18 +23,15 @@ class Meeting < ActiveRecord::Base
       puts ""
       next if value == ""
       if value.class == Array
-        meetings = meetings.where(name.to_sym => value);
+        table = name.to_sym
+        attr = name.singularize.to_sym
+        meetings = meetings.joins(table).where(table => {attr => value}).uniq
       elsif name == "organizer"
       else
         meetings = meetings.where("#{name} LIKE ?", "#{value}%");
       end
     end
-    puts "here"
-    puts "here"
-    puts "here"
-    puts meetings
-    puts "here"
-    puts "here"
+
     meetings
   end
 

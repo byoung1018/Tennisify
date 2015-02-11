@@ -95,14 +95,14 @@ end
 create_meeting!({
   location: "San Francisco",
   title: "Beat up on the mall cop",
-  organizer_id: 25,
+  organizer_id: 2,
   about: "Why wouldn't this be fun?",
   date: "Sun, 27 Feb 2015",
   time: "2000-01-01 14:00:00 UTC",
   max_players: 4,
   public: "Yes",
   level: ["3.5", "4.0", "4.5"],
-  gender: ["M", "F"]
+  gender: ["M", "F"],
   age_group: ["18-40"]
 
 })
@@ -110,14 +110,14 @@ create_meeting!({
 create_meeting!({
   location: "San Francisco",
   title: "Do you like racing?",
-  organizer_id: 1,
+  organizer_id: 2,
   about: "Racing... tennis... I'll come up with the rules when we start...",
   date: "Sun, 20 Feb 2015",
   time: "2000-01-01 15:00:00 UTC",
   max_players: 4,
   public: "Yes",
   level: ["3.5", "4.0", "4.5"],
-  gender: ["M", "F"]
+  gender: ["M", "F"],
   age_group: ["18-40"]
 })
 
@@ -131,6 +131,6 @@ create_meeting!({
   max_players: 4,
   public: "Yes",
   level: ["4.5"],
-  gender: ["M", "F"]
+  gender: ["M"],
   age_group: ["18-40"]
 })

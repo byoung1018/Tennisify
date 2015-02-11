@@ -23,10 +23,37 @@
    padding-top: 60px;
  }
 
-.boxx{
+input[type="number"] {
+  width: 50px;
+}
+
+input[type="date"] {
+  width: 160px;
+}
+
+input[type="time"] {
+  width: 160px;
+}
+
+.blue {
   background-color: blue;
 }
 
-.boxx1 {
-  background-color: red;
+.border {
+  // border-style: solid;
+  // border-color: red;
+}
+
+.inlinePadding {
+  padding-top: 5px;
+  padding-right: 5px
+}
+
+.noBottomMargin {
+  margin-bottom: 0px
+}
+
+
+.backdrop {
+  background-image: url("http://www.hdwallsource.com/img/2014/9/awesome-tennis-wallpaper-44869-46012-hd-wallpapers.jpg")
 }
