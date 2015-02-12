@@ -9,7 +9,8 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
   },
 
   events: {
-    "route": "checkLogin"
+    "route": "checkLogin",
+    "click .create-meeting": "newMeeting"
   },
 
   checkLogin: function (route, params) {
@@ -24,36 +25,72 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
   },
 
   initialize: function () {
-    this.listenTo(this, "route", this.checkLogin)
+    this.listenTo(this, "route", this.checkLogin);
+    this._index = $(".meeting-index");
+    this._show = $(".meeting-show")
     this.$rootEl = $('#main');
+    this._modal = $("#modal-view");
   },
 
   index: function () {
     Tennisify.Collections.meetings.fetch()
+    this._index.removeClass("side-view");
+    this._index.addClass("col-sm-offset-1");
+    this._index.addClass("col-sm-10");
+    this._show.addClass("hidden");
     var index = new Tennisify.Views.MeetingsIndex({
       collection: Tennisify.Collections.meetings
     });
-    this._swapView(index);
+    $(".meeting-index").html(index.render().$el);
+
+
+    var filter = new Tennisify.Views.filterMeeting();
+    $(".meeting-filter").html(filter.render().$el);
+
   },
 
-  _swapView: function (view) {
+  renderFilter: function () {
+  },
+
+  _swapView: function (view, container) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
-    this.$rootEl.html(view.render().$el);
+    this._show.html(view.$el);
   },
 
-  newMeeting: function () {
+  newMeeting: function (event) {
+    debugger
+    event.preventDefault();
+    debugger
     var meeting = new Tennisify.Views.newMeeting({});
-    this._swapView(meeting);
+    this.showModal(meeting);
+    debugger
+    $('#modal').modal('toggle')
+  },
+
+  showModal: function (view) {
+    this._modalView && this._modalView.remove();
+    this._modalView = view;
+    this._modal.html(view.render().$el);
+
   },
 
   showMeeting: function (id) {
+    this.shrinkIndex();
+    this._show.removeClass("hidden")
     var meeting =
       Tennisify.Collections.meetings.getOrFetch(id);
     var view = new Tennisify.Views.ShowMeeting({
       model: meeting
     });
     this._swapView(view);
+  },
+
+  shrinkIndex: function () {
+    $("#filter-container").collapse();
+    this._index.addClass("side-view");
+    this._index.removeClass("col-sm-offset-1");
+    this._index.removeClass("col-sm-10");
   },
 
   editMeeting: function (id) {

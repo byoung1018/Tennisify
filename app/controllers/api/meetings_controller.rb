@@ -84,13 +84,13 @@ module Api
 
       def meeting_params
         params.require(:meeting).permit(:date, :time, :max_players, :title,
-                    :about, :age_groups, :levels, :location, :public)
+                    :about, :age_groups, :levels, :area, :location, :public)
       end
 
       def filter_params
         params.require(:filter).permit(:date, :time, :max_players, :title,
-            :about, :age_groups, :levels, :location, :public, :genders,
-            :organizer, :dateStart, :dateEnd, :timeStart, :timeEnd, :maxPlayers)
+            :about, :age_groups, :levels, :area, :public, :genders, :dateEnd,
+            :organizer, :dateStart, :timeStart, :timeEnd, :location, :maxPlayers)
       end
   end
 end

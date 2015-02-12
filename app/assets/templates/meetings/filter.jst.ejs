@@ -1,59 +1,64 @@
+<div class="collapse in" id="filter-container">
 
-<div class="form-group col-sm-3 ">
-  <label>Title</label>
-  <input type="text" name="filter[title]" id="title" value="" class="filter form-control">
+  <div class="form-group col-sm-3">
+    <label>Title</label>
+    <input type="text" name="filter[title]" id="title" value="" class="filter form-control">
 
-  <label>Organizer</label>
-  <input type="text" name="filter[organizer]" id="title" value="" class=" filter form-control">
+    <label>Organizer</label>
+    <input type="text" name="filter[organizer]" id="title" value="" class=" filter form-control">
 
-  <div class="row">
-    <label class="col-sm-3">Maximum Players</label>
-    <input type="number" name="filter[maxPlayers]" class="form-control col-sm-3" >
+    <div class="row">
+      <label class="col-sm-3">Maximum Players</label>
+      <input type="number" name="filter[maxPlayers]" class="form-control col-sm-3" >
 
-    <label class="col-sm-6">Public
-      <%= buttons("radio", "Public", "filter", ['Yes', 'No'])%>
+      <label class="col-sm-6">Public
+        <%= buttons("radio", "Public", "filter", ['Yes', 'No'])%>
+      </label>
+    </div>
+  </div>
+
+  <div class="form-group col-sm-3">
+    <label class="">Dates
+      <input type="date" class="form-control" name="filter[dateStart]" value="">
+      to
+      <input type="date" class="form-control" name="filter[dateEnd]" value="">
+    </label>
+    <label class="">Time
+      <input type="time" class="form-control" name="filter[timeStart]" value="">
+      to
+      <input type="time" class="form-control" name="filter[timeEnd]" value="">
+    </label>
+    <label class="col-sm-6">Genders:
+      <%= buttons("checkbox", "genders", "filter", ['M', 'F'])%>
     </label>
   </div>
-</div>
 
-<div class="form-group col-sm-3">
-  <label class="">Dates
-    <input type="date" class="form-control" name="filter[dateStart]" value="">
-    to
-    <input type="date" class="form-control" name="filter[dateEnd]" value="">
-  </label>
-  <label class="">Time
-    <input type="time" class="form-control" name="filter[timeStart]" value="">
-    to
-    <input type="time" class="form-control" name="filter[timeEnd]" value="">
-  </label>
-  <label class="col-sm-6">Genders:
-    <%= buttons("checkbox", "genders", "filter", ['M', 'F'])%>
-  </label>
-</div>
-
-<div class="form-group col-sm-6">
-  <div class="form-group ">
-    <label class="col-sm-9 noBottomMargin">Locations: </label>
-    <div class="col-sm-9">
-      <%= buttons("checkbox", "locations", "filter", LOCATIONS)%>
+  <div class="form-group col-sm-6">
+    <div class="form-group ">
+      <label class="col-sm-9 noBottomMargin">areas: </label>
+      <div class="col-sm-9">
+        <%= buttons("checkbox", "areas", "filter", AREAS)%>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group">
-    <label class="col-sm-9 noBottomMargin">Age Groups: </label>
-    <div class="col-sm-9">
-      <%= buttons("checkbox", "age_groups", "filter",
-        ['1-18', '18-40', '40-55', '55-65', '65+'])%>
+    <div class="form-group">
+      <label class="col-sm-9 noBottomMargin">Age Groups: </label>
+      <div class="col-sm-9">  
+        <%= buttons("checkbox", "age_groups", "filter",
+          ['1-18', '18-40', '40-55', '55-65', '65+'])%>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group">
-    <label class="col-sm-9 noBottomMargin">Levels: </label>
-    <div class="col-sm-9">
-      <%= buttons("checkbox", "levels", "filter", LEVELS)%>
+    <div class="form-group">
+      <label class="col-sm-9 noBottomMargin">Levels: </label>
+      <div class="col-sm-9">
+        <%= buttons("checkbox", "levels", "filter", LEVELS)%>
+      </div>
     </div>
-  </div>
 
+  </div>
 </div>
-<!-- <button class="filter">submit</button> -->
+<!-- <span class="glyphicon glyphicon-arrow-up btn btn-primary" aria-hidden="true" data-toggle="collapse"></span> -->
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#filter-container" aria-expanded="false" aria-controls="collapseExample">
+Hide Filter
+</button>

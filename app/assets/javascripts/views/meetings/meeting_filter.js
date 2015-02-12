@@ -2,7 +2,15 @@ Tennisify.Views.filterMeeting = Backbone.View.extend({
   template: JST['meetings/filter'],
   tagName: "form",
   events: {
-    "input .filter": "runFilter" //works for text
+    "input .filter": "runFilter",
+    "click .colapse-button": this.colapse,
+  },
+
+  tagName: "form",
+  colapse: function (event) {
+    alert("here")
+    event.preventDefault()
+    $(".filter-container").colapse()
   },
 
   render: function () {

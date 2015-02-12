@@ -1,3 +1,32 @@
+model
+  add view to page (should be hidden?)
+  hide.bs.modal should be triggered when losing model
+  destroy view on hide
+  create view
+
+click button
+adds view to modal div
+then triggers modal
+fill out form
+create or whatever
+destroy view
+
+
+
+questions
+  why no borders on index items>?
+  how to include glyphicons?
+  can include in text?
+  why is div in show not flush with index
+  create not firing
+
+transition for index to show
+modal for create and edit meeting
+
+always have filter and index there.
+
+
+
 add button and if to show button or no filter.  give it class from listener
 
 

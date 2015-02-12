@@ -3,6 +3,7 @@ Tennisify.Views.MeetingIndexItem = Backbone.View.extend({
   initialize: function () {
     this.showFilter = true;
   },
+  className: "index-item",
   render: function () {
     var content = this.template({
       meeting: this.model});

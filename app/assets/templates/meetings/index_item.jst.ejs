@@ -1,27 +1,21 @@
 <a href="#meetings/<%= meeting.id %>">
-  <div class="border col-sm-4  ">
-    <div class="index-item modal-content">
-      <div class="modal-header">
-        <h3 class="index-item-header"><%= meeting.escape("title") %></h3>
-      </div>
-      <div class="row">
-        <label class="border col-sm-3">Organizer:</label>
-        <div class="border col-sm-6">
-          <%= meeting.get("organizer").fname %>
-        </div>
-      </div>
-      <div class="row">
-        <label class="border col-sm-3">Date:</label>
-        <div class="border col-sm-6">
-          <%= meeting.escape("date") %>
-        </div>
-      </div>
-      <div class="row">
-        <label class="border col-sm-3">Time: </label>
-        <div class="border col-sm-6">
-          <%= timeDisplay(meeting.get("time")) %>
-        </div>
-      </div>
+  <h3 class="index-item-header"><%= meeting.escape("title") %></h3>
+  <div class="row">
+    <label class="col-sm-4">Organizer:</label>
+    <div class="col-sm-6">
+      <%= meeting.get("organizer").fname %>
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-sm-4">Date:</label>
+    <div class="col-sm-6">
+      <%= meeting.escape("date") %>
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-sm-4">Time: </label>
+    <div class="col-sm-6">
+      <%= timeDisplay(meeting.get("time")) %>
     </div>
   </div>
 </a>
@@ -30,7 +24,7 @@
 
 
 <!-- accepted out of total
-location
+area
 
 
 

@@ -1,21 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-2 boxx">
-      Index
-    </div>
-    <div class="col-md-10 boxx1">
-      <a href="#meetings/<%=meeting.id%>/edit">edit</a>
+  <div class="show-meeting col-md-10">
+
+    <div class="meeting-details">
+      <h1><%= meeting.escape("title") %></h1>
+      <h2>Organized by <%= meeting.get("organizer").fname %></h2>
+
       <ul class="index-item">
         <a href="#meetings/<%= meeting.id %>">
-          <h1><%= meeting.escape("title") %></h1>
         </a>
         <div class="response">
         </div>
         <li><%= meeting.escape("organizer_id") %></li>
         <li><%= meeting.escape("about") %></li>
-        <li><%= meeting.escape("date") %></li>
-        <li><%= meeting.escape("time") %></li>
+        <li><%= dateDisplay(meeting.escape("date")) %></li>
+        <li><%= timeDisplay(meeting.get("time")) %></li>
       </ul>
     </div>
+    <a href="#meetings/<%=meeting.id%>/edit">edit</a>
   </div>
-</div>
+  <a href="#">back to index</a>

@@ -47,7 +47,7 @@ User.create!({
   username: "hoboats",
   level: "4.0",
   reveal_age: "Yes",
-  location: "San Francisco",
+  area: "San Francisco",
   age: "47",
   gender: "M"
 })
@@ -61,7 +61,7 @@ User.create!({
   username: "mallcop",
   level: "3.5",
   reveal_age: "Yes",
-  location: "San Francisco",
+  area: "San Francisco",
   age: "49",
   gender: "M"
   })
@@ -93,7 +93,8 @@ def str_to_class(str)
 end
 
 create_meeting!({
-  location: "San Francisco",
+  area: "San Francisco",
+  location: "SFTC",
   title: "Beat up on the mall cop",
   organizer_id: 2,
   about: "Why wouldn't this be fun?",
@@ -108,7 +109,8 @@ create_meeting!({
 })
 
 create_meeting!({
-  location: "San Francisco",
+  area: "San Francisco",
+  location: "Balboa Park",
   title: "Do you like racing?",
   organizer_id: 2,
   about: "Racing... tennis... I'll come up with the rules when we start...",
@@ -122,7 +124,8 @@ create_meeting!({
 })
 
 create_meeting!({
-  location: "San Francisco",
+  area: "San Francisco",
+  location: "Golden Gate Park",
   title: "Monday Dubs",
   organizer_id: 1,
   about: "Cus we all need practice",

@@ -16,6 +16,13 @@ function timeDisplay(dateTime) {
   return hours + ":" + minutes + period;
 }
 
+function dateDisplay(dateStr) {
+  var date = new Date(dateStr)
+  var months = ["January", "February", "March", "April", "May", "June", "July",
+                "August", "September", "October", "November", "December"]
+    return months[date.getUTCMonth()] + " " + date.getUTCDay();
+}
+
 function toDoubleDigit(num) {
   if (num < 10) {
     return "0" + num.toString();
