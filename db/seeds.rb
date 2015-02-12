@@ -30,6 +30,8 @@ Gender.create!([{gender: 'M'}, {gender: 'F'}])
 #             {meeting_id: 25, age_group_id: 4}, ])
 # AllowedGender.create!([{meeting_id: 25, gender_id: 1},
 #       {meeting_id: 25, gender_id: 2}])
+
+#id 1
 User.create!({fname: "Bryce",
   lname: "Young",
   password: "asdfasdf",
@@ -38,10 +40,10 @@ User.create!({fname: "Bryce",
   level: "4.5",
   reveal_age: true})
 
-
+#id 2
 User.create!({
-  fname: "Will",
-  lname: "Ferrell",
+  fname: "Ricky",
+  lname: "Bobby",
   password: "asdfasdf",
   email: "boatsNhos@gmail.com",
   username: "hoboats",
@@ -49,13 +51,14 @@ User.create!({
   reveal_age: "Yes",
   area: "San Francisco",
   age: "47",
-  gender: "M"
+  gender: "M",
+  picture: "https://media2.wnyc.org/i/620/372/c/80/photologue/photos/ferrell.jpg"
 })
 
-
+#id 3
 User.create!({
-  fname: "Kevin",
-  lname: "James",
+  fname: "Paul",
+  lname: "Blart",
   password: "asdfasdf",
   email: "safermalls@gmail.com",
   username: "mallcop",
@@ -63,8 +66,27 @@ User.create!({
   reveal_age: "Yes",
   area: "San Francisco",
   age: "49",
-  gender: "M"
+  gender: "M",
+  picture: "http://www3.pictures.zimbio.com/pc/Kevin+James+Adam+Sandler+John+McEnroe+Play+kDzQvYcCCJAl.jpg"
   })
+#id 4
+User.create!({
+  fname: "Bobby",
+  lname: "Boucher",
+  password: "asdfasdf",
+  email: "bestH20@gmail.com",
+  username: "wboy",
+  level: "3.5",
+  reveal_age: "Yes",
+  area: "San Francisco",
+  age: "49",
+  gender: "M",
+  picture: "http://www.hollywoodreporter.com/sites/default/files/2013/08/adam_sandler_us_open_a_l.jpg"
+  })
+
+#id 4
+
+
 
 
 def create_meeting!(attrs)
@@ -91,7 +113,7 @@ end
 def str_to_class(str)
   return str.to_s.singularize.camelize.constantize
 end
-
+#id 1
 create_meeting!({
   area: "San Francisco",
   location: "SFTC",
@@ -107,7 +129,7 @@ create_meeting!({
   age_group: ["18-40"]
 
 })
-
+#id 2
 create_meeting!({
   area: "San Francisco",
   location: "Balboa Park",
@@ -120,6 +142,72 @@ create_meeting!({
   public: "Yes",
   level: ["3.5", "4.0", "4.5"],
   gender: ["M", "F"],
+  age_group: ["18-40"]
+})
+
+#id 3
+create_meeting!({
+  area: "San Francisco",
+  location: "Golden Gate Park",
+  title: "Monday Dubs",
+  organizer_id: 1,
+  about: "Cus we all need practice",
+  date: "Sun, 22 Feb 2015",
+  time: "2000-01-01 18:00:00 UTC",
+  max_players: 4,
+  public: "Yes",
+  level: ["4.5"],
+  gender: ["M"],
+  age_group: ["18-40"]
+})
+
+
+
+Response.create!([
+  {respondent_id: 1, meeting_id: 1, response_status: "declined"},
+  {respondent_id: 2, meeting_id: 1, response_status: "accepted"},
+  {respondent_id: 3, meeting_id: 1, response_status: "declined"},
+
+  {respondent_id: 1, meeting_id: 2, response_status: "declined"},
+  {respondent_id: 2, meeting_id: 2, response_status: "declined"},
+  {respondent_id: 3, meeting_id: 2, response_status: "accepted"},
+
+  {respondent_id: 1, meeting_id: 3, response_status: "maybe"},
+  {respondent_id: 2, meeting_id: 3, response_status: "declined"},
+  {respondent_id: 3, meeting_id: 3, response_status: "declined"},
+
+  ])
+
+
+
+
+create_meeting!({
+  area: "San Francisco",
+  location: "Golden Gate Park",
+  title: "Monday Dubs",
+  organizer_id: 1,
+  about: "Cus we all need practice",
+  date: "Sun, 22 Feb 2015",
+  time: "2000-01-01 18:00:00 UTC",
+  max_players: 4,
+  public: "Yes",
+  level: ["4.5"],
+  gender: ["M"],
+  age_group: ["18-40"]
+})
+
+create_meeting!({
+  area: "San Francisco",
+  location: "Golden Gate Park",
+  title: "Monday Dubs",
+  organizer_id: 1,
+  about: "Cus we all need practice",
+  date: "Sun, 22 Feb 2015",
+  time: "2000-01-01 18:00:00 UTC",
+  max_players: 4,
+  public: "Yes",
+  level: ["4.5"],
+  gender: ["M"],
   age_group: ["18-40"]
 })
 

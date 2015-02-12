@@ -43,7 +43,7 @@
 
     <div class="form-group">
       <label class="col-sm-9 noBottomMargin">Age Groups: </label>
-      <div class="col-sm-9">  
+      <div class="col-sm-9">
         <%= buttons("checkbox", "age_groups", "filter",
           ['1-18', '18-40', '40-55', '55-65', '65+'])%>
       </div>
@@ -59,6 +59,7 @@
   </div>
 </div>
 <!-- <span class="glyphicon glyphicon-arrow-up btn btn-primary" aria-hidden="true" data-toggle="collapse"></span> -->
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#filter-container" aria-expanded="false" aria-controls="collapseExample">
-Hide Filter
+<button class="col-sm-12 toggle-filter-button"  type="button" data-toggle="collapse" data-target="#filter-container" aria-expanded="false" aria-controls="collapseExample">
+  Hide Filter
+  <span class="glyphicon glyphicon-chevron-up toggle-filter-button" aria-hidden="true"></span>
 </button>

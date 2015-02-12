@@ -15,7 +15,23 @@ json.age_groups do
   json.array! meeting.val_arr_association("age_group")
 end
 
+if responses
+  json.responses do
+    json.array! responses do |response|
+      json.extract! response, :response_status
+      json.respondent do
+        json.extract! response.respondent, :fname, :lname, :email, :username, :level,
+        :area, :age, :reveal_age, :gender, :picture
+      end
+    end
+  end
+end
+
+
+
+
 if current_user_response
+  puts current_user_response
   json.current_user_response do
     json.extract! current_user_response, :response_status
   end

@@ -31,6 +31,12 @@ function toDoubleDigit(num) {
   return num;
 }
 
+function chevron(direction) {
+  var chevron = '<span class="glyphicon glyphicon-chevron-' + direction +
+  ' toggle-filter-button" aria-hidden="true"></span>';
+  return chevron;
+}
+
 function buttons(buttonType, label, modelType, buttonNames, selectedItems) {
   var $container = $(JST['helpers/button_container']({label: label}));
   buttonNames.forEach(function (buttonName) {
@@ -70,3 +76,10 @@ function toTitle(string){
   string = string.replace(/_([a-z])/g, function (g) { return " " + g[1].toUpperCase(); })
   return capitalize(string);
 };
+
+
+function verifyPicture(user) {
+  if (user.get("picture") === null) {
+    user.set("picture", "http://www.digitaldavidson.co.uk/wp-content/uploads/2014/03/gravatar-logo-512.jpg")
+  }
+}

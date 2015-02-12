@@ -26,6 +26,7 @@ module Api
     def show
       @meeting = Meeting.find(params[:id])
       @current_user_response = @meeting.current_user_response(current_user.id)
+      @responses = @meeting.responses
     end
 
     def update

@@ -10,7 +10,7 @@ Tennisify.Views.showResponse = Backbone.View.extend({
   },
 
   events: {
-    "click *": "createResponse"
+    "click .respond-button": "createResponse"
   },
 
   render: function () {

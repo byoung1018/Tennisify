@@ -1,24 +1,26 @@
-model
-  add view to page (should be hidden?)
-  hide.bs.modal should be triggered when losing model
-  destroy view on hide
-  create view
-
-click button
-adds view to modal div
-then triggers modal
-fill out form
-create or whatever
-destroy view
-
+fix login-
+  change login to modal
+  display through redirect
+  hide everythign?
 
 
 questions
-  why no borders on index items>?
+  why no borders on index items?
   how to include glyphicons?
-  can include in text?
-  why is div in show not flush with index
+  can include glyphicons in text?
   create not firing
+    read html from the existing nav bar
+    pass that into a view
+    put a listener on that
+
+  why is div in show not flush with index
+
+
+
+fix login routing
+  reroute to modal
+  login
+
 
 transition for index to show
 modal for create and edit meeting

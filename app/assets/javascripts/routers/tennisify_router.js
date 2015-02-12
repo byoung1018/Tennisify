@@ -10,10 +10,14 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
 
   events: {
     "route": "checkLogin",
-    "click .create-meeting": "newMeeting"
   },
 
+
+
+
+
   checkLogin: function (route, params) {
+    console.log("here");
     if (!currentUser && route != "newUser" && route != "login") {
       Backbone.history.navigate("login", { trigger: true })
     }
@@ -21,6 +25,7 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
 
   showLogin: function () {
     var loginPage = new Tennisify.Views.SessionNew();
+
     this._swapView(loginPage);
   },
 
@@ -30,11 +35,16 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
     this._show = $(".meeting-show")
     this.$rootEl = $('#main');
     this._modal = $("#modal-view");
+    this.createNavBarView();
+  },
+
+  createNavBarView: function () {
+    this.navBar = new Tennisify.Views.NavBar();
   },
 
   index: function () {
     Tennisify.Collections.meetings.fetch()
-    this._index.removeClass("side-view");
+    this._index.removeClass("col-sm-3");
     this._index.addClass("col-sm-offset-1");
     this._index.addClass("col-sm-10");
     this._show.addClass("hidden");
@@ -50,6 +60,7 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
   },
 
   renderFilter: function () {
+
   },
 
   _swapView: function (view, container) {
@@ -58,15 +69,7 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
     this._show.html(view.$el);
   },
 
-  newMeeting: function (event) {
-    debugger
-    event.preventDefault();
-    debugger
-    var meeting = new Tennisify.Views.newMeeting({});
-    this.showModal(meeting);
-    debugger
-    $('#modal').modal('toggle')
-  },
+
 
   showModal: function (view) {
     this._modalView && this._modalView.remove();
@@ -88,7 +91,7 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
 
   shrinkIndex: function () {
     $("#filter-container").collapse();
-    this._index.addClass("side-view");
+    this._index.addClass("col-sm-3");
     this._index.removeClass("col-sm-offset-1");
     this._index.removeClass("col-sm-10");
   },

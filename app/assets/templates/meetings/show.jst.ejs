@@ -1,20 +1,25 @@
-  <div class="show-meeting col-md-10">
 
-    <div class="meeting-details">
-      <h1><%= meeting.escape("title") %></h1>
-      <h2>Organized by <%= meeting.get("organizer").fname %></h2>
 
-      <ul class="index-item">
-        <a href="#meetings/<%= meeting.id %>">
-        </a>
-        <div class="response">
-        </div>
-        <li><%= meeting.escape("organizer_id") %></li>
-        <li><%= meeting.escape("about") %></li>
-        <li><%= dateDisplay(meeting.escape("date")) %></li>
-        <li><%= timeDisplay(meeting.get("time")) %></li>
-      </ul>
-    </div>
+<div class=" border show-meeting col-md-8">
+
+  <div class="meeting-details">
     <a href="#meetings/<%=meeting.id%>/edit">edit</a>
+    <a href="#">back to index</a>
+    <h1><%= meeting.escape("title") %></h1>
+    <h2>Organized by <%= meeting.get("organizer").fname %></h2>
+
+    <ul class="">
+      <a href="#meetings/<%= meeting.id %>">
+      </a>
+      <div class="response">
+      </div>
+      <li><%= meeting.get("organizer").fname + " " + meeting.get("organizer").lname %></li>
+      <li><%= meeting.escape("about") %></li>
+      <li><%= dateDisplay(meeting.escape("date")) %></li>
+      <li><%= timeDisplay(meeting.get("time")) %></li>
+    </ul>
   </div>
-  <a href="#">back to index</a>
+</div>
+<div class=" border respondents col-md-3">
+
+</div>
