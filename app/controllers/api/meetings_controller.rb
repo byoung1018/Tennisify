@@ -33,8 +33,8 @@ module Api
       @meeting = Meeting.find(params[:id])
 
       if @meeting.update(meeting_params)
-        self.create_associations
         self.destroy_associations
+        self.create_associations
         render json: @meeting
         puts "updated"
       else
@@ -75,9 +75,7 @@ module Api
           next
         end
         existing_attr = existing_attr_model.send(attr)
-        if !(params[attr.pluralize].include?(existing_attr))
-          existing_entry.destroy
-        end
+        existing_entry.destroy
       end
     end
 

@@ -59,17 +59,24 @@ input[type="time"] {
   margin-bottom: 0px
 }
 
+.meeting-edit{
+  float: right;
+}
+.meeting-back{
+  float: left;
+}
+
 .meeting-filter {
   border-bottom: solid, 10px;
   background-color: #f0f0f5;
 }
 
-div.index-item {
-
+.index-item {
+  display: inline;
   float: left;
   width: 300px;
   color: white;
-  border: 5px solid, black;
+  border: white 5px solid;
   background-color: #4e7fb6;
   font-size: large;
   margin: 20px 20px 20px 20px;

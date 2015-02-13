@@ -3,8 +3,13 @@
 <div class="show-meeting col-md-8 container">
 
   <div class="meeting-details">
-    <a href="#meetings/<%=meeting.id%>/edit">edit</a>
-    <a href="#">back to index</a>
+    <div class="row">
+      <a href="#" class="meeting-back">Back to Index</a>
+      <%if (edit) {%>
+        <a href="#meetings/<%=meeting.id%>/edit" class="meeting-edit">Edit</a>
+      <%} %>
+
+    </div>
     <div class="row">
       <div class="col-sm-8">
         <h1 class="meeting-title"><%= meeting.escape("title") %></h1>

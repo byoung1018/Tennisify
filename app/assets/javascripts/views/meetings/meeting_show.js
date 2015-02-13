@@ -6,12 +6,14 @@ Tennisify.Views.ShowMeeting = Backbone.CompositeView.extend({
   },
 
   events: {
+    "click .meeting-edit": "editMeeting",
   },
 
   render: function () {
-
+    var edit = this.model.get("organizer_id") === currentUser ? true : false
     var meetingShow = this.template({
-      meeting: this.model
+      meeting: this.model,
+      edit: edit
     });
     this.$el.html(meetingShow);
 
@@ -21,6 +23,19 @@ Tennisify.Views.ShowMeeting = Backbone.CompositeView.extend({
     })
     this.addSubview(".respondents", respondentsShow)
     return this;
+  },
+
+  showModal: function (view) {
+    Tennisify.currentModalView && Tennisify.currentModalView.remove();
+    Tennisify.currentModalView = view;
+    Tennisify.modalContent.html(view.render().$el);
+    $('#modal').modal('toggle')
+  },
+
+  editMeeting: function (event) {
+    event.preventDefault();
+    var view = new Tennisify.Views.EditMeeting({model: this.model});
+    this.showModal(view);
   },
 
 });

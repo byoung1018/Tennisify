@@ -19,8 +19,9 @@ function timeDisplay(dateTime) {
 function dateDisplay(dateStr) {
   var date = new Date(dateStr)
   var months = ["January", "February", "March", "April", "May", "June", "July",
-                "August", "September", "October", "November", "December"]
-    return months[date.getUTCMonth()] + " " + date.getUTCDay();
+                "August", "September", "October", "November", "December"];
+  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    return days[date.getUTCDay()] + ", "  + months[date.getUTCMonth()] + " " + date.getUTCDate();
 }
 
 function toDoubleDigit(num) {

@@ -84,6 +84,33 @@ User.create!({
   picture: "http://www.hollywoodreporter.com/sites/default/files/2013/08/adam_sandler_us_open_a_l.jpg"
   })
 User.create!({
+  fname: "Redfoo",
+  lname: "Boucher",
+  password: "asdfasdf",
+  email: "shufflin@gmail.com",
+  username: "partyrock",
+  level: "5.0",
+  reveal_age: "Yes",
+  area: "Eastbay",
+  age: "49",
+  gender: "M",
+  picture: "http://www.hollywoodreporter.com/sites/default/files/2013/08/adam_sandler_us_open_a_l.jpg"
+})
+
+User.create!({
+  fname: "Bobby",
+  lname: "Boucher",
+  password: "asdfasdf",
+  email: "bestH20@gmail.com",
+  username: "wboy",
+  level: "3.5",
+  reveal_age: "Yes",
+  area: "San Francisco",
+  age: "49",
+  gender: "M",
+  picture: "http://www.hollywoodreporter.com/sites/default/files/2013/08/adam_sandler_us_open_a_l.jpg"
+})
+User.create!({
   fname: "Bobby",
   lname: "Boucher",
   password: "asdfasdf",

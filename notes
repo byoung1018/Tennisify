@@ -1,12 +1,9 @@
-no border in show
 
-fix filter for dates
-check for comparing dates in sql rails
-
-
-add listeners on all filter settings
 add about for users
 seed data
+guest login
+
+
 not allow to accept if filters not met
 
 transition for index to show
