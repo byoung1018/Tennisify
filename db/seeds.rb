@@ -225,6 +225,9 @@ def create_meeting!(attrs)
       value.each do |value|
         attr_model = str_to_class(attr).where(attr => value).first
         allowed_obj_class = str_to_class("allowed_#{attr}")
+        puts attr
+        puts value
+
         objs_to_create << allowed_obj_class.new({"#{attr}_id" => attr_model.id})
       end
     else
@@ -311,16 +314,20 @@ create_meeting!({
 })
 
 Response.create!([
-  {respondent_id: 5, meeting_id: 2, response_status: "accepted"},
-  {respondent_id: 7, meeting_id: 2, response_status: "maybe"},
-  {respondent_id: 10, meeting_id: 2, response_status: "accepted"},
-  {respondent_id: 8, meeting_id: 2, response_status: "declined"},
-  {respondent_id: 4, meeting_id: 2, response_status: "accepted"},
-  {respondent_id: 9, meeting_id: 2, response_status: "maybe"},
-  {respondent_id: 6, meeting_id: 2, response_status: "accepted"},
-  {respondent_id: 3, meeting_id: 2, response_status: "declined"},
-  {respondent_id: 6, meeting_id: 2, response_status: "accepted"},
-  {respondent_id: 11, meeting_id: 2, response_status: "declined"},
+  {respondent_id: 5, meeting_id: 3, response_status: "accepted"},
+  {respondent_id: 7, meeting_id: 3, response_status: "maybe"},
+  {respondent_id: 10, meeting_id: 3, response_status: "accepted"},
+  {respondent_id: 8, meeting_id: 3, response_status: "declined"},
+  {respondent_id: 4, meeting_id: 3, response_status: "accepted"},
+  {respondent_id: 13, meeting_id: 3, response_status: "declined"},
+  {respondent_id: 9, meeting_id: 3, response_status: "maybe"},
+  {respondent_id: 6, meeting_id: 3, response_status: "accepted"},
+  {respondent_id: 3, meeting_id: 3, response_status: "declined"},
+  {respondent_id: 6, meeting_id: 3, response_status: "accepted"},
+  {respondent_id: 11, meeting_id: 3, response_status: "declined"},
+  {respondent_id: 2, meeting_id: 3, response_status: "declined"},
+  {respondent_id: 12, meeting_id: 3, response_status: "accepted"},
+
   ])
 
 #id 4
@@ -374,14 +381,14 @@ create_meeting!({
   max_players: 4,
   public: "Yes",
   level: ["5.5+"],
-  gender: ["M, F"],
+  gender: ["M", "F"],
   age_group: ["18-40"]
 })
 Response.create!([
-  {respondent_id: 9, meeting_id: 4, response_status: "declined"},
-  {respondent_id: 12, meeting_id: 4, response_status: "maybe"},
-  {respondent_id: 10, meeting_id: 4, response_status: "accepted"},
-  {respondent_id: 13, meeting_id: 4, response_status: "accepted"},
+  {respondent_id: 9, meeting_id: 6, response_status: "declined"},
+  {respondent_id: 12, meeting_id: 6, response_status: "maybe"},
+  {respondent_id: 10, meeting_id: 6, response_status: "accepted"},
+  {respondent_id: 13, meeting_id: 6, response_status: "accepted"},
   ])
 
 #id 7
@@ -400,23 +407,38 @@ create_meeting!({
   age_group: ["18-40"]
 })
 Response.create!([
-  {respondent_id: 10, meeting_id: 4, response_status: "accepted"},
-  {respondent_id: 11, meeting_id: 4, response_status: "accepted"},
-  {respondent_id: 13, meeting_id: 4, response_status: "accepted"},
+  {respondent_id: 10, meeting_id: 7, response_status: "accepted"},
+  {respondent_id: 11, meeting_id: 7, response_status: "accepted"},
+  {respondent_id: 13, meeting_id: 7, response_status: "accepted"},
   ])
 
 #id 8
 create_meeting!({
   area: "Eastbay",
   location: "Harbor Bay",
-  title: "Looking for some Singles, but not with you Roger",
+  title: "Looking for some Singles",
   organizer_id: 12,
-  about: "Looking for someone to either drill with play a match or both",
+  about: "Looking a hitting partner not named Roger.  We can either drill, play a match or both",
   date: "Mon, 23 Feb 2015",
   time: "2000-01-01 18:00:00 UTC",
   max_players: 2,
   public: "Yes",
-  level: ["4.5, 5.0, 5.5+"],
+  level: ["4.5", '5.0', "5.5+"],
   gender: ["M"],
   age_group: ["18-40"]
   })
+
+create_meeting!({
+  area: "Eastbay",
+  location: "Harbor Bay",
+  title: "Looking for some Singles",
+  organizer_id: 12,
+  about: "Looking a hitting partner not named Roger.  We can either drill, play a match or both",
+  date: "Mon, 23 Feb 2015",
+  time: "2000-01-01 18:00:00 UTC",
+  max_players: 2,
+  public: "Yes",
+  level: ["4.5", '5.0', "5.5+"],
+  gender: ["M"],
+  age_group: ["18-40"]
+})
