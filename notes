@@ -1,10 +1,5 @@
-fix login
-will log in if errors
-check other form stop route
 
 add about for users
-seed data
-guest login
 
 
 not allow to accept if filters not met

@@ -74,7 +74,7 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
     Tennisify.currentModalView && Tennisify.currentModalView.remove();
     Tennisify.currentModalView = view;
     Tennisify.modalContent.html(view.render().$el);
-    $('#modal').modal('toggle')
+    $('#modal').modal('toggle');
   },
 
   showMeeting: function (id) {
