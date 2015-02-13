@@ -5,6 +5,12 @@ window.Tennisify = {
   Routers: {},
   initialize: function() {
     new Tennisify.Routers.TennisifyRouter();
+    Tennisify.Collections.meetings = new Tennisify.Collections.Meetings();
+    Tennisify.Collections.users = new Tennisify.Collections.Users();
+    Tennisify.currentModalView;
+    Tennisify.filterShowing = true;
+    Tennisify.routeHistory = new Array(2);
+    Tennisify.modalContent = $(".modal-content");
     Backbone.history.start();
 
   }

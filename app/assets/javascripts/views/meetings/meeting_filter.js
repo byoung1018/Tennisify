@@ -13,9 +13,8 @@ Tennisify.Views.filterMeeting = Backbone.View.extend({
 
 
   toggleFilter: function (event) {
-    this._filterShowing = !this._filterShowing;
-    this._toggleButton
-    if (this._filterShowing) {
+    Tennisify.filterShowing = !Tennisify.filterShowing;
+    if (Tennisify.filterShowing) {
       this._toggleButton.html("Hide Filter" + chevron("up"));
     }
     else{
@@ -28,7 +27,7 @@ Tennisify.Views.filterMeeting = Backbone.View.extend({
     this.$el.html(content);
     this._toggleButton = this.$("button.toggle-filter-button");
     this._chevron = this.$("span.glyphicon-chevron-up")
-    this._filterShowing = true;
+    Tennisify.filterShowing = true;
     return this;
   },
 

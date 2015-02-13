@@ -83,3 +83,12 @@ function verifyPicture(user) {
     user.set("picture", "http://www.digitaldavidson.co.uk/wp-content/uploads/2014/03/gravatar-logo-512.jpg")
   }
 }
+
+function key(obj, value) {
+  for (var key in obj){
+    if (obj[key] === value) {
+      return key;
+    }
+  }
+  return undefined;
+}

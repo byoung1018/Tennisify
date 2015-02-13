@@ -1,32 +1,29 @@
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1>Login</h1>
-      </div>
-      <div class="modal-body">
+<div class="modal-content">
+  <div class="modal-header clearfix">
+    <h1>Login</h1>
+    <a href="#" class="create-account-link">Create Account</a>
+  </div>
+  <div class="modal-body">
 
-        <ul class="errors"></ul>
-        <label>username or email
-          <input type="text"
-          name="user[login]"
-          id="email"
-          value="">
-        </label>
+    <ul class="errors"></ul>
+    <label>username or email
+      <input type="text"
+      name="user[login]"
+      id="email"
+      value="">
+    </label>
 
-        <label>Password
-          <input type="text"
-          name="user[password]"
-          id="password"
-          value="">
-        </label>
-      </div>
-      <div class="modal-footer">
-        <button class="login">Log In</button>
-        <button type="button" class="btn btn-default login" data-dismiss="modal">Log In</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button class="submit-meeting btn btn-primary"><%=buttonText%></button>
-      </div>
-    </div>
+    <label>Password
+      <input type="text"
+      name="user[password]"
+      id="password"
+      value="">
+    </label>
+  </div>
+  <div class="modal-footer">
+    <!-- <button class="login">Log In</button> -->
+    <button type="button" class="btn btn-default login" data-dismiss="modal">Log In</button>
+
+    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
   </div>
 </div>

@@ -1,11 +1,10 @@
 module Api
   class UsersController < ApiController
     # todo verify email is an email
-    wrap_parameters :user, {include: [:username, :fname, :lname, :password,
-                                :email, :level, :area, :age, :reveal_ge]}
+    wrap_parameters :user, {include: [:username, :fname, :lname, :password, :reveal_age, :gender,
+      :email, :level, :area, :age]}
     def create
       @user = User.new(user_params)
-
       if @user.save
         login_user!(@user)
         render json: @user
@@ -19,13 +18,19 @@ module Api
     end
 
     def show
-      @user = params[:id]
+      @user = User.find(params[:id])
+      puts "here"
+      puts "here"
+      puts "here"
+      puts "here"
+      puts "here"
+      puts @user.fname
     end
 
     private
     def user_params
-      params.require(:user).permit(:username, :fname, :lname, :password,
-                      :email, :level, :area, :age, :reveal_age)
+      params.require(:user).permit(:username, :fname, :lname, :password, :reveal_age, :gender,
+                      :email, :level, :area, :age)
     end
   end
 end

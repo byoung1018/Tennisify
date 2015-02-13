@@ -9,7 +9,6 @@ Tennisify.Views.MeetingRespondents = Backbone.CompositeView.extend({
     this.$el.html(this.container());
 
     this.collection.each(function (respondent) {
-      console.log(respondent.get('fname'));
       verifyPicture(respondent);
       var content = this.template({
         respondent: respondent});

@@ -1,32 +1,7 @@
-fix login-
-  change login to modal
-  display through redirect
-  hide everythign?
-
-
-questions
-  why no borders on index items?
-  how to include glyphicons?
-  can include glyphicons in text?
-  create not firing
-    read html from the existing nav bar
-    pass that into a view
-    put a listener on that
-
-  why is div in show not flush with index
-
-
-
-fix login routing
-  reroute to modal
-  login
 
 
 transition for index to show
 modal for create and edit meeting
-
-always have filter and index there.
-
 
 
 add button and if to show button or no filter.  give it class from listener

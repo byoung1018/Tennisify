@@ -9,7 +9,17 @@ Tennisify.Views.SessionNew = Backbone.ErrorView.extend({
   },
   tagName: "form",
   events: {
-    "click button.login": "login"
+    "click button.login": "login",
+    "click .create-account-link": "showCreate",
+  },
+
+
+  showCreate: function () {
+    event.preventDefault();
+    var user = new Tennisify.Models.User();
+    var view = new Tennisify.Views.NewUser({model: user});
+    Tennisify.modalContent.html(view.render().$el);
+
   },
 
   login: function (event) {
@@ -23,8 +33,7 @@ Tennisify.Views.SessionNew = Backbone.ErrorView.extend({
         data: loginDetails,
         success: function (user) {
           currentUser = new Tennisify.Models.User(user);
-          console.log(currentUser); 
-          Backbone.history.navigate("/", {trigger:true})
+          Backbone.history.navigate("#", {trigger:true})
         }.bind(this),
         error: function (errors) {
           this.renderErrors(errors);

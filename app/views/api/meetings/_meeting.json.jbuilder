@@ -20,7 +20,7 @@ if responses
     json.array! responses do |response|
       json.extract! response, :response_status
       json.respondent do
-        json.extract! response.respondent, :fname, :lname, :email, :username, :level,
+        json.extract! response.respondent, :id, :fname, :lname, :email, :username, :level,
         :area, :age, :reveal_age, :gender, :picture
       end
     end

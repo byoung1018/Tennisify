@@ -20,5 +20,3 @@ Tennisify.Collections.Meetings = Backbone.Collection.extend({
   }
 
 });
-
-Tennisify.Collections.meetings = new Tennisify.Collections.Meetings();

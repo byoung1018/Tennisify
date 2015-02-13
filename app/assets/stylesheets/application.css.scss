@@ -58,15 +58,19 @@ input[type="time"] {
 
   float: left;
   width: 300px;
-  color: black;
+  color: white;
   border: 5px solid, black;
-  background-color: Gainsboro;
+  background-color: #4e7fb6;
   font-size: large;
   margin: 20px 20px 20px 20px;
+  display: inline;
+  border-radius: 10px;
+  padding-left: 5px;
+
 }
 
 img.thumb {
-  max-width:150px;
+  max-width:145px;
   max-height:150px;
 }
 
@@ -81,19 +85,41 @@ img.thumb {
   border-bottom: 1px solid rgba(0, 0, 0, 0.670588)
 }
 
-.side-view {
-  width: 350px;
-}
-
 .index-item:hover {
   border: 5px solid black;
   border-radius: 5px;
+}
+
+.profile-picture {
+  float: right;
+  max-width:300px;
+  max-height:150px;
 }
 
 .index-item-header {
   text-align: center;
 }
 
+.create-account-link {
+  float: right;
+}
+
+.toggle-filter-button{
+  background-color: #FF6600;
+}
+
+.individual-scroll {
+  height: 100vh;
+  overflow: scroll;
+}
+
+a{
+  color: white;
+}
+
+.response-title{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.670588)
+}
 
 
 //

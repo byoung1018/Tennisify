@@ -11,7 +11,6 @@ Tennisify.Models.Meeting = Backbone.Model.extend({
       response.responses.forEach(function (userResponse) {
         var respondent = new Tennisify.Models.User(userResponse.respondent);
         respondent.set("response", userResponse.response_status);
-        console.log(this.respondents());
         this.respondents().add(respondent);
       }.bind(this))
       delete response.responses;

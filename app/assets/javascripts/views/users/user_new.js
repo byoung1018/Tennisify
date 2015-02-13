@@ -1,5 +1,5 @@
-Tennisify.Views.newUser = Backbone.ErrorView.extend({
-  template: JST['users/new'],
+Tennisify.Views.NewUser = Backbone.ErrorView.extend({
+  template: JST['users/form'],
 
   events: {
     "click .create-user": "createUser"
@@ -11,9 +11,11 @@ Tennisify.Views.newUser = Backbone.ErrorView.extend({
     event.preventDefault();
     var attrs = $(event.delegateTarget).serializeJSON()["user"];
     var user = new Tennisify.Models.User(attrs);
-    console.log(attrs);
     user.save({}, {
-      success: function () {
+      success: function (user) {
+        currentUser = user.id;
+        Backbone.history.navigate("#", {trigger: true});
+        $('#modal').modal('toggle')
       },
       error: function (user, errors) {
         this.renderErrors(errors);
@@ -25,7 +27,10 @@ Tennisify.Views.newUser = Backbone.ErrorView.extend({
 
   render: function () {
     var content = this.template({
-      user: new Tennisify.Views.newUser()});
+      user: this.model,
+      title: "Sign Up",
+      submit: "Create Account"
+    });
     this.$el.html(content);
 
     return this;

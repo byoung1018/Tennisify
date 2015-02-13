@@ -1,11 +1,11 @@
 <div class="respondent" >
   <div class="row">
     <div class="image col-sm-7">
-      <img src="<%= respondent.escape("picture") %>" alt="http://www.digitaldavidson.co.uk/wp-content/uploads/2014/03/gravatar-logo-512.jpg" class="thumb">
+      <img src="<%= respondent.escape("picture") %>" class="thumb">
     </div>
     <div class="info col-sm-5" >
       <div>
-        <a href="#"><%= respondent.escape("fname")%> <%= respondent.escape("lname")%> </a>
+        <a href="#users/<%= respondent.get("id") %>"><%= respondent.escape("fname")%> <%= respondent.escape("lname")%> </a>
       <div>
         <%= respondent.escape("level") %>
       </div>

@@ -6,18 +6,30 @@ Tennisify.Views.NavBar = Backbone.View.extend({
   },
   events: {
     "click .create-meeting": "newMeeting",
+    "click .show-profile": "showUser",
+
   },
 
   newMeeting: function (event) {
     event.preventDefault();
     var meeting = new Tennisify.Views.newMeeting({});
     this.showModal(meeting);
-    $('#modal').modal('toggle')
+  },
+
+  showUser: function () {
+    event.preventDefault();
+    var user = Tennisify.Collections.users.getOrFetch(currentUser, function () {
+      var userView = new Tennisify.Views.showUser({model: user});
+      this.showModal(userView);
+    }.bind(this))
   },
 
   showModal: function (view) {
-    this._modalView && this._modalView.remove();
-    this._modalView = view;
-    $("#modal-view").html(view.render().$el);
+    Tennisify.currentModalView && Tennisify.currentModalView.remove();
+    Tennisify.currentModalView = view;
+    Tennisify.modalContent.html(view.render().$el);
+    $('#modal').modal('toggle')
   },
+
+
 });
