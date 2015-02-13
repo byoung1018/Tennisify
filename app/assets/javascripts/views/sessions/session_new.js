@@ -11,6 +11,13 @@ Tennisify.Views.SessionNew = Backbone.ErrorView.extend({
   events: {
     "click button.login": "login",
     "click .create-account-link": "showCreate",
+    "click .guest-login": "guestLogin",
+
+  },
+
+  guestLogin: function () {
+    this.$(".session-login").val("partyrocker");
+    this.$(".session-password").val("asdfasdf");
   },
 
 
@@ -32,8 +39,10 @@ Tennisify.Views.SessionNew = Backbone.ErrorView.extend({
         type: "POST",
         data: loginDetails,
         success: function (user) {
-          currentUser = new Tennisify.Models.User(user);
+          currentUser = user.id;
+          $('#modal').modal('toggle')
           Backbone.history.navigate("#", {trigger:true})
+
         }.bind(this),
         error: function (errors) {
           this.renderErrors(errors);

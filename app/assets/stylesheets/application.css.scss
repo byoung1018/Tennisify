@@ -117,7 +117,9 @@ img.thumb {
 .profile-picture {
   float: right;
   max-width:300px;
-  max-height:150px;
+  max-height:300px;
+  width: auto;
+  height: auto
 }
 
 .index-item-header {

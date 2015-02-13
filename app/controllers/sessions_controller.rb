@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       render json: { errors: ["Invalid username or password"]}, status: 422
     else
       login_user!(user)
-      render json: :user, status: 200
+      render json: user, status: 200
     end
   end
 

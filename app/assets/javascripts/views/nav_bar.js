@@ -17,8 +17,9 @@ Tennisify.Views.NavBar = Backbone.View.extend({
   },
 
   showUser: function () {
+    console.log("here");
     event.preventDefault();
-    var user = Tennisify.Collections.users.getOrFetch(currentUser, function () {
+    Tennisify.Collections.users.getOrFetch(currentUser, function (user) {
       var userView = new Tennisify.Views.showUser({model: user});
       this.showModal(userView);
     }.bind(this))
