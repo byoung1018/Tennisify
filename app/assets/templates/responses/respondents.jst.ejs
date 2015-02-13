@@ -1,14 +1,12 @@
-<div class="respondent" >
-  <div class="row">
-    <div class="image col-sm-7">
-      <img src="<%= respondent.escape("picture") %>" class="thumb">
-    </div>
-    <div class="info col-sm-5" >
-      <div>
-        <a href="#users/<%= respondent.get("id") %>"><%= respondent.escape("fname")%> <%= respondent.escape("lname")%> </a>
-      <div>
-        <%= respondent.escape("level") %>
-      </div>
+<div class="respondent row" >
+  <div class="image col-sm-7">
+    <img src="<%= respondent.escape("picture") %>" class="thumb">
+  </div>
+  <div class="info col-sm-5" >
+    <div>
+      <a href="#users/<%= respondent.get("id") %>"><%= respondent.escape("fname")%> <%= respondent.escape("lname")%> </a>
+    <div>
+      <%= respondent.escape("level") %>
     </div>
   </div>
 </div>

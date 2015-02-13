@@ -49,7 +49,8 @@ function buttons(buttonType, label, modelType, buttonNames, selectedItems) {
       buttonType: buttonType,
       buttonName: buttonName,
       name: name,
-      checked: checked
+      checked: checked,
+      className: modelType + "-click-button"
     })
     $container.append(button);
   })

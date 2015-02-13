@@ -9,18 +9,15 @@ Tennisify.Views.ShowMeeting = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var responseContent = new Tennisify.Views.showResponse({
-      model: this.model.response()
-    })
 
     var meetingShow = this.template({
       meeting: this.model
     });
     this.$el.html(meetingShow);
-    this.$('.response').html(responseContent.render().$el);
-    this.$('.response-box').data("meeting-id", this.model.id)
+
     var respondentsShow = new Tennisify.Views.MeetingRespondents({
-      collection: this.model.respondents()
+      collection: this.model.respondents(),
+      model: this.model
     })
     this.addSubview(".respondents", respondentsShow)
     return this;

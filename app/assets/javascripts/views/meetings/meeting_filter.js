@@ -3,7 +3,8 @@ Tennisify.Views.filterMeeting = Backbone.View.extend({
   tagName: "form",
   events: {
     "input .filter": "runFilter",
-    "click .toggle-filter-button": "toggleFilter"
+    "click .filter-click-button": "runFilter",
+    // "click .toggle-filter-button": "toggleFilter"
   },
 
   initialize: function () {
@@ -32,7 +33,6 @@ Tennisify.Views.filterMeeting = Backbone.View.extend({
   },
 
   runFilter: function (event) {
-    event.preventDefault();
     var filter = $(event.delegateTarget).serializeJSON();
     Tennisify.Collections.meetings.fetch({data: filter})
   },

@@ -1,23 +1,47 @@
 
 
-<div class="show-meeting col-md-8">
+<div class="show-meeting col-md-8 container">
 
   <div class="meeting-details">
     <a href="#meetings/<%=meeting.id%>/edit">edit</a>
     <a href="#">back to index</a>
-    <h1><%= meeting.escape("title") %></h1>
-    <h2>Organized by <%= meeting.get("organizer").fname %></h2>
-
-    <ul class="">
-      <a href="#meetings/<%= meeting.id %>">
-      </a>
-      <div class="response">
+    <div class="row">
+      <div class="col-sm-8">
+        <h1 class="meeting-title"><%= meeting.escape("title") %></h1>
       </div>
-      <li><%= meeting.get("organizer").fname + " " + meeting.get("organizer").lname %></li>
-      <li><%= meeting.escape("about") %></li>
-      <li><%= dateDisplay(meeting.escape("date")) %></li>
-      <li><%= timeDisplay(meeting.get("time")) %></li>
-    </ul>
+
+    </div>
+    <div class="col-sm-offset-1 row">
+      <h2><%= dateDisplay(meeting.escape("date")) %></h2>
+      <h4><%= timeDisplay(meeting.get("time")) %></h4>
+    </div>
+    <div class="col-sm-offset-1 row">
+      <h2><%= meeting.escape("location")%></h2>
+      <h4>Organizer: <%= meeting.get("organizer").fname + " " + meeting.get("organizer").lname%></h4>
+      <h4>Max Players:<%= meeting.escape("max_players")%></h4>
+    </div>
+
+    <div class="meeting-player-details row">
+      <div class="col-sm-4">
+        <label>Genders: </label>
+        <%= meeting.escape("genders") %>
+      </div>
+
+      <div class="col-sm-4">
+        <label>Levels: </label>
+        <%= meeting.escape("levels") %>
+      </div>
+
+      <div class="col-sm-4">
+        <label>Age_groups: </label>
+        <%= meeting.escape("age_groups") %>
+      </div>
+    </div>
+
+    <div class="about-text container">
+
+      <%= meeting.escape("about") %>
+    </div>
   </div>
 </div>
 <div class="respondents col-md-3 individual-scroll"></div>

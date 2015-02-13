@@ -1,26 +1,29 @@
+no border in show
 
+fix filter for dates
+check for comparing dates in sql rails
+
+
+add listeners on all filter settings
+add about for users
+seed data
+not allow to accept if filters not met
 
 transition for index to show
-modal for create and edit meeting
 
 
-add button and if to show button or no filter.  give it class from listener
 
 
-on show give index class of single item view and put show in other side
-add arrow to show page to go back to index
-if no index in side bar then add back to index link
-
-look at evite for show meeting
-look for paginated shows
-put border on filter
-find arrow for hide and show border
-
-hide filter
-test heroku
 
 
-add exact location
+
+
+
+
+
+
+
+
 
 add invites personal invites to meetings
   add invited_users to db - meeting, user ids, invite

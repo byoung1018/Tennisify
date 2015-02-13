@@ -45,16 +45,26 @@ input[type="time"] {
   border-color: red;
 }
 
+.meeting-player-details{
+  border-top: 1px solid black;
+  margin-top: 20px;
+  padding-top: 10px;
+}
 
+.about-text{
+  font-size: large;
+  margin-top: 10px
+}
 .noBottomMargin {
   margin-bottom: 0px
 }
 
 .meeting-filter {
-  border-bottom: solid, 10px
+  border-bottom: solid, 10px;
+  background-color: #f0f0f5;
 }
 
-.index-item {
+div.index-item {
 
   float: left;
   width: 300px;
@@ -82,7 +92,14 @@ img.thumb {
 .respondent {
   padding-top: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.670588)
+  padding-left: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.670588);
+}
+
+.respondents {
+  padding-left: 0px;
+  padding-right: 0px;
+  border-left: 1px solid rgba(0, 0, 0, 0.670588);
 }
 
 .index-item:hover {
@@ -105,7 +122,7 @@ img.thumb {
 }
 
 .toggle-filter-button{
-  background-color: #FF6600;
+  background-color: #4fa84f;
 }
 
 .individual-scroll {
@@ -113,14 +130,20 @@ img.thumb {
   overflow: scroll;
 }
 
-a{
+a.index-items{
   color: white;
 }
 
 .response-title{
   border-bottom: 1px solid rgba(0, 0, 0, 0.670588)
 }
-
+// .response {
+//   font-size;
+// }
+.birthday {
+  margin-top: -5px;
+  padding-left: 0px;
+}
 
 //
 // .backdrop {

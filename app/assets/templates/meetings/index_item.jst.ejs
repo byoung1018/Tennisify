@@ -1,9 +1,9 @@
-<a href="#meetings/<%= meeting.id %>">
+<a class="index-items" href="#meetings/<%= meeting.id %>">
   <h3 class="index-item-header"><%= meeting.escape("title") %></h3>
   <div class="row">
     <label class="col-sm-4">Organizer:</label>
     <div class="col-sm-6">
-      <%= meeting.get("organizer").fname %>
+      <%= meeting.get("organizer").fname + " " + meeting.get("organizer").lname%>
     </div>
   </div>
   <div class="row">

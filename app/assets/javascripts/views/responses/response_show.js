@@ -3,7 +3,7 @@ Tennisify.Views.showResponse = Backbone.View.extend({
 
   notRespondedTemplate: JST['responses/show_buttons'],
 
-  className: "response-box",
+  className: "response-box respondent",
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);

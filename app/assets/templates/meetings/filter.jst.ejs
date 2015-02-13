@@ -5,35 +5,38 @@
     <input type="text" name="filter[title]" id="title" value="" class="filter form-control">
 
     <label>Organizer</label>
-    <input type="text" name="filter[organizer]" id="title" value="" class=" filter form-control">
+    <input type="text" name="filter[organizer]" id="title" value="" class="filter form-control">
 
     <div class="row">
-      <label class="col-sm-3">Maximum Players</label>
-      <input type="number" name="filter[maxPlayers]" class="form-control col-sm-3" >
+      <label class="col-sm-4">Maximum Players</label>
+      <input type="number" name="filter[maxPlayers]" class="filter form-control col-sm-4" >
 
-      <label class="col-sm-6">Public
-        <%= buttons("radio", "Public", "filter", ['Yes', 'No'])%>
+      <label class="col-sm-5 col-sm-offset-1 row">Public
+        <div>
+
+          <%= buttons("radio", "Public", "filter", ['Yes', 'No'])%>
+        </div>
       </label>
     </div>
   </div>
 
-  <div class="form-group col-sm-3">
+  <div class="form-group col-sm-4">
     <label class="">Dates
-      <input type="date" class="form-control" name="filter[dateStart]" value="">
+      <input type="date" class="filter form-control" name="filter[dateStart]" value="">
       to
-      <input type="date" class="form-control" name="filter[dateEnd]" value="">
+      <input type="date" class="filter form-control" name="filter[dateEnd]" value="">
     </label>
     <label class="">Time
-      <input type="time" class="form-control" name="filter[timeStart]" value="">
+      <input type="time" class="filter form-control" name="filter[timeStart]" value="">
       to
-      <input type="time" class="form-control" name="filter[timeEnd]" value="">
+      <input type="time" class="filter form-control" name="filter[timeEnd]" value="">
     </label>
     <label class="col-sm-6">Genders:
       <%= buttons("checkbox", "genders", "filter", ['M', 'F'])%>
     </label>
   </div>
 
-  <div class="form-group col-sm-6">
+  <div class="form-group col-sm-5">
     <div class="form-group ">
       <label class="col-sm-9 noBottomMargin">areas: </label>
       <div class="col-sm-9">
