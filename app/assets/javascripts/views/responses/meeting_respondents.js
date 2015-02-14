@@ -14,14 +14,14 @@ Tennisify.Views.MeetingRespondents = Backbone.CompositeView.extend({
         respondent: respondent});
       this.$("." + respondent.get("response")).append(content);
 
+
+
+    }.bind(this))
       var responseContent = new Tennisify.Views.showResponse({
         model: this.model.response()
       })
       this.$('.response').html(responseContent.render().$el);
       this.$('.response-box').data("meeting-id", this.model.id)
-
-
-    }.bind(this))
 
     return this;
   },
