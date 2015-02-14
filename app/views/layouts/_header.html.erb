@@ -14,7 +14,12 @@
     <ul class="nav navbar-nav navbar-right">
       <li><button class="create-meeting btn btn-primary navbar-btn">Create Meet</button></li>
       <li><button class="show-profile btn btn-primary navbar-btn">My Profile</button></li>
-      <li><%= button_to "Sign out", session_url, method: :delete, class: "btn btn-primary navbar-btn" %></li>
+      <% if current_user%>
+
+        <li><%= button_to "Sign out", session_url, method: :delete, class: "btn btn-primary navbar-btn" %></li>
+      <%else%>
+        <li><%= button_to "Sign In", "#login", method: :get, class: "btn btn-primary navbar-btn" %></li>
+      <%end %>
 
     </ul>
   </div>
