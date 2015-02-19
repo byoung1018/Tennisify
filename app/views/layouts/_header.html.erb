@@ -12,11 +12,11 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <li><button class="create-meeting btn btn-primary navbar-btn <%= button_state %>">Create Meet</button></li>
+        <li><button class="show-profile btn btn-primary navbar-btn <%= button_state %>">My Profile</button></li>
         <% if current_user%>
           <li><%= button_to "Sign out", session_url, method: :delete, class: "btn btn-primary navbar-btn" %></li>
         <%else%>
-          <li><button class="create-meeting btn btn-primary navbar-btn <%= button_state %>">Create Meet</button></li>
-          <li><button class="show-profile btn btn-primary navbar-btn <%= button_state %>">My Profile</button></li>
           <li><button class="btn btn-primary navbar-btn login-button">Sign In</button></li>
         <%end %>
 

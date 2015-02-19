@@ -39,7 +39,9 @@ Tennisify.Views.SessionNew = Backbone.ErrorView.extend({
         success: function (user) {
           currentUser = user.id;
           $('#modal').modal('toggle')
-          Backbone.history.navigate("#", {trigger:true})
+          $(".create-meeting").removeClass("disabled");
+          $(".show-profile").removeClass("disabled");
+          // Backbone.history.navigate("#", {trigger:true})
 
         }.bind(this),
         error: function (errors) {

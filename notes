@@ -1,7 +1,9 @@
-google create buttons that link without putting redirect listeners on them
+move navbar over to backbone
+google enable buttons for login (and disable for logout)
+my profile craps out
+
 
 how to route to create meeting if popup is from create meeting and to index if not
-fix show filter hide filter button
 
 fix modal popup
   give everything a url

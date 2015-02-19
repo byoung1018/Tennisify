@@ -37,7 +37,6 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
   },
 
   login: function () {
-    debugger
     var loginPage = new Tennisify.Views.SessionNew();
     this.showModal(loginPage);
   },
