@@ -1,59 +1,69 @@
-<h1><%= title %></h1>
-<ul class="errors"></ul>
+
 
 <div class="container">
-  <div class="row">
-      <label class="form-group col-sm-3">Username
-        <input type="text" class="form-control" name="user[username]" value="<%= user.escape("username") %>">
-      </label>
-      <label class="form-group col-sm-3">Password
-        <input type="password" class="form-control" name="user[password]" value="<%= user.escape("password") %>">
-      </label>
-  </div>
 
-  <div class="row">
-    <label class="form-group col-sm-3">First Name
-      <input type="text" class="form-control" name="user[fname]" value="<%= user.escape("fname") %>" placeholder="first">
-    </label>
-    <label class="form-group col-sm-3">Last Name
-      <input type="text" class="form-control" name="user[lname]" value="<%= user.escape("lname") %>" placeholder="last">
-    </label>
-  </div>
-
-  <div class="row">
-    <label class="form-group col-sm-3">Email
-      <input type="text" class="form-control" name="user[email]" value="<%= user.escape("email") %>">
-    </label>
-
-    <label class="form-group col-sm-3">Picture
-      <input type="text" class="form-control" name="user[picture]" value="<%= user.escape("picture") %>">
-    </label>
+  <div class="modal-header clearfix">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h1><%= title %></h1>
 
   </div>
 
-  <div class="row">
-    <div class="col-sm-3">
+  <div class="modal-body">
+    <ul class="errors"></ul>
+    <div class="row">
+        <label class="form-group col-sm-3">Username
+          <input type="text" class="form-control" name="user[username]" value="<%= user.escape("username") %>">
+        </label>
+        <label class="form-group col-sm-3">Password
+          <input type="password" class="form-control" name="user[password]" value="<%= user.escape("password") %>">
+        </label>
+    </div>
 
-      <label class="col-sm-4">Level
-        <%= select("level", "user", LEVELS)%>
+    <div class="row">
+      <label class="form-group col-sm-3">First Name
+        <input type="text" class="form-control" name="user[fname]" value="<%= user.escape("fname") %>" placeholder="first">
       </label>
-      <label class="col-sm-6">Area
-        <%= select("area", "user", AREAS)%>
+      <label class="form-group col-sm-3">Last Name
+        <input type="text" class="form-control" name="user[lname]" value="<%= user.escape("lname") %>" placeholder="last">
       </label>
     </div>
-    <div class="col-sm-4">
-      <label class="birthday col-sm-6">Birthday
-        <input type="date" class="form-control" name="user[birthday]" value="<%= user.escape("age") %>">
+
+    <div class="row">
+      <label class="form-group col-sm-3">Email
+        <input type="text" class="form-control" name="user[email]" value="<%= user.escape("email") %>">
       </label>
-      <label class="col-sm-4">Reveal Age
-        <%= buttons("radio", "reveal_age", "user", ['Yes', 'No'], 'Yes') %>
+
+      <label class="form-group col-sm-3">Picture
+        <input type="text" class="form-control" name="user[picture]" value="<%= user.escape("picture") %>">
       </label>
     </div>
-  </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <label class="col-sm-4">Level
+          <%= select("level", "user", LEVELS)%>
+        </label>
+        <label class="col-sm-6">Area
+          <%= select("area", "user", AREAS)%>
+        </label>
+      </div>
+      <div class="col-sm-4">
+        <label class="birthday col-sm-6">Birthday
+          <input type="date" class="form-control" name="user[birthday]" value="<%= user.escape("age") %>">
+        </label>
+        <label class="col-sm-4">Reveal Age
+          <%= buttons("radio", "reveal_age", "user", ['Yes', 'No'], 'Yes') %>
+        </label>
+      </div>
+    </div>
+    <div class="row">
       <label class="col-sm-3">Gender
         <%= buttons('radio', 'gender', "user", ['M', 'F']) %>
       </label>
+    </div>
+  </div>
 
-
-  <button class="create-user"><%= submit %></button>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default create-user"><%= submit %></button>
+  </div>
 </div>

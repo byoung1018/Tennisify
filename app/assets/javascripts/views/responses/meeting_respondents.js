@@ -2,7 +2,7 @@ Tennisify.Views.MeetingRespondents = Backbone.CompositeView.extend({
   template: JST['responses/respondents'],
   container: JST['responses/respondent_container'],
   initialize: function () {
-    this.listenTo(this.collection, "sync", this.render)
+    this.listenTo(this.collection, "sync add", this.render)
   },
   render: function () {
     this.$el.empty();

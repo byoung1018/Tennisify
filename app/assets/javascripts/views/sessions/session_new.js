@@ -12,7 +12,6 @@ Tennisify.Views.SessionNew = Backbone.ErrorView.extend({
     "click button.login": "login",
     "click .create-account-link": "showCreate",
     "click .guest-login": "guestLogin",
-
   },
 
   guestLogin: function () {
@@ -26,7 +25,6 @@ Tennisify.Views.SessionNew = Backbone.ErrorView.extend({
     var user = new Tennisify.Models.User();
     var view = new Tennisify.Views.NewUser({model: user});
     Tennisify.modalContent.html(view.render().$el);
-
   },
 
   login: function (event) {

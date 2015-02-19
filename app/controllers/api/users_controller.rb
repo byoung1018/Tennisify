@@ -2,7 +2,7 @@ module Api
   class UsersController < ApiController
     # todo verify email is an email
     wrap_parameters :user, {include: [:username, :fname, :lname, :password, :reveal_age, :gender,
-      :email, :level, :area, :age, :birthday]}
+      :email, :level, :area, :birthday]}
     def create
       @user = User.new(user_params)
       if @user.save
@@ -24,7 +24,7 @@ module Api
     private
     def user_params
       params.require(:user).permit(:username, :fname, :lname, :password, :reveal_age, :gender,
-                      :email, :level, :area, :age, :birthday)
+                      :email, :level, :area, :birthday)
     end
   end
 end

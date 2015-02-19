@@ -1,7 +1,7 @@
 Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
   routes:{
     "": "index",
-    "login": "showLogin",
+    "login": "login",
     "users/new": "newUser",
     "users/:id": "showUser",
     "meetings/new": "newMeeting",
@@ -9,21 +9,35 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
     "meetings/:id": "showMeeting",
   },
 
-  events: {
-    "route": "checkLogin",
+  // login
+  // create user
+  // show profile
 
+
+  showCreateUser: function () {
+    event.preventDefault();
+    var user = new Tennisify.Models.User();
+    var view = new Tennisify.Views.NewUser({model: user});
+    this.showModal(view);
+  },
+
+  newMeeting: function () {
+    if (!currentUser) {
+      Backbone.history.navigate("login", { trigger: true })
+    } else{
+      var meeting = new Tennisify.Views.newMeeting();
+      this.showModal(meeting);
+    }
   },
 
 
   checkLogin: function (route, params) {
-    if (!currentUser && route != "newUser" && route != "login") {
-      Backbone.history.navigate("login", { trigger: true })
-    }
     Tennisify.routeHistory[1] = Tennisify.routeHistory[0];
     Tennisify.routeHistory[0] = {route: route, params: params};
   },
 
-  showLogin: function () {
+  login: function () {
+    debugger
     var loginPage = new Tennisify.Views.SessionNew();
     this.showModal(loginPage);
   },

@@ -1,13 +1,73 @@
+google create buttons that link without putting redirect listeners on them
+
+how to route to create meeting if popup is from create meeting and to index if not
+fix show filter hide filter button
+
+fix modal popup
+  give everything a url
+  create list of redirect pages
+  on closing login or create
+    if page is redirect page check next.
+    if can't find valid page redirect to index
+
+
+
+modals
+  login
+  create meeting
+  create user
+  show profile
+
+where go after?
+  login
+    wherever original was supposed to be
+  create meeting
+    that meeting
+  create user
+    wherever original was supposed to be
+  show profile
+    wherever original was supposed to be
+
+
+
+  url modals
+    login
+
+  non-url modals
+    create meet
+    create user
+    show profile
+
+add calculate age function
+drop age column
+remove from intake
+create age function on model
+put it into jbuilder
+
+
 
 add about for users
 
-
 not allow to accept if filters not met
+level
+age
+gender
+
+can't create blank meetings
 
 transition for index to show
 
 
 
+data-dismiss makes the current modal window force close
+
+data-toggle opens up a new modal with the href content inside it
+
+<a data-dismiss="modal" data-toggle="modal" href="#lost">Click</a>
+or
+
+<a data-dismiss="modal" onclick="call the new div here">Click</a>
+do let us know if it works.
 
 
 

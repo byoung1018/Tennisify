@@ -25,7 +25,9 @@ module Api
 
     def show
       @meeting = Meeting.find(params[:id])
-      @current_user_response = @meeting.current_user_response(current_user.id)
+      if current_user
+        @current_user_response = @meeting.current_user_response(current_user.id)
+      end
       @responses = @meeting.responses
     end
 

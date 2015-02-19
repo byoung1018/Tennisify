@@ -16,6 +16,19 @@ class User < ActiveRecord::Base
   validates :session_token, presence: true, uniqueness: true
   validates :fname, presence: true
 
+  def age
+    return nil unless self.birthday
+
+    puts self.birthday.class
+    birthday = Date.parse(self.birthday)
+    today = Date.today
+    age = today.year - birthday.year
+    if birthday.month > today.month ||
+      (birthday.month == today.month && birthday.day > today.day)
+      age -= 1
+    end
+    age
+  end
 
   def self.find_by_credentials(login, password)
     user = User.find_by(email: login)

@@ -16,7 +16,6 @@ Tennisify.Views.ShowMeeting = Backbone.CompositeView.extend({
       edit: edit
     });
     this.$el.html(meetingShow);
-
     var respondentsShow = new Tennisify.Views.MeetingRespondents({
       collection: this.model.respondents(),
       model: this.model

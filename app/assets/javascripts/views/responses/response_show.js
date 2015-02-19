@@ -1,7 +1,7 @@
 Tennisify.Views.showResponse = Backbone.View.extend({
   respondedTemplate: JST['responses/show_response'],
-
   notRespondedTemplate: JST['responses/show_buttons'],
+  notLoggedIn: JST['responses/show_login_msg'],
 
   className: "response-box respondent",
 
@@ -15,7 +15,10 @@ Tennisify.Views.showResponse = Backbone.View.extend({
 
   render: function () {
     var responseStatus = this.model.get("response_status");
-    if (responseStatus) {
+    if (!currentUser) {
+      var responseBox = this.notLoggedIn();
+    }
+    else if (responseStatus) {
       var responseBox = this.respondedTemplate({
         response: responseStatus
       });
