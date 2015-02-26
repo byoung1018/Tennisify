@@ -1,44 +1,56 @@
+add invitees to meeting
+  on click of invite toggle button
+    save meeting as model
+    render invite view and pass meeting model
+  on click of save invitees
+    creates invite collection from data
+    render meeting and passes it the meeting model and invitee collection
+    change meeting view to take in meeting model and invitees collection
+    display invitees in meeting edit
+  on click save meeting
+    change save to create invitees
+
+1a. create model for invitees
+    create collection for invitees
+
+2. add create invite button to meeting form
+    on button click
+      have button create a model for meeting
+      render invite view and pass it the meeting
+
+3. create invite view
+    check modals and replace modal
+    view:
+      box for search
+        should filter down users
+      list of all users below
+      add button
+      list of users to add
+      save button
+      cancel button
+    on save click
+      create collection from added users
+      render meeting view passing it the collection and meeting model
+    on cancel
+      render meeting view passing it the collection and meeting model
+4. change meeting create to render invited users
+    pass the collection into the template
+    add box for invited users
+5. change meeting save on controller to create the invite entries
+    check on collection saving
+
+fix editing to invite people
+
+    have invite box
+
+  add display invitees to show meeting with scroll
+  have public checkboxes toggle the display
+
+
 move navbar over to backbone
-google enable buttons for login (and disable for logout)
-my profile craps out
 
 
 how to route to create meeting if popup is from create meeting and to index if not
-
-fix modal popup
-  give everything a url
-  create list of redirect pages
-  on closing login or create
-    if page is redirect page check next.
-    if can't find valid page redirect to index
-
-
-
-modals
-  login
-  create meeting
-  create user
-  show profile
-
-where go after?
-  login
-    wherever original was supposed to be
-  create meeting
-    that meeting
-  create user
-    wherever original was supposed to be
-  show profile
-    wherever original was supposed to be
-
-
-
-  url modals
-    login
-
-  non-url modals
-    create meet
-    create user
-    show profile
 
 add calculate age function
 drop age column

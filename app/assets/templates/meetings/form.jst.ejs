@@ -3,69 +3,90 @@
   <h1><%=title%></h1>
 </div>
 <div class="modal-body">
-  <ul class="errors"></ul>
-  <div class="col-sm-6">
+  <div class="container">
+    <ul class="errors"></ul>
+    <div class="row col-sm-7">
 
-    <label>Title
-    </label>
-    <input class="form-control" type="text" name="meeting[title]"
-    value="<%=meeting.escape("title")%>">
+      <div class="row">
 
+        <div class="col-sm-5">
+          <label>Title
+          <input class="form-control" type="text" name="meeting[title]"
+            value="<%=meeting.escape("title")%>">
+        </div>
 
-    <label>About Meeting
-    </label>
-    <textarea name="meeting[about]" class="form-control"><%=meeting.escape("about")%></textarea>
+        <div class="col-sm-3">
+          <label>Date</label>
+            <input class="form-control" type="date" name="meeting[date]"
+            value="<%=meeting.escape("date")%>">
+        </div>
+        <div class="col-sm-3">
+          <label>Time</label>
+          <input class="form-control" type="time" name="meeting[time]"
+            value="<%=toMilitary(meeting.escape("time"))%>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5">
+          <label>Location</label>
+          <input class="form-control" type="text" name="meeting[location]"
+                 value="<%=meeting.escape("location")%>">
+        </div>
+        <div class="col-sm-3">
+          <label>Area</label>
+          <%= select("area", "meeting", AREAS, meeting.escape("area"))%>
+        </div>
+        <div class="col-sm-3">
+          <div>
+            <label>Genders</label>
+          </div>
+          <div>
+            <%= buttons("checkbox", "genders", "meeting", ['M', 'F'], meeting.get("genders"))%>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5">
+          <label>About Meeting</label>
+          <textarea name="meeting[about]" class="form-control" rows="3"><%=meeting.escape("about")%></textarea>
+        </div>
 
-
-    <label>Date
-    </label>
-    <input class="form-control" type="date" name="meeting[date]"
-    value="<%=meeting.escape("date")%>">
-
-
-    <label>Time
-    </label>
-    <input class="form-control" type="time" name="meeting[time]"
-    value="<%=toMilitary(meeting.escape("time"))%>">
-
-    <label> Maximum Players
-    </label>
-    <input class="form-control" type="number" name="meeting[max_players]"
-    value="<%= meeting.escape("max_players") %>">
-  </div>
-  <div class="col-sm-6">
-
-    <label>Location
-    </label>
-    <input class="form-control" type="text" name="meeting[location]"
-    value="<%=meeting.escape("location")%>">
-
-    <label>Area</label>
-    <div>
-      <%= select("area", "meeting", AREAS, meeting.escape("area"))%>
+        <div class="col-sm-7">
+          <div class="row col-sm-12">
+            <label>Age Groups</label>
+            <div>
+              <%= buttons("checkbox", "age_groups", "meeting", AGEGROUPS, meeting.get("age_groups"))%>
+            </div>
+          </div>
+          <div class="row col-sm-12">
+            <label>Levels</label>
+            <div>
+              <%= buttons("checkbox", "levels", "meeting", LEVELS, meeting.get("levels"))%>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="row col-sm-12">
+            <label>Public</label>
+            <%= buttons("radio", "public", "meeting", ['Yes', 'No'], [meeting.get("public")])%>
+          </div>
+          <div class="row col-sm-12">
+            <a href="#">Invite Specific Players</a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <label>Maximum Players</label>
+          <input class="form-control" type="number" name="meeting[max_players]"
+                  value="<%= meeting.escape("max_players") %>">
+        </div>
+      </div>
     </div>
 
-    <label>Public</label>
-    <div>
-      <%= buttons("radio", "public", "meeting", ['Yes', 'No'], [meeting.get("public")])%>
-    </div>
-
-    <label>Levels</label>
-    <div>
-      <%= buttons("checkbox", "levels", "meeting", LEVELS, meeting.get("levels"))%>
-    </div>
-
-    <label>Age Groups</label>
-    <div>
-      <%= buttons("checkbox", "age_groups", "meeting", AGEGROUPS, meeting.get("age_groups"))%>
-    </div>
-
-    <label>Genders</label>
-    <div>
-      <%= buttons("checkbox", "genders", "meeting", ['M', 'F'], meeting.get("genders"))%>
-    </div>
   </div>
 </div>
+
 <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
   <button class="submit-meeting btn btn-primary" data-dismiss="modal"><%=buttonText%></button>

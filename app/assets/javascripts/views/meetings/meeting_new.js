@@ -6,6 +6,11 @@ Tennisify.Views.newMeeting = Backbone.ErrorView.extend({
   className: "meeting-form",
   tagName: "form",
 
+  // cancelCreate: function (event) {
+  //   var attrs = $(event.delegateTarget).serializeJSON()["meeting"];
+  //   var meeting = new Tennisify.Models.Meeting(attrs);
+  // },
+
   createMeeting: function (event) {
     var attrs = $(event.delegateTarget).serializeJSON()["meeting"];
     var meeting = new Tennisify.Models.Meeting(attrs);
@@ -25,7 +30,7 @@ Tennisify.Views.newMeeting = Backbone.ErrorView.extend({
       title: "Create Meeting",
       buttonText: "Create",
       meeting: new Tennisify.Models.Meeting()
-      });
+    });
     this.$el.html(content);
 
     return this;

@@ -6,6 +6,8 @@ class Meeting < ActiveRecord::Base
   has_many :allowed_age_groups
   has_many :age_groups, through: :allowed_age_groups
   has_many :allowed_genders
+  has_many :invites
+  has_many :invited_users, through: :invites, source: :user
   has_many :genders, through: :allowed_genders
 
   validates :title, :date, :time, presence: true

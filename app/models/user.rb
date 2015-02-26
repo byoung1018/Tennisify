@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # todo change message for validation errors (says fname right now)
   has_many :responses, foreign_key: :respondent_id
   has_many :owned_meetings, class_name: 'Meeting', foreign_key: :organizer_id
-
+  has_many :invites
 
   attr_reader :password
 
