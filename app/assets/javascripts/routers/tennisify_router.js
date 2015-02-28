@@ -9,11 +9,6 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
     "meetings/:id": "showMeeting",
   },
 
-  // login
-  // create user
-  // show profile
-
-
   showCreateUser: function () {
     event.preventDefault();
     var user = new Tennisify.Models.User();

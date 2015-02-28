@@ -16,7 +16,6 @@ Tennisify.Views.showUser = Backbone.View.extend({
   },
   editUser: function () {
     event.preventDefault();
-    // var user = Tennisify.Collections.users.getOrFetch(this)
     var view = new Tennisify.Views.EditUser({model: this.model});
     Tennisify.modalContent.html(view.render().$el);
   },

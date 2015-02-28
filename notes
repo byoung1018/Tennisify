@@ -1,3 +1,8 @@
+check line 20 of composite view
+double check composite view
+
+add hover to guest button
+
 add invitees to meeting
   on click of invite toggle button
     save meeting as model

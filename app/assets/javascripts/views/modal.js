@@ -11,7 +11,6 @@ Tennisify.Views.Modal = Backbone.View.extend({
     "hide.bs.modal #modal": "routeBack"
   },
   routeBack: function () {
-    console.log("going back");
     var lastRoute = Tennisify.routeHistory[1];
     if (lastRoute || (lastRoute === "" && lastRoute != "showLogin")) {
       var route = key(this.model, lastRoute.route)

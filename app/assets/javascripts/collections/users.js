@@ -9,7 +9,6 @@ Tennisify.Collections.Users = Backbone.Collection.extend({
       user = new Tennisify.Models.User({ id: id });
       user.fetch({
         success: function (user) {
-          console.log(user);
           that.add(user);
           verifyPicture(user);
           callback(user);

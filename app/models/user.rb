@@ -19,7 +19,6 @@ class User < ActiveRecord::Base
   def age
     return nil unless self.birthday
 
-    puts self.birthday.class
     birthday = Date.parse(self.birthday)
     today = Date.today
     age = today.year - birthday.year

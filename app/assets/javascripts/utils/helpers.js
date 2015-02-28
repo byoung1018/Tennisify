@@ -74,7 +74,6 @@ function capitalize(string) {
 }
 
 function toTitle(string){
-  // string = string.replace(/([A-Z])/g, function(char){return (" " + char);});
   string = string.replace(/_([a-z])/g, function (g) { return " " + g[1].toUpperCase(); })
   return capitalize(string);
 };

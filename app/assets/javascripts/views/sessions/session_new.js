@@ -15,8 +15,12 @@ Tennisify.Views.SessionNew = Backbone.ErrorView.extend({
   },
 
   guestLogin: function () {
-    this.$(".session-login").val("partyrocker");
-    this.$(".session-password").val("asdfasdf");
+    var guestId = Math.floor(Math.random() * 12) + 1;
+    var guestUser = new Tennisify.Models.User({"id": guestId});
+    guestUser.fetch({success: function (user) {
+      this.$(".session-login").val(user.get("username"));
+      this.$(".session-password").val("asdfasdf");
+    }})
   },
 
 

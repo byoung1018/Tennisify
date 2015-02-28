@@ -15,7 +15,6 @@ Tennisify.Views.filterMeeting = Backbone.View.extend({
 
 
   toggleFilter: function (event) {
-    console.log("toggling");
     Tennisify.filterShowing = !Tennisify.filterShowing;
     if (Tennisify.filterShowing) {
       this._toggleButton.html("Hide Filter" + chevron("up"));

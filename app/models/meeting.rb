@@ -20,11 +20,6 @@ class Meeting < ActiveRecord::Base
     meetings = Meeting.all
     date_fields = ['dateStart', 'dateEnd', 'timeStart', 'timeEnd']
     filter["filter"].each do |name, value|
-      puts ""
-      puts name
-      puts value
-      puts ""
-
       next if value == ""
       if value.class == Array
         table = name.to_sym

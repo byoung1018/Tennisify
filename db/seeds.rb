@@ -216,7 +216,6 @@ User.create!({
 
 
 
-
 def create_meeting!(attrs)
   meeting = Meeting.new()
   objs_to_create = []
@@ -225,9 +224,6 @@ def create_meeting!(attrs)
       value.each do |value|
         attr_model = str_to_class(attr).where(attr => value).first
         allowed_obj_class = str_to_class("allowed_#{attr}")
-        puts attr
-        puts value
-
         objs_to_create << allowed_obj_class.new({"#{attr}_id" => attr_model.id})
       end
     else
