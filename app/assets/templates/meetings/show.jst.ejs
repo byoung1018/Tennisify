@@ -23,7 +23,7 @@
     <div class="col-sm-offset-1 row">
       <h2><%= meeting.escape("location")%></h2>
       <h4>Organizer: <%= meeting.get("organizer").fname + " " + meeting.get("organizer").lname%></h4>
-      <h4>Max Players:<%= meeting.escape("max_players")%></h4>
+      <h4>Max Players: <%= meeting.escape("max_players") === 0 ? meeting.escape("max_players") : "unlimited"%></h4>
     </div>
 
     <div class="meeting-player-details row">
