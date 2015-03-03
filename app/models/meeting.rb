@@ -37,9 +37,6 @@ class Meeting < ActiveRecord::Base
         elsif name == 'timeEnd'
           meetings = meetings.where('time < ?', value)
         end
-        # value = DateTime.parse(value);
-
-        puts "here"
       else
         meetings = meetings.where("#{name} LIKE ?", "#{value}%");
       end

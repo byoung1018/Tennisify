@@ -7,13 +7,6 @@ json.invited_users do
   end
 end
 json.organizer do
-  puts "here"
-  puts "here"
-  puts "here"
-  puts "here"
-  puts "here"
-  puts "here"
-  puts meeting.id
   json.extract! meeting.organizer, :fname, :lname
 end
 
