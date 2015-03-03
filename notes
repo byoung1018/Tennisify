@@ -90,6 +90,135 @@ do let us know if it works.
 
 
 
+{area: "South Bay",	location: "Almaden Valley Athletic Club",}
+{area: "Sacramento",	location: "Auburn Racquet & Fitness Club",}
+{area: "Peninsula",	location: "Pacific Athletic Club",}
+{area: "South Bay",	location: "Bay Club - Santa Clara",}
+{area: "South Bay",	location: "Bay Club - Santa Clara",}
+{area: "San Francisco",	location: "Bay Club San Francisco Tennis",}
+{area: "San Francisco",	location: "Bay Club San Francisco Tennis",}
+{area: "Diablo South",	location: "Bay Trees Tennis Park",}
+{area: "Solano",	location: "Benicia High School",}
+{area: "Diablo South",	location: "Blackhawk Country Club",}
+{area: "Sacramento",	location: "Broadstone Racquet Club",}
+{area: "Sacramento",	location: "Broadstone Racquet Club",}
+{area: "San Francisco",	location: "California Tennis Club",}
+{area: "Monterey Bay",	location: "Carmel Valley Athletic Club",}
+{area: "East Bay",	location: "Claremont Resort & Spa",}
+{area: "Fresno",	location: "Clovis North High School",}
+{area: "Diablo South",	location: "Clubsport Fremont",}
+{area: "Diablo South",	location: "Clubsport Fremont",}
+{area: "Diablo South",	location: "Clubsport Fremont",}
+{area: "Diablo South",	location: "Clubsport Fremont",}
+{area: "Diablo South",	location: "Clubsport of Pleasanton",}
+{area: "Diablo South",	location: "Club Sport San Ramon",}
+{area: "Diablo North",	location: "Clubsport Valley Vista",}
+{area: "Fresno",	location: "Copper River Country Club",}
+{area: "Peninsula",	location: "Courtside Club",}
+{area: "Peninsula",	location: "Courtside Club",}
+{area: "Diablo South",	location: "Crow Canyon Country Club",}
+{area: "Peninsula",	location: "Cubberley Center",}
+{area: "Peninsula",	location: "Cuesta Tennis Center",}
+{area: "Peninsula",	location: "Cuesta Tennis Center",}
+{area: "Peninsula",	location: "Cuesta Tennis Center",}
+{area: "Peninsula",	location: "Cuesta Tennis Center",}
+{area: "Peninsula",	location: "Cupertino Sports Center",}
+{area: "Peninsula",	location: "Cupertino Sports Center",}
+{area: "Peninsula",	location: "Cupertino Sports Center",}
+{area: "East Bay",	location: "Davie Tennis Stadium",}
+{area: "Diablo South",	location: "Diablo Country Club",}
+{area: "Diablo North",	location: "Diamond Hills",}
+{area: "East Bay",	location: "Mervyn Morris Park",}
+{area: "South Bay",	location: "Evergreen Valley College",}
+{area: "South Bay",	location: "Fair Oaks West Apartments",}
+{area: "Peninsula",	location: "Edgewater Park",}
+{area: "Peninsula",	location: "Fremont Hills Country Club",}
+{area: "Diablo South",	location: "Fremont Tennis Center",}
+{area: "San Francisco",	location: "Gellert Park",}
+{area: "Monterey Bay",	location: "Gilroy Tennis Center",}
+{area: "East Bay",	location: "Davie Tennis Stadium",}
+{area: "San Francisco",	location: "San Francisco State University",}
+{area: "Sacramento",	location: "Gold River Racquet Club",}
+{area: "San Francisco",	location: "Golden Gate Park Tennis Complex",}
+{area: "San Francisco",	location: "Golden Gate Park Tennis Complex",}
+{area: "San Francisco",	location: "Golden Gate Park Tennis Complex",}
+{area: "San Francisco",	location: "Golden Gateway Tennis & Swim Club",}
+{area: "East Bay",	location: "Harbor Bay Club",}
+{area: "Marin",	location: "Harbor Point Tennis Club",}
+{area: "Peninsula",	location: "Highlands Rec Center San Mateo",}
+{area: "Fresno",	location: "Cliff Drysdale Tennis-Visalia",}
+{area: "Central Valley",	location: "In Shape Sports Club",}
+{area: "Monterey Bay",	location: "Jade Street Park",}
+{area: "Peninsula",	location: "Addison Penzak Jewish Community Center",}
+{area: "Sacramento",	location: "Johnson Ranch Racquet Club",}
+{area: "South Bay",	location: "Kona Kai Swim & Racquet Club",}
+{area: "Sonoma",	location: "La Cantera Racquet Club",}
+{area: "Peninsula",	location: "Ladera Oaks Swim and Tennis Club",}
+{area: "Diablo North",	location: "Lafayette Tennis Club",}
+{area: "Sacramento",	location: "Laguna Creek Racquet Club",}
+{area: "Marin",	location: "Lagunitas Country Club",}
+{area: "Peninsula",	location: "Los Altos Golf & Country Club",}
+{area: "Peninsula",	location: "Los Gatos Swim & Racquet Club",}
+{area: "Peninsula",	location: "Los Gatos Swim & Racquet Club",}
+{area: "Peninsula",	location: "Los Gatos Swim & Racquet Club",}
+{area: "Marin",	location: "Marin Tennis Club",}
+{area: "Sacramento",	location: "McKinley Park",}
+{area: "Sacramento",	location: "McKinley Park",}
+{area: "East Bay",	location: "Memorial Park (Albany)",}
+{area: "Peninsula",	location: "Menlo Circus Club",}
+{area: "Marin",	location: "Mill Valley Tennis Club",}
+{area: "Sacramento",	location: "Millennium by In-Shape El Dorado",}
+{area: "Solano",	location: "Millennium by In Shape Rancho Solano",}
+{area: "Solano",	location: "Millennium by In-Shape Browns Valley",}
+{area: "Diablo South",	location: "Mission Hills Athletic Club",}
+{area: "Diablo South",	location: "Mission Hills Athletic Club",}
+{area: "Monterey Bay",	location: "Monterey Tennis Center",}
+{area: "Diablo North",	location: "Moraga Country Club",}
+{area: "South Bay",	location: "Almaden Swim and Racquet Club",}
+{area: "Marin",	location: "Mt Tam Racquet Club",}
+{area: "Sacramento",	location: "Natomas Racquet Club",}
+{area: "Central Valley",	location: "Oak Park Tennis Complex",}
+{area: "San Francisco",	location: "Olympic Club",}
+{area: "Sacramento",	location: "Park Terrace Swim Tennis Club",}
+{area: "Peninsula",	location: "Peninsula Golf & Country Club",}
+{area: "Sonoma",	location: "Petaluma Valley Athletic Club",}
+{area: "Marin",	location: "Pioneer Park",}
+{area: "Diablo South",	location: "Pleasanton Tennis and Community Park",}
+{area: "Diablo South",	location: "Pleasanton Tennis and Community Park",}
+{area: "Diablo South",	location: "Pleasanton Tennis and Community Park",}
+{area: "Marin",	location: "Rafael Racquet Club",}
+{area: "East Bay",	location: "Refugio Valley Park",}
+{area: "Monterey Bay",	location: "Ridgemark Golf & Country Club",}
+{area: "Sacramento",	location: "Rio Del Oro Racquet Club",}
+{area: "Marin",	location: "Rolling Hills Club",}
+{area: "Sacramento",	location: "Rollingwood Racquet Club",}
+{area: "Diablo South",	location: "Round Hill Country Club",}
+{area: "Diablo South",	location: "Round Hill Country Club",}
+{area: "San Francisco",	location: "San Bruno City Park",}
+{area: "Peninsula",	location: "Arguello Park",}
+{area: "Peninsula",	location: "Arguello Park",}
+{area: "South Bay",	location: "San Jose Swim Racquet Club",}
+{area: "Sonoma",	location: "Santa Rosa High",}
+{area: "Peninsula",	location: "Saratoga Country Club",}
+{area: "Monterey Bay",	location: "Seascape Sports Club",}
+{area: "Fresno",	location: "Sierra Sport Racquet Club",}
+{area: "South Bay",	location: "Silver Creek Valley Country Club",}
+{area: "Central Valley",	location: "Sportsmen of Stanislaus",}
+{area: "South Bay",	location: "Sunnyvale Municipal Tennis Center",}
+{area: "South Bay",	location: "Sunnyvale Municipal Tennis Center",}
+{area: "Marin",	location: "Tiburon Peninsula Club",}
+{area: "Central Valley",	location: "Twin Arbors Athletic Club",}
+{area: "Diablo South",	location: "Veterans' Memorial Park",}
+{area: "Peninsula",	location: "University Club of Palo Alto",}
+{area: "Peninsula",	location: "Valley Church",}
+{area: "South Bay",	location: "Wallenberg Park",}
+{area: "Diablo North",	location: "Walnut Country-Crossings",}
+{area: "Diablo North",	location: "Walnut Creek Tennis Center",}
+{area: "Diablo North",	location: "Walnut Creek Tennis Center",}
+{area: "Diablo North",	location: "Walnut Creek Tennis Center",}
+{area: "East Bay",	location: "Washington Park",}
+{area: "Diablo North",	location: "Willow Pass Park",}
+{area: "Sacramento",	location: "Yuba City Racquet Club",}
 
 
 

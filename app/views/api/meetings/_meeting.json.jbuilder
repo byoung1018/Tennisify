@@ -2,10 +2,18 @@ json.extract! meeting, :id, :title, :about, :date, :time,
                   :max_players, :organizer_id, :public, :area, :location
 json.invited_users do
   json.array! meeting.invited_users do |invited_user|
+
     json.extract! invited_user, :id, :fname, :lname
   end
 end
 json.organizer do
+  puts "here"
+  puts "here"
+  puts "here"
+  puts "here"
+  puts "here"
+  puts "here"
+  puts meeting.id
   json.extract! meeting.organizer, :fname, :lname
 end
 
