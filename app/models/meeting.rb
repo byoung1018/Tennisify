@@ -26,6 +26,11 @@ class Meeting < ActiveRecord::Base
         attr = name.singularize.to_sym
         meetings = meetings.joins(table).where(table => {attr => value}).uniq
       elsif name == "organizer"
+        puts
+        meetings = meetings.where("organizer_id in (select id from users where users.fname like ?)", "%#{value}%")
+
+      elsif name == "max_players"
+        meetings = meetings.where("max_players = ?", "#{value}");
       elsif date_fields.include?(name)
         ['dateStart', 'dateEnd', 'timeStart', 'timeEnd']
         if name == "dateStart"
