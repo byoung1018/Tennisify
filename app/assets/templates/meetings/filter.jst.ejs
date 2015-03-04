@@ -1,63 +1,63 @@
 <div class="collapse in" id="filter-container">
 
-  <div class="form-group col-sm-3">
+
+  <div class="form-group col-sm-4">
     <label>Title</label>
     <input type="text" name="filter[title]" id="title" value="" class="filter form-control">
 
     <label>Organizer</label>
     <input type="text" name="filter[organizer]" id="title" value="" class="filter form-control">
 
-    <div class="row">
-      <label class="col-sm-4">Maximum Players</label>
-      <input type="number" name="filter[maxPlayers]" class="filter form-control col-sm-4" >
+    <div class="">
+      <label >Maximum Players</label>
+      <input type="number" name="filter[maxPlayers]" class="filter form-control" >
 
-      <label class="col-sm-5 col-sm-offset-1 row">Public
-        <div>
-          <%= buttons("radio", "Public", "filter", ['Yes', 'No'])%>
-        </div>
-      </label>
     </div>
   </div>
 
   <div class="form-group col-sm-4">
-    <label class="">Dates
-      <input type="date" class="filter form-control" name="filter[dateStart]" value="">
-      to
-      <input type="date" class="filter form-control" name="filter[dateEnd]" value="">
-    </label>
-    <label class="">Time
-      <input type="time" class="filter form-control" name="filter[timeStart]" value="">
-      to
-      <input type="time" class="filter form-control" name="filter[timeEnd]" value="">
-    </label>
-    <label class="col-sm-6">Genders:
-      <%= buttons("checkbox", "genders", "filter", ['M', 'F'])%>
-    </label>
+    <div class="row">
+      <div class="col-sm-6">
+        <label class="">Dates</label>
+        <input type="date" class="filter form-control" name="filter[dateStart]" value="">
+        to
+        <input type="date" class="filter form-control" name="filter[dateEnd]" value="">
+      </div>
+      <div class="col-sm-6">
+        <label class="">Time</label>
+        <input type="time" class="filter form-control" name="filter[timeStart]" value="">
+        to
+        <input type="time" class="filter form-control" name="filter[timeEnd]" value="">
+      </div>
+    </div>
+    <div class="row">
+      <label class="col-sm-6">Genders:
+        <%= buttons("checkbox", "genders", "filter", ['M', 'F'])%>
+      </label>
+    </div>
   </div>
-
-  <div class="form-group col-sm-5">
-    <div class="form-group ">
-      <label class="col-sm-9 noBottomMargin">Areas: </label>
-      <div class="col-sm-9">
+  <div class="form-group col-sm-4">
+    <div class="form-group">
+      <label class="col-sm-12 noBottomMargin">Areas: </label>
+      <div class="col-sm-12">
         <%= buttons("checkbox", "areas", "filter", AREAS)%>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-sm-9 noBottomMargin">Age Groups: </label>
-      <div class="col-sm-9">
+      <label class="col-sm-12 noBottomMargin">Age Groups: </label>
+      <div class="col-sm-12">
         <%= buttons("checkbox", "age_groups", "filter",
-          ['1-18', '18-40', '40-55', '55-65', '65+'])%>
+        ['1-18', '18-40', '40-55', '55-65', '65+'])%>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-sm-9 noBottomMargin">Levels: </label>
-      <div class="col-sm-9">
+      <label class="col-sm-12 noBottomMargin">Levels: </label>
+      <div class="col-sm-12">
         <%= buttons("checkbox", "levels", "filter", LEVELS)%>
       </div>
     </div>
-
   </div>
 </div>
 <button class="col-sm-12 toggle-filter-button"  type="button" data-toggle="collapse" data-target="#filter-container" aria-expanded="false" aria-controls="collapseExample">
