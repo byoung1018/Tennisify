@@ -45,10 +45,11 @@ input[type="time"] {
   border-color: red;
 }
 
-.meeting-player-details{
+.line{
   border-top: 1px solid black;
   margin-top: 20px;
   padding-top: 10px;
+  padding-right: 0px
 }
 
 .about-text{
@@ -100,14 +101,11 @@ img.thumb {
 .respondent {
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 15px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.670588);
 }
 
 .respondents {
-  padding-left: 0px;
-  padding-right: 0px;
   border-left: 1px solid rgba(0, 0, 0, 0.670588);
+  padding-right: 0px;
 }
 
 .index-item:hover {
@@ -153,6 +151,17 @@ a.index-items{
 .birthday {
   margin-top: -5px;
   padding-left: 0px;
+}
+
+.show-meeting {
+    padding-right: 0px;
+}
+
+.image {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 10px;
+  margin-right: -10px;
 }
 
 //

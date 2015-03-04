@@ -1,52 +1,46 @@
 
 
-<div class="show-meeting col-md-8 container">
+<div class="show-meeting col-sm-8">
+  <div class="row col-sm-12">
+    <a href="#" class="meeting-back">Back to Index</a>
+    <%if (edit) {%>
+      <a href="#meetings/<%=meeting.id%>/edit" class="meeting-edit">Edit</a>
+    <%} %>
+  </div>
+  <div class="row col-sm-12">
+      <h1 class="meeting-title"><%= meeting.escape("title") %></h1>
+  </div>
+  <div class="col-sm-offset-1 row col-sm-11">
+    <h2><%= dateDisplay(meeting.escape("date")) %></h2>
+    <h4><%= timeDisplay(meeting.get("time")) %></h4>
+  </div>
+  <div class="col-sm-offset-1 row col-sm-11">
+    <h2><%= meeting.escape("location")%></h2>
+    <h4>Organizer: <%= meeting.get("organizer").fname + " " + meeting.get("organizer").lname%></h4>
+    <h4>Max Players: <%= meeting.escape("max_players") === 0 ? meeting.escape("max_players") : "unlimited"%></h4>
+  </div>
 
-  <div class="meeting-details">
-    <div class="row">
-      <a href="#" class="meeting-back">Back to Index</a>
-      <%if (edit) {%>
-        <a href="#meetings/<%=meeting.id%>/edit" class="meeting-edit">Edit</a>
-      <%} %>
-
-    </div>
-    <div class="row">
-      <div class="col-sm-8">
-        <h1 class="meeting-title"><%= meeting.escape("title") %></h1>
-      </div>
-
-    </div>
-    <div class="col-sm-offset-1 row">
-      <h2><%= dateDisplay(meeting.escape("date")) %></h2>
-      <h4><%= timeDisplay(meeting.get("time")) %></h4>
-    </div>
-    <div class="col-sm-offset-1 row">
-      <h2><%= meeting.escape("location")%></h2>
-      <h4>Organizer: <%= meeting.get("organizer").fname + " " + meeting.get("organizer").lname%></h4>
-      <h4>Max Players: <%= meeting.escape("max_players") === 0 ? meeting.escape("max_players") : "unlimited"%></h4>
-    </div>
-
-    <div class="meeting-player-details row">
-      <div class="col-sm-4">
-        <label>Genders: </label>
-        <%= meeting.escape("genders") %>
-      </div>
-
-      <div class="col-sm-4">
-        <label>Levels: </label>
-        <%= meeting.escape("levels") %>
-      </div>
-
-      <div class="col-sm-4">
-        <label>Age_groups: </label>
-        <%= meeting.escape("age_groups") %>
-      </div>
+  <div class="line row col-sm-12"></div>
+  <div class="row col-sm-12">
+    <div class="col-sm-4">
+      <label>Genders: </label>
+      <%= meeting.escape("genders") %>
     </div>
 
-    <div class="about-text container">
+    <div class="col-sm-4">
+      <label>Levels: </label>
+      <%= meeting.escape("levels") %>
+    </div>
 
-      <%= meeting.escape("about") %>
+    <div class="col-sm-4">
+      <label>Age_groups: </label>
+      <%= meeting.escape("age_groups") %>
     </div>
   </div>
+
+  <div class="about-text row col-sm-12">
+    <%= meeting.escape("about") %>
+  </div>
+
 </div>
-<div class="respondents col-md-3 individual-scroll"></div>
+<div class="respondents row col-sm-3 individual-scroll"></div>

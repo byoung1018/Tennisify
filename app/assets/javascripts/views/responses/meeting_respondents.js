@@ -15,7 +15,6 @@ Tennisify.Views.MeetingRespondents = Backbone.CompositeView.extend({
       this.$("." + respondent.get("response")).append(content);
 
 
-
     }.bind(this))
       var responseContent = new Tennisify.Views.showResponse({
         model: this.model.response()
