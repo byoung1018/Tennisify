@@ -228,12 +228,12 @@ meetings = [
     max_players: 0,
     level: ["4.5"]
   },
-  {title: "Leage match",
+  {title: "league match",
     about: "We playing the SFTC team at home.  I will make a lineup based on available players",
     max_players: 0,
     level: ["4.5"]
   },
-  {title: "Leage match",
+  {title: "league match",
     about: "We playing the Balboa Park team at home.  I will make a lineup based on available players",
     max_players: 0,
     level: ["4.5"]
