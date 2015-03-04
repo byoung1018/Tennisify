@@ -13,7 +13,8 @@ Tennisify.Views.MeetingRespondents = Backbone.CompositeView.extend({
       var content = this.template({
         respondent: respondent});
       this.$("." + respondent.get("response")).append(content);
-
+      var line = $('<div class="line row col-sm-12"></div>')
+      this.$("." + respondent.get("response")).append(line);
 
     }.bind(this))
       var responseContent = new Tennisify.Views.showResponse({
