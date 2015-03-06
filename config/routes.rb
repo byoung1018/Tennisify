@@ -9,5 +9,6 @@ Rails.application.routes.draw do
       resources :responses, only: [:index]
     end
     resources :users, only: [:create, :show, :index]
+    resources :verify_phone, only: [:create]
   end
 end

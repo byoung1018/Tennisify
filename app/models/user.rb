@@ -1,3 +1,5 @@
+require 'twilio-ruby'
+
 class User < ActiveRecord::Base
   # todo change message for validation errors (says fname right now)
   has_many :responses, foreign_key: :respondent_id
@@ -28,7 +30,6 @@ class User < ActiveRecord::Base
     age
   end
 
-
   def self.filter(name)
     users = User.all
     users = users.where("fname LIKE ? or lname LIKE ?", "#{name}%", "#{name}%");
@@ -44,6 +45,8 @@ class User < ActiveRecord::Base
     return nil if user.nil?
     user.is_password?(password) ? user : nil
   end
+
+  
 
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)

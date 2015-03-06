@@ -3,7 +3,6 @@ Tennisify.Views.showUser = Backbone.View.extend({
   phoneTemplate: JST['users/phone'],
 
   render: function () {
-    debugger
     var edit = this.model.id == currentUser ? true : false
     if (currentUser == this.model.id) {
       if (this.model.get("phone_status") === "unverified") {
@@ -24,8 +23,25 @@ Tennisify.Views.showUser = Backbone.View.extend({
 
   events: {
     "click .edit-button": "editUser",
+    "click .verify-phone": "verifyPhone",
     "#modal hide.bs.modal": "routeBack"
   },
+
+  verifyPhone: function (event) {
+    event.preventDefault()
+    $.ajax({
+      url: "/api/verify_phone",
+      type: "POST",
+      success: function (verification_code) {
+        console.log(verification_code);
+      }.bind(this),
+      error: function (errors) {
+        console.log(errors);
+      }.bind(this),
+      dataType: 'json'
+    })
+  },
+
   editUser: function () {
     event.preventDefault();
     var view = new Tennisify.Views.EditUser({model: this.model});

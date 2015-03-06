@@ -1,4 +1,3 @@
-require 'twilio-ruby'
 class Meeting < ActiveRecord::Base
   belongs_to :organizer, class_name: 'User'
   has_many :responses
@@ -77,12 +76,6 @@ class Meeting < ActiveRecord::Base
 
   end
 
-  def self.verify_phone_number(phone_number)
-    @client = Twilio::REST::Client.new(ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"])
 
-    caller_id = @client.account.outgoing_caller_ids.create(:friendly_name => "My actual cell number",
-    :phone_number => "+15109258758")
-    puts caller_id.validation_code
-  end
 
 end
