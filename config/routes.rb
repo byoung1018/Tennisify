@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :meetings do
       resources :responses, only: [:index]
     end
-    resources :users, only: [:create, :show, :index]
+    resources :users, only: [:create, :show, :index, :update]
     resources :verify_phone, only: [:create, :update]
   end
 end

@@ -74,7 +74,6 @@ class Meeting < ActiveRecord::Base
   end
 
   def send_messages
-
     @client = Twilio::REST::Client.new(ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"])
     self.invited_users.each do |user|
       if user.phone_status == "verified"

@@ -14,7 +14,6 @@ Tennisify.Views.NewUser = Backbone.ErrorView.extend({
     user.save({}, {
       success: function (user) {
         currentUser = user.id;
-        currentUser = user.id;
         $('#modal').modal('toggle')
         $(".create-meeting").removeClass("disabled");
         $(".show-profile").removeClass("disabled");

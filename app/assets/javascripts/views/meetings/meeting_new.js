@@ -34,6 +34,7 @@ Tennisify.Views.newMeeting = Backbone.ErrorView.extend({
     meeting.save({}, {
       success: function (meeting) {
         Backbone.history.navigate("meetings/" + meeting.id, {trigger: true})
+        $('#modal').modal('toggle')
       },
       error: function (meeting, errors) {
         this.renderErrors(errors)

@@ -5,7 +5,8 @@ Tennisify.Views.showUser = Backbone.View.extend({
   render: function () {
     var edit = this.model.id == currentUser ? true : false
     if (currentUser == this.model.id) {
-      if (this.model.get("phone_status") === "unverified") {
+      if (this.model.get("phone_status") === "unverified" &&
+          (this.model.get("phone_number") !== "")) {
         var button = '<button class="verify-phone">Verify Phone Number</button>'
       }
       var phone = this.phoneTemplate({user: this.model, button: button})
