@@ -532,7 +532,8 @@ User.create!({fname: "Bryce",
   email: "byoung@gmail.com",
   username: "b",
   level: "4.5",
-  reveal_age: "no"})
+  reveal_age: "no",
+  phone_status: "verified"})
 100.times do
   meet = create_meeting!(random_meeting(meetings))
   create_responses(meet)
