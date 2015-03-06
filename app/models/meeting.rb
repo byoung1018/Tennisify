@@ -69,7 +69,7 @@ class Meeting < ActiveRecord::Base
     # Get your Account Sid and Auth Token from twilio.com/user/account
 
     @client = Twilio::REST::Client.new(ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"])
-    phone_number = "+15105061345"
+    phone_number = "+15109258758"
     message = @client.account.messages.create(:body => message,
     :to => phone_number,
     :from => "+14152129645")
@@ -78,14 +78,11 @@ class Meeting < ActiveRecord::Base
   end
 
   def self.verify_phone_number(phone_number)
-
-    account_sid = ''
-    auth_token = '{{ auth_token }}'
     @client = Twilio::REST::Client.new(ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"])
-  
-    caller_id = @client.account.outgoing_caller_ids.create(:friendly_name => "My Home Phone Number",
-    :phone_number => "+14158675309")
-    puts caller_id.phone_number
+
+    caller_id = @client.account.outgoing_caller_ids.create(:friendly_name => "My actual cell number",
+    :phone_number => "+15109258758")
+    puts caller_id.validation_code
   end
 
 end
