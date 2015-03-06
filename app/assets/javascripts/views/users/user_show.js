@@ -29,11 +29,13 @@ Tennisify.Views.showUser = Backbone.View.extend({
 
   verifyPhone: function (event) {
     event.preventDefault()
+    $("button.verify-phone").remove()
     $.ajax({
       url: "/api/verify_phone",
       type: "POST",
-      success: function (verification_code) {
-        console.log(verification_code);
+      success: function (response) {
+        $("button.verify-phone").remove();
+        $("div.verify-phone").text("Your verification code is: " + response.validation_code)
       }.bind(this),
       error: function (errors) {
         console.log(errors);

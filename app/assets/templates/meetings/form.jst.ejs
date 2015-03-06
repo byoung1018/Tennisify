@@ -73,7 +73,9 @@
             <%= buttons("radio", "public", "meeting", ['Yes', 'No'], [meeting.get("public")])%>
           </div>
           <div class="row col-sm-12">
-            <a href="#" class="invite">Invite Specific Players</a>
+            <a href="#" class="invite">Invite Individuals</a>
+            <input type="checkbox" name="meeting[send_sms]">
+            <label>Send SMS</label>
           </div>
         </div>
         <div class="col-sm-3">

@@ -1,14 +1,13 @@
 module Api
   class MeetingsController < ApiController
-  #todo errors for create and fail
-    # def initialize
-    #   @_meeting_fields =
-    # end
     def create
       @meeting = Meeting.new(meeting_params)
       @meeting.organizer_id = current_user.id
       if @meeting.save
         create_invites(params[:invited])
+        if params[:send_sms]
+          @meeting.send_messages
+        end
         self.create_associations
         render json: @meeting
       else

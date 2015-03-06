@@ -64,15 +64,27 @@ class Meeting < ActiveRecord::Base
     end
   end
 
-  def self.send_message(message, phone_number)
-    # Get your Account Sid and Auth Token from twilio.com/user/account
+  def self.time_formated(time)
+    hours = time.hour
+    period = hours > 11 ? "pm" : "am";
+    hours > 12 if hours -= 12
+    min = time.min < 10 ? "0#{time.min}" : time.min
+
+    "#{hours}:#{min} #{period}"
+  end
+
+  def send_messages
 
     @client = Twilio::REST::Client.new(ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"])
-    phone_number = "+15109258758"
-    message = @client.account.messages.create(:body => message,
-    :to => phone_number,
-    :from => "+14152129645")
-    puts message.sid
+    self.invited_users.each do |user|
+      if user.phone_status == "verified"
+        message = "you have been invited tennis\n #{self.title}\nOrganizer: #{self.organizer.fname}\nLocation: #{self.location}\nDate:#{self.date}\nTime: #{Meeting.time_formated(self.time)}"
+        @client.account.messages.create(:body => message,
+        :to => user.phone_number,
+        :from => "+14152129645")
+      end
+
+    end
 
   end
 

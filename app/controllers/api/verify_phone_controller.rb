@@ -8,14 +8,15 @@ module Api
       caller_id = @client.account.outgoing_caller_ids.create(friendly_name: current_user.username,
                 phone_number: current_user.phone_number,
                 status_callback: "http://www.tennisify.net/api/verify_phone/#{current_user.id}",
-                status_callback_method: "put"
+                status_callback_method: "get"
       )
       render json: { validation_code: caller_id.validation_code }
     end
 
-    def update
+    def show
       user = User.find(params[:id])
       user.update!({phone_status: "verified"})
+      render json: user
     end
   end
 end
