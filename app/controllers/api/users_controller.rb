@@ -21,6 +21,14 @@ module Api
       @user = User.find(params[:id])
     end
 
+    def index
+      if params[:name]
+        @users = User.filter(params[:name])
+      else
+        @users = User.all
+      end
+    end
+
     private
     def user_params
       params.require(:user).permit(:username, :fname, :lname, :password, :reveal_age, :gender,

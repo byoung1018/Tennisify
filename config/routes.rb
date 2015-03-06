@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     resources :meetings do
       resources :responses, only: [:index]
     end
-    resources :users, only: [:create, :show]
+    resources :users, only: [:create, :show, :index]
   end
 end

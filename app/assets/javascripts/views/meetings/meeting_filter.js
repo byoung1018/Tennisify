@@ -5,7 +5,6 @@ Tennisify.Views.filterMeeting = Backbone.View.extend({
     "input .filter": "runFilter",
     "click .filter-click-button": "runFilter",
     "click .toggle-filter-button": "toggleFilter",
-    // "click .toggle-filter-button": "toggleFilter"
   },
 
   initialize: function () {

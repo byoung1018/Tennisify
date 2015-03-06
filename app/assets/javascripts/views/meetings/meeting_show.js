@@ -24,6 +24,7 @@ Tennisify.Views.ShowMeeting = Backbone.CompositeView.extend({
     return this;
   },
 
+
   showModal: function (view) {
     Tennisify.currentModalView && Tennisify.currentModalView.remove();
     Tennisify.currentModalView = view;

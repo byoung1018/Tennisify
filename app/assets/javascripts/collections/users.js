@@ -1,6 +1,6 @@
 Tennisify.Collections.Users = Backbone.Collection.extend({
   url: "api/users",
-  model: Tennisify.Collections.User,
+  model: Tennisify.Models.User,
   getOrFetch: function (id, callback) {
     var user = this.get(id),
     that = this;

@@ -38,6 +38,11 @@ add invitees to meeting
       render meeting view passing it the collection and meeting model
     on cancel
       render meeting view passing it the collection and meeting model
+
+
+resume here
+add remove invitees
+fix box styling
 4. change meeting create to render invited users
     pass the collection into the template
     add box for invited users

@@ -8,10 +8,17 @@ module Api
       @meeting = Meeting.new(meeting_params)
       @meeting.organizer_id = current_user.id
       if @meeting.save
+        create_invites(params[:invited])
         self.create_associations
         render json: @meeting
       else
         render json: { errors: @meeting.errors.full_messages }, status: 422
+      end
+    end
+
+    def create_invites(ids)
+      ids.each do |id|
+        Invite.create!({meeting_id: @meeting.id, user_id: id})
       end
     end
 
@@ -85,7 +92,7 @@ module Api
 
       def meeting_params
         params.require(:meeting).permit(:date, :time, :max_players, :title,
-                    :about, :age_groups, :levels, :area, :location, :public)
+                  :invited, :about, :age_groups, :levels, :area, :location, :public)
       end
 
       def filter_params

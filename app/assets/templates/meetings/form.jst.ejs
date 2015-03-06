@@ -66,20 +66,27 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row add-bottom-margin">
         <div class="col-sm-5">
           <div class="row col-sm-12">
             <label>Public</label>
             <%= buttons("radio", "public", "meeting", ['Yes', 'No'], [meeting.get("public")])%>
           </div>
           <div class="row col-sm-12">
-            <a href="#">Invite Specific Players</a>
+            <a href="#" class="invite">Invite Specific Players</a>
           </div>
         </div>
         <div class="col-sm-3">
           <label>Maximum Players</label>
           <input class="form-control" type="number" name="meeting[max_players]"
                   value="<%= meeting.escape("max_players") %>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <ul class="display-invited" data-columns="2">
+
+          </ul>
         </div>
       </div>
     </div>
@@ -89,5 +96,5 @@
 
 <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-  <button class="submit-meeting btn btn-primary" data-dismiss="modal"><%=buttonText%></button>
+  <button type="button" class="submit-meeting btn btn-primary"><%=buttonText%></button>
 </div>

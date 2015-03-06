@@ -1,0 +1,40 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h1>Invite Players</h1>
+</div>
+<div class="modal-body container">
+  <ul class="errors"></ul>
+  <div class="row col-sm-7">
+    <div class="col-sm-5">
+      <div class="row add-bottom-margin">
+        <label>Player Name</label>
+      </div>
+      <div class="row">
+        <input type="text" class="player-input form-control add-bottom-margin">
+        <select multiple class="form-control user-list">
+
+        </select>
+      </div>
+    </div>
+
+    <div class="col-sm-1">
+      <div class="push-down row sm-col-12"></div>
+      <div class="row sm-col-12">
+        <button class="add-bottom-margin add-player float-right"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+        <button class="remove-player float-right"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></button>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <label>Players</label>
+      <select multiple class="form-control invited-players">
+
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="cancel-invites btn btn-default" data-dismiss="modal">Cancel</button>
+  <button class="save-invites btn btn-primary" data-dismiss="modal">Save</button>
+</div>

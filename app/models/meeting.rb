@@ -1,3 +1,4 @@
+require 'twilio-ruby'
 class Meeting < ActiveRecord::Base
   belongs_to :organizer, class_name: 'User'
   has_many :responses
@@ -10,12 +11,11 @@ class Meeting < ActiveRecord::Base
   has_many :invited_users, through: :invites, source: :user
   has_many :genders, through: :allowed_genders
 
+
   validates :title, :date, :time, presence: true
   def current_user_response(user_id)
     responses.find_by(respondent_id: user_id)
   end
-  #Client.where(:orders_count => [1,3,5])    -> SELECT * FROM clients WHERE (clients.orders_count IN (1,3,5))
-  #where("bar LIKE ?", "%#{query}%")
   def self.filter(filter)
     meetings = Meeting.all
     date_fields = ['dateStart', 'dateEnd', 'timeStart', 'timeEnd']
@@ -63,6 +63,19 @@ class Meeting < ActiveRecord::Base
     self.send("#{association}s").map do |obj|
       obj.send(association)
     end
+  end
+
+  def send_message
+    # Get your Account Sid and Auth Token from twilio.com/user/account
+    account_sid = 'PN1691ca35bf129060b3fde1a4b63cc0f0'
+    auth_token = ''
+    @client = Twilio::REST::Client.new account_sid, auth_token
+
+    message = @client.account.messages.create(:body => "Jenny please?! I love you <3",
+    :to => "+14159352345",     # Replace with your phone number
+    :from => "+14158141829")   # Replace with your Twilio number
+    puts message.sid
+
   end
 
 end

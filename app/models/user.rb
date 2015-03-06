@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
   validates :fname, presence: true
 
   def age
-    return nil unless self.birthday
 
+    return nil if self.birthday == ""
     birthday = Date.parse(self.birthday)
     today = Date.today
     age = today.year - birthday.year
@@ -27,6 +27,14 @@ class User < ActiveRecord::Base
       age -= 1
     end
     age
+  end
+
+
+  def self.filter(name)
+    users = User.all
+    users = users.where("fname LIKE ? or lname LIKE ?", "#{name}%", "#{name}%");
+
+    users
   end
 
   def self.find_by_credentials(login, password)

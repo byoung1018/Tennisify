@@ -32,8 +32,16 @@ input[type="date"] {
   width: 100%;
 }
 
+button.float-right {
+  float: right;
+}
+
 input[type="time"] {
   width: 100%;
+}
+
+.add-bottom-margin {
+  margin-bottom: 5px
 }
 
 .blue {
@@ -163,6 +171,49 @@ a.index-items{
   margin-left: 10px;
   margin-right: -10px;
 }
+
+.push-down {
+  height: 150px;
+}
+
+select[multiple].invited-players {
+  height: 350px;
+}
+
+select[multiple].user-list {
+  height: 300px
+}
+
+// ul.display-invited {
+//   border: 1px solid #cccccc;
+//   border-radius: 4px;
+//   height: 125px;
+//   // columns: 2;
+//   // -webkit-columns: 2;
+//   // -moz-columns: 2;
+//   overflow: scroll;
+// }
+
+.display-invited {
+  border: 1px dotted blue;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  overflow: scroll;
+  height: 125px;
+}
+
+.display-invited li {
+  display: inline-block;
+  width: 45%;
+  margin: 0;
+  padding: 0;
+  vertical-align: top; 
+}
+
+
 
 //
 // .backdrop {

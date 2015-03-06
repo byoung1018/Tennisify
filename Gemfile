@@ -17,7 +17,7 @@ gem 'bcrypt'
 gem 'bootstrap-sass'
 
 gem 'font-awesome-rails'
-
+gem 'twilio-ruby'
 group :development, :test do
   gem 'byebug'
 
