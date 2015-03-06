@@ -11,7 +11,8 @@ class Meeting < ActiveRecord::Base
   has_many :genders, through: :allowed_genders
 
 
-  validates :title, :date, :time, presence: true
+  validates :title, :organizer_id, :date, :time, :max_players, :public, :area, :location, presence: true
+
   def current_user_response(user_id)
     responses.find_by(respondent_id: user_id)
   end
@@ -74,7 +75,8 @@ class Meeting < ActiveRecord::Base
   end
 
   def send_messages
-    @client = Twilio::REST::Client.new(ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"])
+    @client = Twilio::REST::Client.new(twilio_account_sid, twilio_auth_token)
+    puts "here"
     self.invited_users.each do |user|
       if user.phone_status == "verified"
         message = "you have been invited tennis\n #{self.title}\nOrganizer: #{self.organizer.fname}\nLocation: #{self.location}\nDate:#{self.date}\nTime: #{Meeting.time_formated(self.time)}"
