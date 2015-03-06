@@ -3,45 +3,43 @@
   <h1 class="col-sm-3"><%= user.escape("fname") + " " + user.escape("lname") %></h1>
   <img class="col-sm-8 profile-picture" src="<%= user.escape("picture") %>">
 </div>
-<div class="modal-body">
-  <div class="container">
-
-    <div class="row">
-      <div class=col-sm-3>
-        <h3>Username:</h3>
-        <%= user.escape("username") %>
-      </div>
-      <div class=col-sm-3>
-        <h3>Email:</h3>
-        <%= user.escape("email") %>
-      </div>
+<div class="modal-body col-sm-12">
+  <div class="row">
+    <div class=col-sm-6>
+      <h3>Username:</h3>
+      <%= user.escape("username") %>
     </div>
-    <div class="row">
-      <div class=col-sm-3>
-        <h3>Age:</h3>
-        <%= user.escape("age") %>
-      </div>
-
-      <div class=col-sm-3>
-        <h3>Gender:</h3>
-        <%= user.escape("gender") %>
-      </div>
-
+    <div class=col-sm-6>
+      <h3>Email:</h3>
+      <%= user.escape("email") %>
     </div>
-    <div class="row">
+  </div>
+  <div class="row">
+    <div class=col-sm-6>
+      <h3>Age:</h3>
+      <%= user.escape("age") %>
+    </div>
 
-      <div class=col-sm-3>
-        <h3>Level:</h3>
-        <%= user.escape("level") %>
-      </div>
-
-      <div class=col-sm-3>
-        <h3>Area:</h3>
-        <%= user.escape("area") %>
-      </div>
+    <div class=col-sm-6>
+      <h3>Gender:</h3>
+      <%= user.escape("gender") %>
     </div>
 
   </div>
+  <div class="row">
+    <div class=col-sm-6>
+      <h3>Level:</h3>
+      <%= user.escape("level") %>
+    </div>
+    <div class=col-sm-6>
+      <h3>Area:</h3>
+      <%= user.escape("area") %>
+    </div>
+  </div>
+  <div class="row">
+    <%= phone %>
+  </div>
+
 
 </div>
 <div class="modal-footer">

@@ -39,14 +39,9 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-6">
-        <label class="col-sm-6">Level
-          <%= select("level", "user", LEVELS)%>
-        </label>
-        <label class="col-sm-6">Area
-          <%= select("area", "user", AREAS)%>
-        </label>
-      </div>
+      <label class="form-group col-sm-6">Phone Number
+        <input type="text" class="form-control" name="user[phone_number]" value="<%= user.escape("phone_number") %>">
+      </label>
       <div class="col-sm-6">
         <label class="birthday col-sm-7">Birthday
           <input type="date" class="form-control" name="user[birthday]" value="<%= user.escape("age") %>">
@@ -57,9 +52,19 @@
       </div>
     </div>
     <div class="row">
-      <label class="col-sm-6">Gender
+      <div class="col-sm-6">
+        <label class="col-sm-6">Level
+          <%= select("level", "user", LEVELS)%>
+        </label>
+        <label class="col-sm-6">Area
+          <%= select("area", "user", AREAS)%>
+        </label>
+      </div>
+      <div class="col-sm-6">
+        <label>Gender</label>
         <%= buttons('radio', 'gender', "user", ['M', 'F']) %>
-      </label>
+      </div>
+
     </div>
   </div>
 

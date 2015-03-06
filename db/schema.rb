@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150225005846) do
+ActiveRecord::Schema.define(version: 20150306045710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,20 +98,22 @@ ActiveRecord::Schema.define(version: 20150225005846) do
   add_index "responses", ["respondent_id"], name: "index_responses_on_respondent_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "fname",           null: false
+    t.string   "fname",                           null: false
     t.string   "lname"
-    t.string   "password_digest", null: false
-    t.string   "session_token",   null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "email",           null: false
-    t.string   "username",        null: false
+    t.string   "password_digest",                 null: false
+    t.string   "session_token",                   null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "email",                           null: false
+    t.string   "username",                        null: false
     t.string   "level"
     t.string   "area"
-    t.string   "reveal_age",      null: false
+    t.string   "reveal_age",                      null: false
     t.string   "gender"
     t.string   "picture"
     t.string   "birthday"
+    t.string   "phone_number"
+    t.string   "phone_status",    default: "Doe"
   end
 
 end

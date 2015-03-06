@@ -99,7 +99,7 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
 
   showUser: function (id) {
     event.preventDefault();
-    var user = Tennisify.Collections.users.getOrFetch(id, function () {
+    Tennisify.Collections.users.getOrFetch(id, function (user) {
       var userView = new Tennisify.Views.showUser({model: user});
       this.showModal(userView);
     }.bind(this))

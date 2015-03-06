@@ -17,8 +17,7 @@ class User < ActiveRecord::Base
   validates :fname, presence: true
 
   def age
-
-    return nil if self.birthday == ""
+    return nil if self.birthday == "" || self.birthday.nil?
     birthday = Date.parse(self.birthday)
     today = Date.today
     age = today.year - birthday.year

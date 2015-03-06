@@ -1,53 +1,9 @@
-check line 20 of composite view
 double check composite view
 
-add hover to guest button
-
-add invitees to meeting
-  on click of invite toggle button
-    save meeting as model
-    render invite view and pass meeting model
-  on click of save invitees
-    creates invite collection from data
-    render meeting and passes it the meeting model and invitee collection
-    change meeting view to take in meeting model and invitees collection
-    display invitees in meeting edit
-  on click save meeting
-    change save to create invitees
-
-1a. create model for invitees
-    create collection for invitees
-
-2. add create invite button to meeting form
-    on button click
-      have button create a model for meeting
-      render invite view and pass it the meeting
-
-3. create invite view
-    check modals and replace modal
-    view:
-      box for search
-        should filter down users
-      list of all users below
-      add button
-      list of users to add
-      save button
-      cancel button
-    on save click
-      create collection from added users
-      render meeting view passing it the collection and meeting model
-    on cancel
-      render meeting view passing it the collection and meeting model
+add verify inbox to account creation
+add button to verify on account profile
 
 
-resume here
-add remove invitees
-fix box styling
-4. change meeting create to render invited users
-    pass the collection into the template
-    add box for invited users
-5. change meeting save on controller to create the invite entries
-    check on collection saving
 
 fix editing to invite people
 
