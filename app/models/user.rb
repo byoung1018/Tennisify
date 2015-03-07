@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
 
   def self.filter(name)
     users = User.all
-    users = users.where("fname LIKE ? or lname LIKE ?", "#{name}%", "#{name}%");
+    users = users.where("fname LIKE ? or lname LIKE ? or fname LIKE ? or lname LIKE ?", "#{name}%", "#{name}%", "#{name.capitalize}%", "#{name.capitalize}%");
 
     users
   end
