@@ -74,10 +74,10 @@ class Meeting < ActiveRecord::Base
     "#{hours}:#{min} #{period}"
   end
 
-  def send_messages
+  def self.send_messages(user_ids)
     @client = Twilio::REST::Client.new(twilio_account_sid, twilio_auth_token)
-    puts "here"
-    self.invited_users.each do |user|
+    user_ids.each do |id|
+      user = User.find(id)
       if user.phone_status == "verified"
         message = "you have been invited tennis\n #{self.title}\nOrganizer: #{self.organizer.fname}\nLocation: #{self.location}\nDate:#{self.date}\nTime: #{Meeting.time_formated(self.time)}"
         @client.account.messages.create(:body => message,

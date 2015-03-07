@@ -5,7 +5,7 @@ module Api
       @meeting.organizer_id = current_user.id
       if @meeting.save
         create_invites(params[:invited])
-        @meeting.send_messages
+        Meeting.send_messages(params[:invited])
         self.create_associations
         render json: @meeting
       else
