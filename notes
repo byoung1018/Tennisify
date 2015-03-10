@@ -1,11 +1,12 @@
 double check composite view
-tolower for sequal
 
+search for:
+tolower for sql
+send different rest to url with anchor tag
 
 move navbar over to backbone
 
 how to route to create meeting if popup is from create meeting and to index if not
-
 
 add about for users
 
@@ -15,26 +16,6 @@ age
 gender
 
 transition for index to show
-
-<a data-dismiss="modal" data-toggle="modal" href="#lost">Click</a>
-or
-
-<a data-dismiss="modal" onclick="call the new div here">Click</a>
-do let us know if it works.
-
-add invites personal invites to meetings
-  add invited_users to db - meeting, user ids, invite
-  add model assoc
-
-  add create invites-
-
-   ...
-
-  add to json
-  add
-
-  add invitations for private meetings
-
 
 filter by public/private current user
 add emails
