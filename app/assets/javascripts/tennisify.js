@@ -4,7 +4,7 @@ window.Tennisify = {
   Views: {},
   Routers: {},
   initialize: function() {
-    new Tennisify.Routers.TennisifyRouter();
+    Tennisify.router = new Tennisify.Routers.TennisifyRouter();
     Tennisify.Collections.meetings = new Tennisify.Collections.Meetings();
     Tennisify.Collections.users = new Tennisify.Collections.Users();
     Tennisify.currentModalView;

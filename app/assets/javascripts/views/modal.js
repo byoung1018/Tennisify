@@ -10,19 +10,4 @@ Tennisify.Views.Modal = Backbone.View.extend({
   events: {
     "hide.bs.modal #modal": "routeBack"
   },
-  routeBack: function () {
-    var lastRoute = Tennisify.routeHistory[1];
-    if (lastRoute || (lastRoute === "" && lastRoute != "showLogin")) {
-      var route = key(this.model, lastRoute.route)
-      if (route.indexOf(":id") > -1) {
-        var id = "" + (lastRoute.params[0]).toString();
-        route = route.replace(":id", id);
-      }
-
-      Backbone.history.navigate(route, {trigger: true});
-    }
-    else {
-      Backbone.history.navigate("/", {trigger: true});
-    }
-  },
 });

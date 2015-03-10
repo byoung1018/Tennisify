@@ -210,18 +210,21 @@ select[multiple].user-list {
   width: 45%;
   margin: 0;
   padding: 0;
-  vertical-align: top; 
+  vertical-align: top;
+}
+
+.navbar-nav > li > a {
+  padding: 0px 0px 0px 0px;
 }
 
 
-
 //
-// .backdrop {
+// .modal-backdrop {
 //   background-image: url("backdrop2.jpg");
 //   top: 0;
 //   left: 0;
 //   bottom: 0;
 //   right: 0;
-//   opacity: 0.5;
+//   // opacity: 0.5;
 //   z-index: -1;
 // }

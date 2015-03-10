@@ -93,3 +93,17 @@ function key(obj, value) {
   }
   return undefined;
 }
+
+function routeBack() {
+  if (!Tennisify.routeHistory[1] || Tennisify.routeHistory[1] === "login" ||
+      Tennisify.routeHistory[1] === "logout" || Tennisify.routeHistory[1] === "") {
+    var route = "/";
+  }else {
+    var route = key(Tennisify.router.routes, Tennisify.routeHistory[1])
+    if (route.indexOf(":id") > -1) {
+      var id = "" + (lastRoute.params[0]).toString();
+      route = route.replace(":id", id);
+    }
+  }
+  Backbone.history.navigate(route, {trigger:true});
+}

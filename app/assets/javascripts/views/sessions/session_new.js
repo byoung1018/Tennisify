@@ -33,25 +33,26 @@ Tennisify.Views.SessionNew = Backbone.ErrorView.extend({
 
   login: function (event) {
     event.preventDefault();
-    var loginDetails =
-      $(event.delegateTarget).serializeJSON();
-    new Tennisify.Models.Session({})
-      $.ajax({
-        url: "/session",
-        type: "POST",
-        data: loginDetails,
-        success: function (user) {
-          currentUser = user.id;
-          $('#modal').modal('toggle')
-          $(".create-meeting").removeClass("disabled");
-          $(".show-profile").removeClass("disabled");
-          // Backbone.history.navigate("#", {trigger:true})
+    var loginDetails = $(event.delegateTarget).serializeJSON();
+    $.ajax({
+      url: "/session",
+      type: "POST",
+      data: loginDetails,
+      success: function (user) {
+        currentUser = user.id;
+        $('#modal').modal('toggle')
+        $(".create-meeting").removeClass("disabled");
+        $(".show-profile").removeClass("disabled");
+        $(".backdrop").show();
+        routeBack();
+      }.bind(this),
+      error: function (errors) {
+        this.renderErrors(errors);
+      }.bind(this),
+      dataType: 'json'
+    })
+  },
 
-        }.bind(this),
-        error: function (errors) {
-          this.renderErrors(errors);
-        }.bind(this),
-        dataType: 'json'
-      })
-  }
+
+
 });

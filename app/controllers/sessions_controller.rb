@@ -13,8 +13,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    user = current_user
     logout_user!
-    redirect_to root_url
+    render json: user, status: 200
   end
 
   def new

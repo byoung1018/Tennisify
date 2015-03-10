@@ -2,6 +2,7 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
   routes:{
     "": "index",
     "login": "login",
+    "logout": "logout",
     "users/new": "newUser",
     "users/:id": "showUser",
     "meetings/new": "newMeeting",
@@ -28,11 +29,12 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
 
   checkLogin: function (route, params) {
     Tennisify.routeHistory[1] = Tennisify.routeHistory[0];
-    Tennisify.routeHistory[0] = {route: route, params: params};
+    Tennisify.routeHistory[0] = route;
   },
 
   login: function () {
     var loginPage = new Tennisify.Views.SessionNew();
+    $(".backdrop").hide();
     this.showModal(loginPage);
   },
 
@@ -65,6 +67,8 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
     var index = new Tennisify.Views.MeetingsIndex({
       collection: Tennisify.Collections.meetings
     });
+    var navBar = new Tennisify.Views.NavBar();
+    $("nav.navbar").html(navBar.render().$el);
     $(".meeting-index").html(index.render().$el);
     var filter = new Tennisify.Views.filterMeeting();
     $(".meeting-filter").html(filter.render().$el);
@@ -75,6 +79,8 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
     this._currentView = view;
     this._show.html(view.$el);
   },
+
+
 
 
 
@@ -129,4 +135,18 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
     var user = new Tennisify.Views.newUser({});
     this._swapView(user);
   },
+
+  logout: function (event) {
+    $.ajax({
+      url: "/session",
+      type: "DELETE",
+      success: function (user) {
+        currentUser = undefined;
+        $(".create-meeting").addClass("disabled");
+        $(".show-profile").addClass("disabled");
+        Backbone.history.navigate("/login", {trigger:true});
+      }.bind(this),
+      dataType: 'json'
+    })
+  }
 })
