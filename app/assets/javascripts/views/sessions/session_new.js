@@ -7,43 +7,45 @@ Tennisify.Views.SessionNew = Backbone.ErrorView.extend({
 
     return this;
   },
-  tagName: "form",
+
+  className: "container",
+
   events: {
-    "click button.login": "login",
+    "click input[type='submit']": "login",
     "click .create-account-link": "showCreate",
-    "click .guest-login": "guestLogin",
+    "click button.guest-login": "guestLogin",
   },
 
-  guestLogin: function () {
+  guestLogin: function (event) {
+    event.preventDefault();
     var guestId = Math.floor(Math.random() * 12) + 1;
     var guestUser = new Tennisify.Models.User({"id": guestId});
     guestUser.fetch({success: function (user) {
-      this.$(".session-login").val(user.get("username"));
-      this.$(".session-password").val("asdfasdf");
-    }})
+      this.$("input[name='user[login]']").val(user.get("username"));
+      this.$("input[name='user[password]']").val("asdfasdf");
+    }});
   },
 
-
   showCreate: function () {
-    event.preventDefault();
-    var user = new Tennisify.Models.User();
-    var view = new Tennisify.Views.NewUser({model: user});
-    Tennisify.modalContent.html(view.render().$el);
+
+    // event.preventDefault();
+    // var user = new Tennisify.Models.User();
+    // var view = new Tennisify.Views.NewUser({model: user});
+    // Tennisify.modalContent.html(view.render().$el);
   },
 
   login: function (event) {
     event.preventDefault();
-    var loginDetails = $(event.delegateTarget).serializeJSON();
+    var loginDetails = $("form").serializeJSON();
     $.ajax({
       url: "/session",
       type: "POST",
       data: loginDetails,
       success: function (user) {
         currentUser = user.id;
-        $('#modal').modal('toggle')
         $(".create-meeting").removeClass("disabled");
         $(".show-profile").removeClass("disabled");
-        $(".backdrop").show();
+        $("#main").show();
         routeBack();
       }.bind(this),
       error: function (errors) {
