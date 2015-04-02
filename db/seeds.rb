@@ -456,7 +456,7 @@ def random_organizer(meet)
   begin
   User.find_by(lname: (organizers.sample)[:lname])
   rescue
-debugger
+
   end
 end
 

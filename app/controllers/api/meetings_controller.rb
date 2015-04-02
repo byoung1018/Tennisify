@@ -3,13 +3,23 @@ module Api
     def create
       @meeting = Meeting.new(meeting_params)
       @meeting.organizer_id = current_user.id
+      @meeting.public = "Yes"
       if @meeting.save
         create_invites(params[:invited])
         # Meeting.send_messages(params[:invited])
         self.create_associations
         render json: @meeting
       else
+        check_multivalue_attribute
         render json: { errors: @meeting.errors.full_messages }, status: 422
+      end
+    end
+
+    def check_multivalue_attribute
+      [:genders, :levels, :age_groups].each do |attribute|
+        unless params[attribute]
+          @meeting.errors.add(attribute, "can't be blank")
+        end
       end
     end
 

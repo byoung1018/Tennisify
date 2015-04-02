@@ -21,19 +21,21 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
     if (!currentUser) {
       Backbone.history.navigate("login", { trigger: true })
     } else{
-      var meeting = new Tennisify.Views.newMeeting();
+      var meeting = new Tennisify.Views.NewMeeting();
       this.showModal(meeting);
     }
   },
 
 
   checkLogin: function (route, params) {
-    if (!currentUser) {
-      Backbone.history.navigate("login", { trigger: true })
-
-    }
     Tennisify.routeHistory[1] = Tennisify.routeHistory[0];
-    Tennisify.routeHistory[0] = route;
+    Tennisify.routeHistory[0] = {};
+    Tennisify.routeHistory[0].route = route;
+    Tennisify.routeHistory[0].params = params;
+    if (!currentUser && route != "login" && route != "newUser") {
+      Backbone.history.navigate("login", { trigger: true })
+      this._pageRendered = false;
+    }
   },
 
   login: function () {
@@ -132,8 +134,10 @@ Tennisify.Routers.TennisifyRouter = Backbone.Router.extend({
   },
 
   newUser: function () {
-    var user = new Tennisify.Views.newUser({});
-    this._swapView(user);
+    var newUser = new Tennisify.Views.NewUser({
+      model: new Tennisify.Models.User()
+      });
+    this.showModal(newUser);
   },
 
   logout: function (event) {

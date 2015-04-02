@@ -25,7 +25,6 @@ Tennisify.Views.showUser = Backbone.View.extend({
   events: {
     "click .edit-button": "editUser",
     "click .verify-phone": "verifyPhone",
-    "#modal hide.bs.modal": "routeBack"
   },
 
   verifyPhone: function (event) {
@@ -49,16 +48,6 @@ Tennisify.Views.showUser = Backbone.View.extend({
     event.preventDefault();
     var view = new Tennisify.Views.EditUser({model: this.model});
     Tennisify.modalContent.html(view.render().$el);
-  },
-
-  routeBack: function () {
-    var lastRoute = Tennisify.routeHistory[0];
-    if (lastRoute || lastRoute === "") {
-      Backbone.history.navigate(lastRoute, {trigger: true});
-    }
-    else {
-      Backbone.history.navigate("/", {trigger: true});
-    }
   },
 
 });

@@ -11,7 +11,7 @@ class Meeting < ActiveRecord::Base
   has_many :genders, through: :allowed_genders
 
 
-  validates :title, :organizer_id, :date, :time, :max_players, :public, :area, :location, presence: true
+  validates :title, :organizer_id, :date, :time, :max_players, :area, :location, presence: true
 
   def current_user_response(user_id)
     responses.find_by(respondent_id: user_id)
@@ -26,7 +26,6 @@ class Meeting < ActiveRecord::Base
         attr = name.singularize.to_sym
         meetings = meetings.joins(table).where(table => {attr => value}).uniq
       elsif name == "organizer"
-        puts
         meetings = meetings.where("organizer_id in (select id from users where users.fname like ?)", "%#{value}%")
 
       elsif name == "max_players"
@@ -43,7 +42,7 @@ class Meeting < ActiveRecord::Base
           meetings = meetings.where('time < ?', value)
         end
       else
-        meetings = meetings.where("#{name} LIKE ?", "#{value}%");
+        meetings = meetings.where("lower(#{name}) LIKE lower(?)", "#{value.downcase}%");
       end
     end
 

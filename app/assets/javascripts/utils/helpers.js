@@ -32,6 +32,14 @@ function toDoubleDigit(num) {
   return num;
 }
 
+function randomDoubleDigit(num) {
+  // body...
+}
+
+function rand(highest) {
+  return Math.floor(Math.random() * highest) + 1;
+}
+
 function chevron(direction) {
   var chevron = '<span class="glyphicon glyphicon-chevron-' + direction +
   ' toggle-filter-button" aria-hidden="true"></span>';
@@ -95,13 +103,13 @@ function key(obj, value) {
 }
 
 function routeBack() {
-  if (!Tennisify.routeHistory[1] || Tennisify.routeHistory[1] === "login" ||
-      Tennisify.routeHistory[1] === "logout" || Tennisify.routeHistory[1] === "") {
-    var route = "/";
+  if (!Tennisify.routeHistory[1].route || Tennisify.routeHistory[1].route === "login" ||
+    Tennisify.routeHistory[1].route === "logout" || Tennisify.routeHistory[1].route === "") {
+      var route = "/";
   }else {
-    var route = key(Tennisify.router.routes, Tennisify.routeHistory[1])
+    var route = key(Tennisify.router.routes, Tennisify.routeHistory[1].route)
     if (route.indexOf(":id") > -1) {
-      var id = "" + (lastRoute.params[0]).toString();
+      var id = Tennisify.routeHistory[1].params[0];
       route = route.replace(":id", id);
     }
   }

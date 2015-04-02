@@ -7,10 +7,16 @@ $colHighlight   : #ecdbff;
   background: linear-gradient(to bottom,#27709b 0,#24688f 100%);
   background-color: $bgDefault;
   border-color: $bgHighlight;
-  .navbar-brand {
+  .brand {
     color: $colDefault;
+    float: left;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    height: 50px;
     &:hover, &:focus {
-      color: $colHighlight; }}
+      text-decoration: none;
+      color: $colHighlight;}}
   .navbar-text {
     color: $colDefault; }
   .navbar-nav {
@@ -45,6 +51,7 @@ $colHighlight   : #ecdbff;
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu {
+
     > li > a {
       color: $colDefault;
       &:hover, &:focus {

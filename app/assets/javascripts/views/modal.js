@@ -10,4 +10,7 @@ Tennisify.Views.Modal = Backbone.View.extend({
   events: {
     "hide.bs.modal #modal": "routeBack"
   },
+  routeBack: function () {
+    routeBack();
+  },
 });

@@ -9,7 +9,7 @@ window.Tennisify = {
     Tennisify.Collections.users = new Tennisify.Collections.Users();
     Tennisify.currentModalView;
     Tennisify.filterShowing = true;
-    Tennisify.routeHistory = new Array(2);
+    Tennisify.routeHistory = [{}, {}];
     Tennisify.modalContent = $(".modal-content");
     Backbone.history.start();
 
